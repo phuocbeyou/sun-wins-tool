@@ -1,0 +1,47 @@
+{
+  "gameSettings": {
+    "BET_AMOUNT": 1000,
+    "JACKPOT_THRESHOLD": 5000000,
+    "BET_STOP": 1000,
+    "TIME_SEND_MESS": 1,
+    "IS_MARTINGALE": false,
+    "RATE_MARTINGALE": 2,
+    "ZOMBIE": true
+  },
+  "gameRules": [
+    "Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.",
+    "Người chơi đặt cược vào màu ngọc rồng dự đoán.",
+    "**Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):",
+    "   - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)",
+    "   - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)",
+    "   - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)",
+    "   - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)",
+    "   - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)",
+    "   - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)",
+    "**Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.",
+    "**Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $\times$ Số tiền hũ khi nổ."
+  ],
+  "bettingRules": [
+    {
+      "description": "WHITE-YELLOW-BLUE-RED",
+      "priority": 1,
+      "active": true,
+      "pattern": [
+        "WHITE",
+        "YELLOW",
+        "BLUE",
+        "RED"
+      ],
+      "betOn": [
+        "RED",
+        "PINK",
+        "YELLOW"
+      ],
+      "betAmount": [
+        1000,
+        1000,
+        5000
+      ]
+    }
+  ]
+}

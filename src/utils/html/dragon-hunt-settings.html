@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐲 Săn Rồng - Cấu hình Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #667eea;
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #34495e;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            transform: scale(1.2);
+        }
+
+        .rules-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .rules-list li {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .rule-item {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: transform 0.2s;
+        }
+
+        .rule-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .rule-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .rule-header h3 {
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        .priority-badge {
+            background: #3498db;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .pattern-display {
+            display: flex;
+            gap: 5px;
+            margin: 10px 0;
+        }
+
+        .pattern-item {
+            background: #667eea;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .bet-amounts {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .bet-amount {
+            background: #27ae60;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-success {
+            background: #27ae60;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #219a52;
+            transform: translateY(-2px);
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .btn-warning {
+            background: #f39c12;
+            color: white;
+        }
+
+        .btn-warning:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .status {
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-weight: 600;
+            text-align: center;
+            display: none;
+        }
+
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            /* increased modal width from 600px to 800px */
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .form-row .form-group {
+            flex: 1;
+            margin-bottom: 0;
+        }
+
+        .pattern-input {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .pattern-input input {
+            width: 60px;
+            text-align: center;
+        }
+
+        .bet-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .bet-option input[type="checkbox"] {
+            transform: scale(1.2);
+        }
+
+        .bet-option input[type="number"] {
+            width: 150px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .rule-header {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+
+            .form-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🐲 Săn Rồng</h1>
+            <p>Cấu hình Game và Chiến thuật Cược</p>
+        </div>
+
+        <div class="content">
+            <div class="section">
+                <h2>⚙️ Cài đặt Game</h2>
+                <div class="form-group">
+                    <label>💰 Số tiền cược mỗi lần:</label>
+                    <input type="number" id="betAmount" value="1000" min="100" step="100">
+                </div>
+                <div class="form-group">
+                    <label>🎰 Ngưỡng Jackpot:</label>
+                    <input type="number" id="jackpotThreshold" value="500000" min="10000" step="10000">
+                </div>
+                <div class="form-group">
+                    <label>🛑 Dừng cược khi thua:</label>
+                    <input type="number" id="betStop" value="10000" min="1000" step="1000">
+                </div>
+                <div class="form-group">
+                    <label>⏱️ Thời gian gửi tin nhắn (giây):</label>
+                    <input type="number" id="timeSendMess" value="1" min="1" max="10">
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="isMartingale">
+                        <label for="isMartingale">📈 Sử dụng chiến thuật Martingale</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>📊 Tỷ lệ Martingale:</label>
+                    <input type="number" id="rateMartingale" value="2" min="1.5" max="5" step="0.1">
+                </div>
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="zombie" checked>
+                        <label for="zombie">🧟 Chế độ Zombie (tự động)</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section betting-rules">
+                <h2>🎯 Quy tắc cược</h2>
+            </div>
+
+            <div class="buttons">
+                <button class="btn btn-success" onclick="saveConfig()">
+                    💾 Lưu cấu hình
+                </button>
+                <button class="btn btn-danger" onclick="resetConfig()">
+                    🔄 Reset về mặc định
+                </button>
+            </div>
+
+            <input type="file" id="configFileInput" class="file-input" accept=".json"
+                onchange="loadConfigFromFile(event)">
+
+            <div id="status" class="status"></div>
+        </div>
+    </div>
+
+    Add/Edit Rule Modal
+    <div id="ruleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">➕ Thêm quy tắc cược mới</h2>
+                <span class="close" onclick="closeAddRuleForm()">&times;</span>
+            </div>
+
+            <form id="ruleForm">
+                <div class="form-group">
+                    <label>📝 Mô tả quy tắc:</label>
+                    <input type="text" id="ruleDescription" placeholder="Ví dụ: Cược TÀI khi có pattern 1-2-3" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>🔢 Độ ưu tiên:</label>
+                        <input type="number" id="rulePriority" value="1" min="1" max="10">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>🎲 Pattern màu (tùy chọn):</label>
+                    <div id="patternInputs">
+                        <!-- Pattern inputs will be dynamically generated here -->
+                    </div>
+                    <small>Nhấp vào màu để thêm vào pattern. Tối đa 10 màu.</small>
+                </div>
+
+                <div class="form-group">
+                    <label>🎯 Loại cược:</label>
+                    <div id="betOptions">
+                        <!-- Bet options will be dynamically generated here -->
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button type="button" class="btn btn-success" onclick="saveRule()">💾 Lưu quy tắc</button>
+                    <button type="button" class="btn btn-danger" onclick="closeAddRuleForm()">❌ Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE_URL = "http://localhost:3000/api/config/dragon-hunt";
+        const AVAILABLE_COLORS = ["RED", "WHITE", "PINK", "BLUE", "YELLOW", "PURPLE", "GREEN"];
+        const MAX_PATTERN_COLORS = 10;
+
+        let currentConfig = {
+            gameSettings: {},
+            bettingRules: []
+        };
+        let editingRuleIndex = -1;
+        let currentPattern = [];
+        const MAX_PATTERN_LENGTH = 10;
+
+        document.addEventListener('DOMContentLoaded', function () {
+            loadConfigFromServer();
+            setupFormSync();
+        });
+
+        // --- Load config từ server ---
+        async function loadConfigFromServer() {
+            try {
+                const response = await fetch(API_BASE_URL);
+                if (!response.ok) throw new Error("Không thể tải config từ server");
+
+                const config = await response.json();
+                currentConfig = config;
+                updateFormFromConfig(config);
+                updateBettingRulesDisplay(config.bettingRules || []);
+
+                showStatus("✅ Đã tải cấu hình từ server!", "success");
+            } catch (error) {
+                currentConfig = {
+                    gameSettings: {
+                        "BET_AMOUNT": 1000,
+                        "JACKPOT_THRESHOLD": 500000,
+                        "BET_STOP": 10000,
+                        "TIME_SEND_MESS": 1,
+                        "IS_MARTINGALE": false,
+                        "RATE_MARTINGALE": 2,
+                        "ZOMBIE": true
+                    },
+                    bettingRules: [
+                        {
+                            "betOn": "PURPLE",
+                            "priority": 10,
+                            "active": true,
+                            "description": "RED → PINK → WHITE cược PURPLE.",
+                            "betAmount": 5000,
+                            "pattern": ["RED", "PINK", "WHITE"]
+                        },
+                        {
+                            "betOn": ["RED", "BLUE", "PINK"],
+                            "priority": 0,
+                            "active": true,
+                            "description": "Default rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK.",
+                            "betAmount": [1000, 2000, 500],
+                            "pattern": []
+                        }
+                    ]
+                };
+                updateFormFromConfig(currentConfig);
+                updateBettingRulesDisplay(currentConfig.bettingRules);
+                showStatus("⚠️ Sử dụng cấu hình mặc định (không kết nối được server)", "error");
+            }
+        }
+
+        function updateFormFromConfig(config) {
+            const settings = config.gameSettings;
+            document.getElementById('betAmount').value = settings.BET_AMOUNT || 1000;
+            document.getElementById('jackpotThreshold').value = settings.JACKPOT_THRESHOLD || 500000;
+            document.getElementById('betStop').value = settings.BET_STOP || 10000;
+            document.getElementById('timeSendMess').value = settings.TIME_SEND_MESS || 1;
+            document.getElementById('isMartingale').checked = settings.IS_MARTINGALE || false;
+            document.getElementById('rateMartingale').value = settings.RATE_MARTINGALE || 2;
+            document.getElementById('zombie').checked = settings.ZOMBIE !== false;
+        }
+
+        function updateConfigFromForm() {
+            currentConfig.gameSettings = {
+                "BET_AMOUNT": parseInt(document.getElementById('betAmount').value),
+                "JACKPOT_THRESHOLD": parseInt(document.getElementById('jackpotThreshold').value),
+                "BET_STOP": parseInt(document.getElementById('betStop').value),
+                "TIME_SEND_MESS": parseInt(document.getElementById('timeSendMess').value),
+                "IS_MARTINGALE": document.getElementById('isMartingale').checked,
+                "RATE_MARTINGALE": parseFloat(document.getElementById('rateMartingale').value),
+                "ZOMBIE": document.getElementById('zombie').checked
+            };
+        }
+
+        // --- Save config về server ---
+        async function saveConfig() {
+            try {
+                updateConfigFromForm();
+
+                const response = await fetch(API_BASE_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(currentConfig, null, 4)
+                });
+
+                if (!response.ok) throw new Error("Server trả lỗi");
+
+                showStatus("✅ Đã lưu cấu hình thành công lên server!", "success");
+            } catch (error) {
+                showStatus("❌ Lỗi khi lưu: " + error.message, "error");
+            }
+        }
+
+        // --- Reset config ---
+        async function resetConfig() {
+            if (!confirm("🔄 Bạn có chắc muốn reset về cấu hình mặc định?")) return;
+            try {
+                const response = await fetch(API_BASE_URL + "/reset", { method: "POST" });
+                if (!response.ok) throw new Error("Server trả lỗi reset");
+
+                const defaultConfig = await response.json();
+                currentConfig = defaultConfig;
+                updateFormFromConfig(defaultConfig);
+                updateBettingRulesDisplay(defaultConfig.bettingRules || []);
+
+                showStatus("🔄 Đã reset về cấu hình mặc định từ server!", "success");
+            } catch (error) {
+                // Fallback reset
+                currentConfig.bettingRules = [];
+                updateBettingRulesDisplay([]);
+                showStatus("🔄 Đã xóa tất cả quy tắc cược!", "success");
+            }
+        }
+
+        // --- Betting Rules Management ---
+        function updateBettingRulesDisplay(bettingRules) {
+            const bettingSection = document.querySelector('.betting-rules');
+            const existingRules = bettingSection.querySelectorAll('.rule-item');
+            existingRules.forEach(rule => rule.remove());
+
+            // Remove existing add button
+            const existingAddBtn = bettingSection.querySelector('.btn-primary');
+            if (existingAddBtn) existingAddBtn.remove();
+
+            bettingRules.forEach((rule, index) => {
+                const ruleDiv = document.createElement('div');
+                ruleDiv.className = 'rule-item';
+                ruleDiv.innerHTML = `
+                    <div class="rule-header">
+                        <h3>Quy tắc ${index + 1} ${rule.active ? '✅' : '❌'}</h3>
+                        <div>
+                            <span class="priority-badge">Ưu tiên: ${rule.priority}</span>
+                            <button class="btn btn-warning" onclick="editRule(${index})" style="padding: 5px 10px; font-size: 12px; margin-left: 10px;">✏️ Sửa</button>
+                            <button class="btn btn-danger" onclick="deleteRule(${index})" style="padding: 5px 10px; font-size: 12px; margin-left: 5px;">🗑️ Xóa</button>
+                        </div>
+                    </div>
+                    <p><strong>Mô tả:</strong> ${rule.description}</p>
+                    ${rule.pattern && rule.pattern.length > 0 ? `
+                        <p><strong>Pattern màu:</strong></p>
+                        <div class="pattern-display">
+                            ${rule.pattern.map(color => `<span class="pattern-item" style="background-color: ${getColorCode(color)}">${color}</span>`).join('')}
+                        </div>
+                    ` : '<p><strong>Pattern:</strong> Không có pattern cụ thể</p>'}
+                    <p><strong>Cược vào:</strong> ${Array.isArray(rule.betOn) ? rule.betOn.join(', ') : rule.betOn}</p>
+                    <div class="bet-amounts">
+                        ${Array.isArray(rule.betAmount) ?
+                        rule.betAmount.map((amount, i) => `<span class="bet-amount">${Array.isArray(rule.betOn) ? rule.betOn[i] : 'Cược'}: ${amount.toLocaleString()} VNĐ</span>`).join('') :
+                        `<span class="bet-amount">${rule.betAmount.toLocaleString()} VNĐ</span>`
+                    }
+                    </div>
+                `;
+                bettingSection.appendChild(ruleDiv);
+            });
+
+            const addRuleBtn = document.createElement('button');
+            addRuleBtn.className = 'btn btn-primary';
+            addRuleBtn.innerHTML = '➕ Thêm quy tắc cược mới';
+            addRuleBtn.onclick = showAddRuleForm;
+            bettingSection.appendChild(addRuleBtn);
+        }
+
+        function getColorCode(colorName) {
+            const colorMap = {
+                'RED': '#e74c3c',
+                'WHITE': '#ecf0f1',
+                'PINK': '#e91e63',
+                'BLUE': '#3498db',
+                'YELLOW': '#f1c40f',
+                'PURPLE': '#9b59b6',
+                'GREEN': '#27ae60'
+            };
+            return colorMap[colorName] || '#95a5a6';
+        }
+
+        function showAddRuleForm() {
+            editingRuleIndex = -1;
+            document.getElementById('modalTitle').textContent = '➕ Thêm quy tắc cược mới';
+            clearRuleForm();
+            updatePatternInputs();
+            updateBetOptions();
+            document.getElementById('ruleModal').style.display = 'block';
+        }
+
+        function updatePatternInputs() {
+            const patternContainer = document.getElementById('patternInputs');
+            patternContainer.innerHTML = `
+                <div class="pattern-input">
+                    <label>Chọn màu cho pattern (tối đa ${MAX_PATTERN_LENGTH} màu):</label>
+                    <div id="selectedPattern" style="display: flex; flex-wrap: wrap; gap: 5px; margin: 10px 0; min-height: 40px; border: 2px dashed #e9ecef; border-radius: 8px; padding: 10px; align-items: center;">
+                        <span id="patternPlaceholder" style="color: #6c757d; font-style: italic;">Nhấp vào màu bên dưới để tạo pattern...</span>
+                    </div>
+                    <div id="colorPalette" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
+                        ${AVAILABLE_COLORS.map(color => `
+                            <button type="button" class="color-btn" data-color="${color}" 
+                                style="background-color: ${getColorCode(color)}; 
+                                       color: ${color === 'WHITE' ? 'black' : 'white'}; 
+                                       border: 3px solid transparent;
+                                       padding: 10px 15px; 
+                                       border-radius: 8px; 
+                                       font-weight: bold; 
+                                       cursor: pointer;
+                                       transition: all 0.3s;
+                                       min-width: 80px;"
+                                onclick="addColorToPattern('${color}')"
+                                onmouseover="this.style.transform='scale(1.05)'"
+                                onmouseout="this.style.transform='scale(1)'">${color}</button>
+                        `).join('')}
+                    </div>
+                    <small>Nhấp vào màu để thêm vào pattern. Tối đa ${MAX_PATTERN_LENGTH} màu.</small>
+                </div>
+            `;
+        }
+
+        function updateBetOptions() {
+            const betOptionsContainer = document.getElementById('betOptions');
+            betOptionsContainer.innerHTML = `
+                <div style="margin-bottom: 15px;">
+                    <label><strong>Chọn màu để cược:</strong></label>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
+                        ${AVAILABLE_COLORS.map(color => `
+                            <div class="bet-option">
+                                <input type="checkbox" id="bet${color}" value="${color}">
+                                <label for="bet${color}" style="background-color: ${getColorCode(color)}; color: ${color === 'WHITE' ? 'black' : 'white'}; padding: 5px 10px; border-radius: 5px; font-weight: bold; margin-right: 10px;">${color}</label>
+                                <input type="number" id="amount${color}" placeholder="Số tiền" min="1000" step="1000" style="width: 120px;">
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function addColorToPattern(color) {
+            if (currentPattern.length >= MAX_PATTERN_LENGTH) {
+                alert(`Chỉ được chọn tối đa ${MAX_PATTERN_LENGTH} màu cho pattern!`);
+                return;
+            }
+
+            console.log("[v0] Adding color to pattern:", color);
+            currentPattern.push(color);
+            console.log("[v0] Current pattern after adding:", currentPattern);
+
+            updatePatternDisplay();
+            updatePatternDescription();
+        }
+
+        function updatePatternDisplay() {
+            const patternContainer = document.getElementById('selectedPattern');
+            const placeholder = document.getElementById('patternPlaceholder');
+
+            console.log("[v0] Updating pattern display, current pattern:", currentPattern);
+
+            // Remove existing pattern items first
+            const existingItems = patternContainer.querySelectorAll('.pattern-color-item');
+            existingItems.forEach(item => item.remove());
+
+            if (currentPattern.length === 0) {
+                console.log("[v0] No pattern items, showing placeholder");
+                if (placeholder) {
+                    placeholder.style.display = 'block';
+                }
+                return;
+            }
+
+            if (placeholder) {
+                placeholder.style.display = 'none';
+            }
+
+            // Add pattern items
+            currentPattern.forEach((color, index) => {
+                const colorItem = document.createElement('div');
+                colorItem.className = 'pattern-color-item';
+                colorItem.style.cssText = `
+                    background-color: ${getColorCode(color)};
+                    color: ${color === 'WHITE' ? 'black' : 'white'};
+                    padding: 8px 12px;
+                    border-radius: 6px;
+                    font-weight: bold;
+                    font-size: 14px;
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    position: relative;
+                `;
+
+                colorItem.innerHTML = `
+                    <span>${index + 1}. ${color}</span>
+                    <button type="button" onclick="removeColorFromPattern(${index})" 
+                        style="background: rgba(255,255,255,0.3); border: none; border-radius: 50%; width: 20px; height: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px; color: inherit;">×</button>
+                `;
+
+                patternContainer.appendChild(colorItem);
+            });
+
+            console.log("[v0] Pattern display updated with", currentPattern.length, "items");
+        }
+
+        function removeColorFromPattern(index) {
+            console.log("[v0] Removing color at index:", index, "Current pattern:", currentPattern);
+            currentPattern.splice(index, 1);
+            console.log("[v0] Pattern after removal:", currentPattern);
+
+            updatePatternDisplay();
+            updatePatternDescription();
+
+            if (currentPattern.length === 0) {
+                console.log("[v0] Last item removed, ensuring placeholder is shown");
+                setTimeout(() => {
+                    const patternContainer = document.getElementById('selectedPattern');
+                    const placeholder = document.getElementById('patternPlaceholder');
+                    if (placeholder) {
+                        placeholder.style.display = 'block';
+                        console.log("[v0] Placeholder shown after timeout");
+                    }
+                    // Remove any remaining pattern items
+                    const existingItems = patternContainer.querySelectorAll('.pattern-color-item');
+                    existingItems.forEach(item => item.remove());
+                }, 10);
+            }
+        }
+
+        function updatePatternDescription() {
+            console.log("[v0] updatePatternDescription called, currentPattern:", currentPattern);
+            const descriptionInput = document.getElementById('ruleDescription');
+            if (!descriptionInput) {
+                console.log("[v0] Description input not found");
+                return;
+            }
+
+            if (currentPattern.length > 0) {
+                const patternDescription = currentPattern.join('-');
+                console.log("[v0] Pattern description generated:", patternDescription);
+                // Always update the description field with the pattern
+                descriptionInput.value = patternDescription;
+                console.log("[v0] Description field updated:", descriptionInput.value);
+            } else {
+                // Clear description when pattern is empty
+                descriptionInput.value = '';
+                console.log("[v0] Description cleared for empty pattern");
+            }
+        }
+
+        function saveRule() {
+            const description = document.getElementById('ruleDescription').value.trim();
+            const priority = parseInt(document.getElementById('rulePriority').value);
+
+            if (!description) {
+                alert('Vui lòng nhập mô tả quy tắc!');
+                return;
+            }
+
+            // Use currentPattern instead of checkbox selection
+            const selectedPatternColors = [...currentPattern];
+
+            const betOn = [];
+            const betAmount = [];
+
+            AVAILABLE_COLORS.forEach(color => {
+                const checkbox = document.getElementById(`bet${color}`);
+                const amountInput = document.getElementById(`amount${color}`);
+
+                if (checkbox && checkbox.checked && amountInput && amountInput.value) {
+                    betOn.push(color);
+                    betAmount.push(parseInt(amountInput.value));
+                }
+            });
+
+            if (betOn.length === 0) {
+                alert('Vui lòng chọn ít nhất một màu để cược và nhập số tiền!');
+                return;
+            }
+
+            const newRule = {
+                description: description,
+                priority: priority,
+                active: true,
+                pattern: selectedPatternColors,
+                betOn: betOn, // Always keep as array
+                betAmount: betAmount // Always keep as array
+            };
+
+            if (editingRuleIndex >= 0) {
+                // Edit existing rule
+                currentConfig.bettingRules[editingRuleIndex] = newRule;
+                showStatus('✅ Đã cập nhật quy tắc cược!', 'success');
+            } else {
+                // Add new rule
+                if (!currentConfig.bettingRules) currentConfig.bettingRules = [];
+                currentConfig.bettingRules.push(newRule);
+                showStatus('✅ Đã thêm quy tắc cược mới!', 'success');
+            }
+
+            // Sort rules by priority (higher priority first)
+            currentConfig.bettingRules.sort((a, b) => b.priority - a.priority);
+
+            updateBettingRulesDisplay(currentConfig.bettingRules);
+            closeAddRuleForm();
+        }
+
+        function editRule(index) {
+            editingRuleIndex = index;
+            const rule = currentConfig.bettingRules[index];
+
+            document.getElementById('modalTitle').textContent = '✏️ Sửa quy tắc cược';
+            document.getElementById('ruleDescription').value = rule.description;
+            document.getElementById('rulePriority').value = rule.priority;
+
+            updatePatternInputs();
+            updateBetOptions();
+
+            // Load existing pattern into currentPattern
+            currentPattern = rule.pattern ? [...rule.pattern] : [];
+            updatePatternDisplay();
+
+            const betOn = Array.isArray(rule.betOn) ? rule.betOn : [rule.betOn];
+            const betAmount = Array.isArray(rule.betAmount) ? rule.betAmount : [rule.betAmount];
+
+            betOn.forEach((color, i) => {
+                const checkbox = document.getElementById(`bet${color}`);
+                const amountInput = document.getElementById(`amount${color}`);
+                if (checkbox) checkbox.checked = true;
+                if (amountInput) amountInput.value = betAmount[i] || betAmount[0];
+            });
+
+            document.getElementById('ruleModal').style.display = 'block';
+        }
+
+        function closeAddRuleForm() {
+            document.getElementById('ruleModal').style.display = 'none';
+            clearRuleForm();
+        }
+
+        function clearRuleForm() {
+            document.getElementById('ruleForm').reset();
+            document.getElementById('rulePriority').value = 1;
+            currentPattern = [];
+            if (document.getElementById('selectedPattern')) {
+                updatePatternDisplay();
+            }
+        }
+
+        function deleteRule(index) {
+            if (!confirm('🗑️ Bạn có chắc muốn xóa quy tắc này?')) return;
+
+            currentConfig.bettingRules.splice(index, 1);
+            updateBettingRulesDisplay(currentConfig.bettingRules);
+            showStatus('🗑️ Đã xóa quy tắc cược!', 'success');
+        }
+
+        // --- Form sync ---
+        function setupFormSync() {
+            const formInputs = [
+                'betAmount', 'jackpotThreshold', 'betStop', 'timeSendMess',
+                'isMartingale', 'rateMartingale', 'zombie'
+            ];
+            formInputs.forEach(inputId => {
+                const element = document.getElementById(inputId);
+                if (element) {
+                    element.addEventListener('input', function () {
+                        clearTimeout(window.formSyncTimeout);
+                        window.formSyncTimeout = setTimeout(() => {
+                            updateConfigFromForm();
+                        }, 500);
+                    });
+                }
+            });
+        }
+
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.textContent = message;
+            statusDiv.className = `status ${type}`;
+            statusDiv.style.display = 'block';
+            setTimeout(() => { statusDiv.style.display = 'none'; }, 5000);
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+            const modal = document.getElementById('ruleModal');
+            if (event.target === modal) {
+                closeAddRuleForm();
+            }
+        }
+    </script>
+</body>
+
+</html>

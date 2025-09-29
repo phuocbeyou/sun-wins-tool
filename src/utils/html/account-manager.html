@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Tài Khoản - Dragon Hunt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+            font-family: 'Courier New', monospace;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #27ae60, #229954);
+            color: white;
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        .btn-danger {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+        }
+
+        .btn-warning:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+        }
+
+        .accounts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .account-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 5px solid #3498db;
+            transition: all 0.3s ease;
+        }
+
+        .account-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .account-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .account-username {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .account-game {
+            background: #3498db;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+        }
+
+        .account-info {
+            margin-bottom: 15px;
+        }
+
+        .account-info div {
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+
+        .account-info strong {
+            color: #2c3e50;
+        }
+
+        .account-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .account-actions .btn {
+            padding: 8px 15px;
+            font-size: 12px;
+            margin: 0;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            animation: modalSlideIn 0.3s ease;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: #e74c3c;
+        }
+
+        .status-message {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            display: none;
+        }
+
+        .status-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .accounts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+                padding: 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎮 Quản Lý Tài Khoản</h1>
+            <p>Dragon Hunt Game - User Account Management</p>
+        </div>
+
+        <div class="content">
+            <!-- Statistics Section -->
+            <div class="section">
+                <h2>📊 Thống Kê</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalAccounts">0</div>
+                        <div class="stat-label">Tổng Tài Khoản</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="activeAccounts">0</div>
+                        <div class="stat-label">Tài Khoản Hoạt Động</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add Account Section -->
+            <div class="section">
+                <h2>➕ Thêm Tài Khoản</h2>
+                <div id="statusMessage" class="status-message"></div>
+
+                <div class="form-group">
+                    <label for="jsonData">Dán JSON Data:</label>
+                    <textarea id="jsonData"
+                        placeholder='Ví dụ: [1, "XGame", "Z8_solokhop121", "chanvl123", {"tokens": 1000, "info": {...}}]'></textarea>
+                </div>
+
+                <button class="btn btn-success" onclick="addAccountFromJson()">➕ Add Account</button>
+                <button class="btn btn-danger" onclick="clearAllAccounts()">🗑️ Clear All</button>
+            </div>
+
+            <!-- Accounts List Section -->
+            <div class="section">
+                <h2>👥 Danh Sách Tài Khoản</h2>
+                <div id="accountsList" class="accounts-grid">
+                    <!-- Accounts will be displayed here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Account Modal -->
+    <div id="accountModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAccountModal()">&times;</span>
+            <h2 id="modalTitle">Thêm Tài Khoản Mới</h2>
+
+            <form id="accountForm">
+                <div class="form-group">
+                    <label for="gameType">Game Type:</label>
+                    <input type="text" id="gameType" value="XGame" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username (ID):</label>
+                    <input type="text" id="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tokens">Tokens:</label>
+                    <input type="number" id="tokens" value="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="userInfo">User Info (JSON):</label>
+                    <textarea id="userInfo"
+                        placeholder='{"ip": "192.168.1.1", "phone": "0123456789", "email": "user@example.com"}'></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-success">💾 Lưu Tài Khoản</button>
+                <button type="button" class="btn btn-danger" onclick="closeAccountModal()">❌ Hủy</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let accounts = [];
+        let editingAccountId = null;
+        const API_BASE = 'http://localhost:3000/api/config';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function () {
+            loadAccountsFromAPI();
+        });
+
+        async function loadAccountsFromAPI() {
+            try {
+                showStatus('Đang tải dữ liệu từ server...', 'success');
+                const response = await fetch(`${API_BASE}/account`);
+
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('[v0] API Response:', data);
+
+                    if (Array.isArray(data)) {
+                        accounts = data.filter(accountArray => Array.isArray(accountArray) && accountArray.length >= 5);
+                    } else {
+                        accounts = [];
+                    }
+
+                    let hasActiveAccount = false;
+                    accounts.forEach(accountArray => {
+                        if (accountArray[4] && accountArray[4].isActive) {
+                            if (hasActiveAccount) {
+                                accountArray[4].isActive = false;
+                            } else {
+                                hasActiveAccount = true;
+                            }
+                        }
+                    });
+
+                    // If no account is active, make the first one active
+                    if (!hasActiveAccount && accounts.length > 0) {
+                        accounts[0][4] = accounts[0][4] || {};
+                        accounts[0][4].isActive = true;
+                    }
+
+                    displayAccounts();
+                    updateStats();
+                    showStatus(`Đã tải ${accounts.length} tài khoản thành công!`, 'success');
+                } else if (response.status === 404) {
+                    accounts = [];
+                    displayAccounts();
+                    updateStats();
+                    showStatus('Chưa có dữ liệu, bắt đầu với danh sách trống.', 'success');
+                } else {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+            } catch (error) {
+                console.error('[v0] Error loading accounts:', error);
+                showStatus('Lỗi khi tải dữ liệu từ server: ' + error.message, 'error');
+                accounts = JSON.parse(localStorage.getItem('dragonHuntAccounts')) || [];
+                displayAccounts();
+                updateStats();
+            }
+        }
+
+        async function saveAccountsToAPI() {
+            try {
+                const response = await fetch(`${API_BASE}/account`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(accounts)
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    console.log('[v0] Saved to API:', result);
+                    localStorage.setItem('dragonHuntAccounts', JSON.stringify(accounts));
+                    return true;
+                } else {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+            } catch (error) {
+                console.error('[v0] Error saving to API:', error);
+                showStatus('Lỗi khi lưu dữ liệu lên server: ' + error.message, 'error');
+                localStorage.setItem('dragonHuntAccounts', JSON.stringify(accounts));
+                return false;
+            }
+        }
+
+        async function addAccountFromJson() {
+            const jsonData = document.getElementById('jsonData').value.trim();
+
+            if (!jsonData) {
+                showStatus('Vui lòng nhập JSON data!', 'error');
+                return;
+            }
+
+            try {
+                const data = JSON.parse(jsonData);
+
+                let accountsToAdd = [];
+                if (Array.isArray(data)) {
+                    if (data.length > 0 && Array.isArray(data[0])) {
+                        // Array of arrays
+                        accountsToAdd = data;
+                    } else if (data.length >= 5) {
+                        // Single array
+                        accountsToAdd = [data];
+                    }
+                }
+
+                if (accountsToAdd.length === 0) {
+                    showStatus('JSON data phải là array với ít nhất 5 phần tử hoặc array of arrays!', 'error');
+                    return;
+                }
+
+                let addedCount = 0;
+                let updatedCount = 0;
+
+                accountsToAdd.forEach(accountArray => {
+                    if (!Array.isArray(accountArray) || accountArray.length < 5) {
+                        return;
+                    }
+
+                    const username = accountArray[2]; // index[2] as ID
+                    const existingAccountIndex = accounts.findIndex(acc => acc[2] === username);
+
+                    if (!accountArray[4]) {
+                        accountArray[4] = {};
+                    }
+
+                    // Set isActive to false by default (will be managed by toggle function)
+                    if (accountArray[4].isActive === undefined) {
+                        accountArray[4].isActive = false;
+                    }
+
+                    if (existingAccountIndex !== -1) {
+                        const wasActive = accounts[existingAccountIndex][4] && accounts[existingAccountIndex][4].isActive;
+                        accounts[existingAccountIndex] = accountArray;
+                        accounts[existingAccountIndex][4].isActive = wasActive;
+                        updatedCount++;
+                    } else {
+                        accounts.push(accountArray);
+                        addedCount++;
+                    }
+                });
+
+                await saveAccountsToAPI();
+                displayAccounts();
+                updateStats();
+
+                let message = '';
+                if (addedCount > 0) message += `Đã thêm ${addedCount} tài khoản mới. `;
+                if (updatedCount > 0) message += `Đã cập nhật ${updatedCount} tài khoản. `;
+                showStatus(message || 'Không có thay đổi nào!', 'success');
+
+                document.getElementById('jsonData').value = '';
+
+            } catch (error) {
+                showStatus('JSON data không hợp lệ: ' + error.message, 'error');
+            }
+        }
+
+        async function deleteAccount(username) {
+            if (confirm(`Bạn có chắc chắn muốn xóa tài khoản "${username}"?`)) {
+                accounts = accounts.filter(acc => acc[2] !== username);
+                await saveAccountsToAPI();
+                displayAccounts();
+                updateStats();
+                showStatus(`Đã xóa tài khoản "${username}" thành công!`, 'success');
+            }
+        }
+
+        async function toggleActiveAccount(username) {
+            const accountIndex = accounts.findIndex(acc => acc[2] === username);
+            if (accountIndex !== -1) {
+                const account = accounts[accountIndex];
+                if (!account[4] || !account[4].isActive) {
+                    accounts.forEach(acc => {
+                        if (acc[4]) {
+                            acc[4].isActive = false;
+                        }
+                    });
+
+                    // Activate this account
+                    if (!account[4]) account[4] = {};
+                    account[4].isActive = true;
+
+                    showStatus(`Đã kích hoạt tài khoản "${username}"!`, 'success');
+                } else {
+                    showStatus(`Tài khoản "${username}" đã được kích hoạt rồi!`, 'error');
+                    return;
+                }
+
+                await saveAccountsToAPI();
+                displayAccounts();
+                updateStats();
+            }
+        }
+
+        function displayAccounts() {
+            const accountsList = document.getElementById('accountsList');
+
+            if (accounts.length === 0) {
+                accountsList.innerHTML = '<p style="text-align: center; color: #666; grid-column: 1/-1;">Chưa có tài khoản nào. Hãy thêm tài khoản đầu tiên!</p>';
+                return;
+            }
+
+            accountsList.innerHTML = accounts.map(accountArray => {
+                const id = accountArray[0];
+                const gameType = accountArray[1];
+                const username = accountArray[2];
+                const password = accountArray[3];
+                const infoObject = accountArray[4] || {};
+
+                // Parse info string if it exists
+                let parsedInfo = {};
+                if (typeof infoObject.info === 'string') {
+                    try {
+                        parsedInfo = JSON.parse(infoObject.info);
+                    } catch (e) {
+                        console.warn('[v0] Failed to parse info string:', e);
+                    }
+                }
+
+                const displayName = parsedInfo.displayName || infoObject.displayName || username;
+                const ipAddress = parsedInfo.ipAddress || infoObject.ipAddress || infoObject.ip || 'N/A';
+                const phone = parsedInfo.phone || infoObject.phone || 'N/A';
+                const userId = parsedInfo.userId || infoObject.userId || 'N/A';
+                const isActive = infoObject.isActive || false;
+
+                const borderColor = isActive ? '#f39c12' : '#27ae60';
+                const activeLabel = isActive ? 'ACTIVE' : 'Inactive';
+                const activeLabelColor = isActive ? '#f39c12' : '#666';
+
+                return `
+                <div class="account-card" style="border-left-color: ${borderColor}">
+                    <div class="account-header">
+                        <div class="account-username">${displayName}</div>
+                        <div class="account-game">${gameType}</div>
+                    </div>
+                    
+                    <div class="account-info">
+                        <div><strong>Username:</strong> ${username}</div>
+                        <div><strong>Password:</strong> ${'*'.repeat(password.length)}</div>
+                        <div><strong>Status:</strong> <span style="color: ${activeLabelColor}; font-weight: bold;">${activeLabel}</span></div>
+                        <div><strong>User ID:</strong> ${userId.toString().substring(0, 8)}...</div>
+                        <div><strong>IP:</strong> ${ipAddress}</div>
+                        <div><strong>Phone:</strong> ${phone}</div>
+                    </div>
+                    
+                    <div class="account-actions">
+                        ${!isActive ? `<button class="btn btn-warning" onclick="toggleActiveAccount('${username}')">⭐ Set Active</button>` : '<button class="btn" style="background: #f39c12; color: white;" disabled>⭐ ACTIVE</button>'}
+                        <button class="btn btn-danger" onclick="deleteAccount('${username}')">🗑️ Xóa</button>
+                    </div>
+                </div>
+            `;
+            }).join('');
+        }
+
+        function updateStats() {
+            document.getElementById('totalAccounts').textContent = accounts.length;
+            document.getElementById('activeAccounts').textContent = accounts.filter(acc => acc[4] && acc[4].isActive).length;
+        }
+
+        async function clearAllAccounts() {
+            if (confirm('Bạn có chắc chắn muốn xóa TẤT CẢ tài khoản? Hành động này không thể hoàn tác!')) {
+                accounts = [];
+                await saveAccountsToAPI();
+                displayAccounts();
+                updateStats();
+                showStatus('Đã xóa tất cả tài khoản!', 'success');
+            }
+        }
+
+        function showStatus(message, type) {
+            const statusDiv = document.getElementById('statusMessage');
+            statusDiv.textContent = message;
+            statusDiv.className = `status-message status-${type}`;
+            statusDiv.style.display = 'block';
+
+            setTimeout(() => {
+                statusDiv.style.display = 'none';
+            }, 5000);
+        }
+
+        window.onclick = function (event) {
+            const modal = document.getElementById('accountModal');
+            if (event.target === modal) {
+                closeAccountModal();
+            }
+        }
+    </script>
+</body>
+
+</html>

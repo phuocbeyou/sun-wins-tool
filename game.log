@@ -1,0 +1,721 @@
+[31m[5,{"gid":501,"second":7.655,"result":"WHITE","startPayoutTime":1759103027792,"jackpotAccumulation":166238,"jackpot":false,"lastJackpotResultRaw":"PINK,RED,WHITE","startTime":1759102980784,"timeBetCountdown":0,"lastResultIndex":27,"endResultTime":1759103027791,"startResultTime":1759103002791,"Jws":[],"timeBet":22,"sessionId":317685,"jackpotResultRaw":"PURPLE,PURPLE,WHITE","resultIndex":20,"jackpotAmount":25923158,"ended":true,"cmd":1956,"endTime":1759103027795,"anim":15,"wns":[],"status":"ENDED","endPayoutTime":1759103035620}][39m
+[32mLịch sử gần đây: [PURPLE, WHITE][39m
+[31m[5,{"gid":501,"second":7.707,"result":"RED","startPayoutTime":1759103083472,"jackpotAccumulation":123668,"jackpot":false,"lastJackpotResultRaw":"PURPLE,PURPLE,WHITE","startTime":1759103036464,"timeBetCountdown":0,"lastResultIndex":20,"endResultTime":1759103083471,"startResultTime":1759103058471,"Jws":[],"timeBet":22,"sessionId":317686,"jackpotResultRaw":"GREEN,RED,PURPLE","resultIndex":9,"jackpotAmount":26089396,"ended":true,"cmd":1956,"endTime":1759103083475,"anim":12,"wns":[],"status":"ENDED","endPayoutTime":1759103091325}][39m
+[32mLịch sử gần đây: [PURPLE, WHITE, RED][39m
+[31m[5,{"gid":501,"second":7.759,"result":"RED","startPayoutTime":1759103139153,"jackpotAccumulation":135493,"jackpot":false,"lastJackpotResultRaw":"GREEN,RED,PURPLE","startTime":1759103092146,"timeBetCountdown":0,"lastResultIndex":9,"endResultTime":1759103139152,"startResultTime":1759103114152,"Jws":[],"timeBet":22,"sessionId":317687,"jackpotResultRaw":"RED,WHITE,YELLOW","resultIndex":31,"jackpotAmount":26213064,"ended":true,"cmd":1956,"endTime":1759103139157,"anim":4,"wns":[],"status":"ENDED","endPayoutTime":1759103147033}][39m
+[32mLịch sử gần đây: [PURPLE, WHITE, RED, RED][39m
+[31m[5,{"gid":501,"second":7.688,"result":"GREEN","startPayoutTime":1759103194824,"jackpotAccumulation":164303,"jackpot":false,"lastJackpotResultRaw":"RED,WHITE,YELLOW","startTime":1759103147816,"timeBetCountdown":0,"lastResultIndex":31,"endResultTime":1759103194823,"startResultTime":1759103169823,"Jws":[],"timeBet":22,"sessionId":317688,"jackpotResultRaw":"PINK,GREEN,PINK","resultIndex":29,"jackpotAmount":26348557,"ended":true,"cmd":1956,"endTime":1759103194828,"anim":8,"wns":[],"status":"ENDED","endPayoutTime":1759103202668}][39m
+[32mLịch sử gần đây: [PURPLE, WHITE, RED, RED, GREEN][39m
+[32mLịch sử gần đây: [PURPLE, WHITE, RED, RED, GREEN, WHITE][39m
+[31m[5,{"gid":501,"second":7.748,"result":"WHITE","startPayoutTime":1759103250499,"jackpotAccumulation":154714,"jackpot":false,"lastJackpotResultRaw":"PINK,GREEN,PINK","startTime":1759103203491,"timeBetCountdown":0,"lastResultIndex":29,"endResultTime":1759103250499,"startResultTime":1759103225499,"Jws":[],"timeBet":22,"sessionId":317689,"jackpotResultRaw":"PINK,BLUE,YELLOW","resultIndex":1,"jackpotAmount":26512860,"ended":true,"cmd":1956,"endTime":1759103250504,"anim":19,"wns":[],"status":"ENDED","endPayoutTime":1759103258373}][39m
+[32m[6:59:00 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 0] Default rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK. (Cược: 1000, 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[31m[5,{"gid":501,"second":7.785,"result":"BLUE","startPayoutTime":1759103974411,"jackpotAccumulation":103458,"jackpot":false,"lastJackpotResultRaw":"PINK,WHITE,YELLOW","startTime":1759103927404,"timeBetCountdown":0,"lastResultIndex":16,"endResultTime":1759103974410,"startResultTime":1759103949410,"Jws":[],"timeBet":22,"sessionId":317702,"jackpotResultRaw":"BLUE,PURPLE,PURPLE","resultIndex":35,"jackpotAmount":27959767,"ended":true,"cmd":1956,"endTime":1759103974415,"anim":13,"wns":[],"status":"ENDED","endPayoutTime":1759103982303}][39m
+[32mLịch sử gần đây: [BLUE][39m
+[31m[5,{"gid":501,"second":7.803,"result":"GREEN","startPayoutTime":1759104030086,"jackpotAccumulation":84108,"jackpot":false,"lastJackpotResultRaw":"BLUE,PURPLE,PURPLE","startTime":1759103983072,"timeBetCountdown":0,"lastResultIndex":35,"endResultTime":1759104030085,"startResultTime":1759104005085,"Jws":[],"timeBet":22,"sessionId":317703,"jackpotResultRaw":"PURPLE,RED,YELLOW","resultIndex":33,"jackpotAmount":28063225,"ended":true,"cmd":1956,"endTime":1759104030090,"anim":8,"wns":[],"status":"ENDED","endPayoutTime":1759104037987}][39m
+[32mLịch sử gần đây: [BLUE, GREEN][39m
+[31m[5,{"gid":501,"second":7.713,"result":"WHITE","startPayoutTime":1759104085754,"jackpotAccumulation":92794,"jackpot":false,"lastJackpotResultRaw":"PURPLE,RED,YELLOW","startTime":1759104038747,"timeBetCountdown":0,"lastResultIndex":33,"endResultTime":1759104085753,"startResultTime":1759104060753,"Jws":[],"timeBet":22,"sessionId":317704,"jackpotResultRaw":"BLUE,YELLOW,WHITE","resultIndex":26,"jackpotAmount":28147333,"ended":true,"cmd":1956,"endTime":1759104085758,"anim":6,"wns":[],"status":"ENDED","endPayoutTime":1759104093610}][39m
+[32mLịch sử gần đây: [BLUE, GREEN, WHITE][39m
+[32m[7:02:04 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 0] Default rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK. (Cược: 1000, 1000 đ)[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Zombie: BẬT[39m
+[31m[5,{"gid":501,"second":7.813,"result":"BLUE","startPayoutTime":1759104141483,"jackpotAccumulation":82646,"jackpot":false,"lastJackpotResultRaw":"BLUE,YELLOW,WHITE","startTime":1759104094475,"timeBetCountdown":0,"lastResultIndex":26,"endResultTime":1759104141482,"startResultTime":1759104116482,"Jws":[],"timeBet":22,"sessionId":317705,"jackpotResultRaw":"PURPLE,GREEN,BLUE","resultIndex":5,"jackpotAmount":28240127,"ended":true,"cmd":1956,"endTime":1759104141485,"anim":4,"wns":[],"status":"ENDED","endPayoutTime":1759104149390}][39m
+[32mLịch sử gần đây: [BLUE][39m
+[31m[5,{"gid":501,"second":7.772,"result":"WHITE","startPayoutTime":1759104197163,"jackpotAccumulation":73444,"jackpot":false,"lastJackpotResultRaw":"PURPLE,GREEN,BLUE","startTime":1759104150155,"timeBetCountdown":0,"lastResultIndex":5,"endResultTime":1759104197162,"startResultTime":1759104172162,"Jws":[],"timeBet":22,"sessionId":317706,"jackpotResultRaw":"YELLOW,PURPLE,PINK","resultIndex":14,"jackpotAmount":28322773,"ended":true,"cmd":1956,"endTime":1759104197167,"anim":19,"wns":[],"status":"ENDED","endPayoutTime":1759104205049}][39m
+[32mLịch sử gần đây: [BLUE, WHITE][39m
+[33mChế độ Martingale: TẮT[39m
+[32m[7:03:46 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[36mMainGame connected.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 0] Default rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK. (Cược: 1000, 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[31m[5,{"gid":501,"second":7.778,"result":"WHITE","startPayoutTime":1759104252835,"jackpotAccumulation":94256,"jackpot":false,"lastJackpotResultRaw":"YELLOW,PURPLE,PINK","startTime":1759104205828,"timeBetCountdown":0,"lastResultIndex":14,"endResultTime":1759104252834,"startResultTime":1759104227834,"Jws":[],"timeBet":22,"sessionId":317707,"jackpotResultRaw":"GREEN,PURPLE,YELLOW","resultIndex":4,"jackpotAmount":28396217,"ended":true,"cmd":1956,"endTime":1759104252839,"anim":4,"wns":[],"status":"ENDED","endPayoutTime":1759104260724}][39m
+[32mLịch sử gần đây: [WHITE][39m
+[34m[7:04:21 AM] [39mPhiên mới bắt đầu: [36m#317708[39m. Đang chờ đặt cược...
+[31mKhông tìm thấy sessionId để đặt cược.[39m
+[31m[5,{"gid":501,"second":7.819,"result":"WHITE","startPayoutTime":1759104308508,"jackpotAccumulation":83635,"jackpot":false,"lastJackpotResultRaw":"GREEN,PURPLE,YELLOW","startTime":1759104261501,"timeBetCountdown":0,"lastResultIndex":4,"endResultTime":1759104308507,"startResultTime":1759104283507,"Jws":[],"timeBet":22,"sessionId":317708,"jackpotResultRaw":"WHITE,GREEN,PURPLE","resultIndex":4,"jackpotAmount":28490473,"ended":true,"cmd":1956,"endTime":1759104308511,"anim":2,"wns":[],"status":"ENDED","endPayoutTime":1759104316418}][39m
+[32mLịch sử gần đây: [WHITE, WHITE][39m
+[34m[7:05:17 AM] [39mPhiên mới bắt đầu: [36m#317709[39m. Đang chờ đặt cược...
+[31mKhông tìm thấy sessionId để đặt cược.[39m
+[32m[7:05:37 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 0] Default rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK. (Cược: 1000, 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[31m[5,{"gid":501,"second":7.854,"result":"RED","startPayoutTime":1759104364182,"jackpotAccumulation":90429,"jackpot":false,"lastJackpotResultRaw":"WHITE,GREEN,PURPLE","startTime":1759104317174,"timeBetCountdown":0,"lastResultIndex":4,"endResultTime":1759104364181,"startResultTime":1759104339181,"Jws":[],"timeBet":22,"sessionId":317709,"jackpotResultRaw":"PURPLE,YELLOW,PINK","resultIndex":9,"jackpotAmount":28574108,"ended":true,"cmd":1956,"endTime":1759104364185,"anim":4,"wns":[],"status":"ENDED","endPayoutTime":1759104372109}][39m
+[32mLịch sử gần đây: [RED][39m
+[34m[7:06:12 AM] [39mPhiên mới bắt đầu: [36m#317710[39m. Đang chờ đặt cược...
+[32m[7:49:10 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[36mMainGame connected.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 0] Default rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK. (Cược: 1000, 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[31m[5,{"gid":501,"second":7.671,"result":"WHITE","startPayoutTime":1759106981189,"jackpotAccumulation":147748,"jackpot":false,"lastJackpotResultRaw":"GREEN,RED,BLUE","startTime":1759106934182,"timeBetCountdown":0,"lastResultIndex":32,"endResultTime":1759106981188,"startResultTime":1759106956188,"Jws":[],"timeBet":22,"sessionId":317756,"jackpotResultRaw":"PINK,RED,GREEN","resultIndex":6,"jackpotAmount":33146857,"ended":true,"cmd":1956,"endTime":1759106981191,"anim":12,"wns":[],"status":"ENDED","endPayoutTime":1759106989025}][39m
+[32mLịch sử gần đây: [WHITE][39m
+[34m[7:49:49 AM] [39mPhiên mới bắt đầu: [36m#317757[39m. Đang chờ đặt cược...
+[90m[7:49:56 AM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[31m[5,{"gid":501,"second":7.647,"result":"GREEN","startPayoutTime":1759107036858,"jackpotAccumulation":148952,"jackpot":false,"lastJackpotResultRaw":"PINK,RED,GREEN","startTime":1759106989850,"timeBetCountdown":0,"lastResultIndex":6,"endResultTime":1759107036857,"startResultTime":1759107011857,"Jws":[],"timeBet":22,"sessionId":317757,"jackpotResultRaw":"WHITE,GREEN,WHITE","resultIndex":17,"jackpotAmount":33294605,"ended":true,"cmd":1956,"endTime":1759107036862,"anim":10,"wns":[],"status":"ENDED","endPayoutTime":1759107044682}][39m
+[32mLịch sử gần đây: [WHITE, GREEN][39m
+[34m[7:50:45 AM] [39mPhiên mới bắt đầu: [36m#317758[39m. Đang chờ đặt cược...
+[90m[7:50:52 AM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32m[7:51:07 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m1. [Ưu tiên: 0] Default rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK. (Cược: 1000, 1000 đ)[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[31m[5,{"gid":501,"second":7.658,"result":"WHITE","startPayoutTime":1759107092540,"jackpotAccumulation":139406,"jackpot":false,"lastJackpotResultRaw":"WHITE,GREEN,WHITE","startTime":1759107045531,"timeBetCountdown":0,"lastResultIndex":17,"endResultTime":1759107092539,"startResultTime":1759107067539,"Jws":[],"timeBet":22,"sessionId":317758,"jackpotResultRaw":"RED,BLUE,GREEN","resultIndex":34,"jackpotAmount":33443557,"ended":true,"cmd":1956,"endTime":1759107092543,"anim":10,"wns":[],"status":"ENDED","endPayoutTime":1759107100369}][39m
+[32mLịch sử gần đây: [WHITE][39m
+[34m[7:51:41 AM] [39mPhiên mới bắt đầu: [36m#317759[39m. Đang chờ đặt cược...
+[90m[7:51:47 AM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[31m[5,{"gid":501,"second":7.633,"result":"BLUE","startPayoutTime":1759107148212,"jackpotAccumulation":141169,"jackpot":false,"lastJackpotResultRaw":"RED,BLUE,GREEN","startTime":1759107101204,"timeBetCountdown":0,"lastResultIndex":34,"endResultTime":1759107148211,"startResultTime":1759107123211,"Jws":[],"timeBet":22,"sessionId":317759,"jackpotResultRaw":"GREEN,PURPLE,RED","resultIndex":5,"jackpotAmount":33582963,"ended":true,"cmd":1956,"endTime":1759107148216,"anim":14,"wns":[],"status":"ENDED","endPayoutTime":1759107156029}][39m
+[32mLịch sử gần đây: [WHITE, BLUE][39m
+[34m[7:52:36 AM] [39mPhiên mới bắt đầu: [36m#317760[39m. Đang chờ đặt cược...
+[32m[7:52:41 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m1. [Ưu tiên: 0] Default rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK. (Cược: 1000, 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[31m[5,{"gid":501,"second":7.69,"result":"BLUE","startPayoutTime":1759107203890,"jackpotAccumulation":173935,"jackpot":false,"lastJackpotResultRaw":"GREEN,PURPLE,RED","startTime":1759107156882,"timeBetCountdown":0,"lastResultIndex":5,"endResultTime":1759107203889,"startResultTime":1759107178889,"Jws":[],"timeBet":22,"sessionId":317760,"jackpotResultRaw":"BLUE,WHITE,PINK","resultIndex":23,"jackpotAmount":33724132,"ended":true,"cmd":1956,"endTime":1759107203894,"anim":14,"wns":[],"status":"ENDED","endPayoutTime":1759107211735}][39m
+[32mLịch sử gần đây: [BLUE][39m
+[34m[7:53:32 AM] [39mPhiên mới bắt đầu: [36m#317761[39m. Đang chờ đặt cược...
+[32m[7:54:00 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[36mMainGame connected.[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 0] Default rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK. (Cược: 1000, 1000 đ)[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[31m[5,{"gid":501,"second":7.679,"result":"GREEN","startPayoutTime":1759107259571,"jackpotAccumulation":195349,"jackpot":false,"lastJackpotResultRaw":"BLUE,WHITE,PINK","startTime":1759107212562,"timeBetCountdown":0,"lastResultIndex":23,"endResultTime":1759107259570,"startResultTime":1759107234570,"Jws":[],"timeBet":22,"sessionId":317761,"jackpotResultRaw":"YELLOW,PURPLE,PINK","resultIndex":17,"jackpotAmount":33898067,"ended":true,"cmd":1956,"endTime":1759107259575,"anim":9,"wns":[],"status":"ENDED","endPayoutTime":1759107267411}][39m
+[32mLịch sử gần đây: [GREEN][39m
+[34m[7:54:28 AM] [39mPhiên mới bắt đầu: [36m#317762[39m. Đang chờ đặt cược...
+[31m[5,{"gid":501,"second":7.711,"result":"WHITE","startPayoutTime":1759107315246,"jackpotAccumulation":152392,"jackpot":false,"lastJackpotResultRaw":"YELLOW,PURPLE,PINK","startTime":1759107268239,"timeBetCountdown":0,"lastResultIndex":17,"endResultTime":1759107315245,"startResultTime":1759107290245,"Jws":[],"timeBet":22,"sessionId":317762,"jackpotResultRaw":"PINK,YELLOW,BLUE","resultIndex":24,"jackpotAmount":34093416,"ended":true,"cmd":1956,"endTime":1759107315250,"anim":2,"wns":[],"status":"ENDED","endPayoutTime":1759107323101}][39m
+[32mLịch sử gần đây: [GREEN, WHITE][39m
+[34m[7:55:23 AM] [39mPhiên mới bắt đầu: [36m#317763[39m. Đang chờ đặt cược...
+[31m[5,{"gid":501,"second":7.652,"result":"WHITE","startPayoutTime":1759107370925,"jackpotAccumulation":162927,"jackpot":false,"lastJackpotResultRaw":"PINK,YELLOW,BLUE","startTime":1759107323919,"timeBetCountdown":0,"lastResultIndex":24,"endResultTime":1759107370924,"startResultTime":1759107345924,"Jws":[],"timeBet":22,"sessionId":317763,"jackpotResultRaw":"PINK,WHITE,BLUE","resultIndex":32,"jackpotAmount":34245808,"ended":true,"cmd":1956,"endTime":1759107370927,"anim":18,"wns":[],"status":"ENDED","endPayoutTime":1759107378751}][39m
+[32mLịch sử gần đây: [GREEN, WHITE, WHITE][39m
+[34m[7:56:19 AM] [39mPhiên mới bắt đầu: [36m#317764[39m. Đang chờ đặt cược...
+[31m[5,{"gid":501,"second":7.658,"result":"WHITE","startPayoutTime":1759107426605,"jackpotAccumulation":172688,"jackpot":false,"lastJackpotResultRaw":"PINK,WHITE,BLUE","startTime":1759107379597,"timeBetCountdown":0,"lastResultIndex":32,"endResultTime":1759107426604,"startResultTime":1759107401604,"Jws":[],"timeBet":22,"sessionId":317764,"jackpotResultRaw":"YELLOW,GREEN,PINK","resultIndex":12,"jackpotAmount":34408735,"ended":true,"cmd":1956,"endTime":1759107426607,"anim":4,"wns":[],"status":"ENDED","endPayoutTime":1759107434434}][39m
+[32mLịch sử gần đây: [GREEN, WHITE, WHITE, WHITE][39m
+[34m[7:57:15 AM] [39mPhiên mới bắt đầu: [36m#317765[39m. Đang chờ đặt cược...
+[31m[5,{"gid":501,"second":7.751,"result":"WHITE","startPayoutTime":1759107482286,"jackpotAccumulation":119454,"jackpot":false,"lastJackpotResultRaw":"YELLOW,GREEN,PINK","startTime":1759107435278,"timeBetCountdown":0,"lastResultIndex":12,"endResultTime":1759107482285,"startResultTime":1759107457285,"Jws":[],"timeBet":22,"sessionId":317765,"jackpotResultRaw":"GREEN,PINK,GREEN","resultIndex":34,"jackpotAmount":34581423,"ended":true,"cmd":1956,"endTime":1759107482289,"anim":5,"wns":[],"status":"ENDED","endPayoutTime":1759107490161}][39m
+[32mLịch sử gần đây: [GREEN, WHITE, WHITE, WHITE, WHITE][39m
+[34m[7:58:10 AM] [39mPhiên mới bắt đầu: [36m#317766[39m. Đang chờ đặt cược...
+[31m[5,{"gid":501,"second":7.745,"result":"GREEN","startPayoutTime":1759107537957,"jackpotAccumulation":112531,"jackpot":false,"lastJackpotResultRaw":"GREEN,PINK,GREEN","startTime":1759107490949,"timeBetCountdown":0,"lastResultIndex":34,"endResultTime":1759107537956,"startResultTime":1759107512956,"Jws":[],"timeBet":22,"sessionId":317766,"jackpotResultRaw":"PURPLE,YELLOW,RED","resultIndex":25,"jackpotAmount":34700877,"ended":true,"cmd":1956,"endTime":1759107537961,"anim":13,"wns":[],"status":"ENDED","endPayoutTime":1759107545830}][39m
+[32mLịch sử gần đây: [GREEN, WHITE, WHITE, WHITE, WHITE, GREEN][39m
+[34m[7:59:06 AM] [39mPhiên mới bắt đầu: [36m#317767[39m. Đang chờ đặt cược...
+[31m[5,{"gid":501,"second":7.676,"result":"BLUE","startPayoutTime":1759107593636,"jackpotAccumulation":140180,"jackpot":false,"lastJackpotResultRaw":"PURPLE,YELLOW,RED","startTime":1759107546630,"timeBetCountdown":0,"lastResultIndex":25,"endResultTime":1759107593635,"startResultTime":1759107568635,"Jws":[],"timeBet":22,"sessionId":317767,"jackpotResultRaw":"WHITE,WHITE,RED","resultIndex":13,"jackpotAmount":34813408,"ended":true,"cmd":1956,"endTime":1759107593640,"anim":10,"wns":[],"status":"ENDED","endPayoutTime":1759107601474}][39m
+[32mLịch sử gần đây: [GREEN, WHITE, WHITE, WHITE, WHITE, GREEN, BLUE][39m
+[34m[8:00:02 AM] [39mPhiên mới bắt đầu: [36m#317768[39m. Đang chờ đặt cược...
+[31m[5,{"gid":501,"second":7.654,"result":"WHITE","startPayoutTime":1759107649331,"jackpotAccumulation":148995,"jackpot":false,"lastJackpotResultRaw":"WHITE,WHITE,RED","startTime":1759107602324,"timeBetCountdown":0,"lastResultIndex":13,"endResultTime":1759107649330,"startResultTime":1759107624330,"Jws":[],"timeBet":22,"sessionId":317768,"jackpotResultRaw":"GREEN,PINK,GREEN","resultIndex":12,"jackpotAmount":34953588,"ended":true,"cmd":1956,"endTime":1759107649335,"anim":16,"wns":[],"status":"ENDED","endPayoutTime":1759107657158}][39m
+[32mLịch sử gần đây: [GREEN, WHITE, WHITE, WHITE, WHITE, GREEN, BLUE, WHITE][39m
+[34m[8:00:57 AM] [39mPhiên mới bắt đầu: [36m#317769[39m. Đang chờ đặt cược...
+[32m[8:01:08 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[36mMainGame connected.[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m1. [Ưu tiên: 0] Default rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK. (Cược: 1000, 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[32m[8:02:43 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 0] Default rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK. (Cược: 1000, 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[34m[8:02:49 AM] [39mPhiên mới bắt đầu: [36m#317771[39m. Đang chờ đặt cược...
+[34m[8:02:56 AM] [39mĐang cố gắng đặt 1000 đ vào cửa [33mWHITE[39m cho phiên [36m#317771[39m.
+[35m[8:02:56 AM] [39mĐã chọn quy tắc: [33mDefault rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK.[39m - Đặt cược (Normal): [33mWHITE[39m với số tiền [31m1000[39m đ.
+[34m[8:02:56 AM] [39mPhiên [36m#317771[39m - [32mNgười dùng: undefined[39m - Đặt cược: [31m1000,1000[39m đ. [35mCược thành công cửa: [39m[33mWHITE,GREEN[39m
+[34m[8:03:04 AM] [39mĐang cố gắng đặt 1000 đ vào cửa [33mGREEN[39m cho phiên [36m#317771[39m.
+[35m[8:03:04 AM] [39mĐã chọn quy tắc: [33mDefault rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK.[39m - Đặt cược (Normal): [33mGREEN[39m với số tiền [31m1000[39m đ.
+[34m[8:03:05 AM] [39mPhiên [36m#317771[39m - [32mNgười dùng: undefined[39m - Đặt cược: [31m1000,1000[39m đ. [35mCược thành công cửa: [39m[33mWHITE,GREEN[39m
+[31m[5,{"gid":501,"second":7.689,"result":"BLUE","startPayoutTime":1759107816382,"jackpotAccumulation":134719,"jackpot":false,"lastJackpotResultRaw":"GREEN,PURPLE,GREEN","startTime":1759107769374,"timeBetCountdown":0,"lastResultIndex":30,"endResultTime":1759107816382,"startResultTime":1759107791382,"Jws":[],"timeBet":22,"sessionId":317771,"jackpotResultRaw":"RED,YELLOW,BLUE","resultIndex":35,"jackpotAmount":35395886,"ended":true,"cmd":1956,"endTime":1759107816386,"anim":1,"wns":[],"status":"ENDED","endPayoutTime":1759107824227}][39m
+[32mLịch sử gần đây: [BLUE][39m
+[34m[8:03:45 AM] [39mPhiên mới bắt đầu: [36m#317772[39m. Đang chờ đặt cược...
+[35m[8:03:53 AM] [39mĐã chọn quy tắc: [33mDefault rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK.[39m - Đặt cược (Normal): [33mWHITE[39m với số tiền [31m1000[39m đ.
+[34m[8:03:53 AM] [39mĐang cố gắng đặt 1000 đ vào cửa [33mWHITE[39m cho phiên [36m#317772[39m.
+[34m[8:03:54 AM] [39mPhiên [36m#317772[39m - [32mNgười dùng: undefined[39m - Đặt cược: [31m1000,1000[39m đ. [35mCược thành công cửa: [39m[33mWHITE,GREEN[39m
+[35m[8:03:58 AM] [39mĐã chọn quy tắc: [33mDefault rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK.[39m - Đặt cược (Normal): [33mGREEN[39m với số tiền [31m1000[39m đ.
+[34m[8:03:58 AM] [39mĐang cố gắng đặt 1000 đ vào cửa [33mGREEN[39m cho phiên [36m#317772[39m.
+[34m[8:03:58 AM] [39mPhiên [36m#317772[39m - [32mNgười dùng: undefined[39m - Đặt cược: [31m1000,1000[39m đ. [35mCược thành công cửa: [39m[33mWHITE,GREEN[39m
+[33mChế độ Martingale: TẮT[39m
+[32m[9:41:32 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 0] Default rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK. (Cược: 1000, 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+Số dư ví: [35mN/A[39m. Thắng cược: [31mN/A[39m
+[32mLịch sử gần đây: [PINK][39m
+[34m[9:42:12 PM] [39mPhiên mới bắt đầu: [36m#318653[39m. Đang chờ đặt cược...
+[31m[9:42:12 PM] [39mCảnh báo ví tiền không đủ để cược (dưới ngưỡng dừng cược) Số dư hiện tại: 0 ₫. Đang dừng trò chơi.
+[31mStopping GameWorker...[39m
+[32mGameWorker stopped successfully.[39m
+[33mConnection closed (MainGame): Stopped by user[39m
+[32m[9:46:52 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 0] Default rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK. (Cược: 1000, 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[32m[9:59:33 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[36mMainGame connected.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 0] Default rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK. (Cược: 1000, 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+Số dư ví: [35mN/A[39m. Thắng cược: [31mN/A[39m
+[32mLịch sử gần đây: [BLUE][39m
+[32m[10:01:46 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 0] Default rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK. (Cược: 1000, 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m5000000000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+Số dư ví: [35mN/A[39m. Thắng cược: [31mN/A[39m
+[32mLịch sử gần đây: [GREEN][39m
+[31mGiá trị hũ dưới ngưỡng dừng. Bỏ cược[39m
+[34m[10:02:38 PM] [39mPhiên mới bắt đầu: [36m#318675[39m. Đang chờ đặt cược...
+[90m[10:02:38 PM] [39mBỏ qua đặt cược cho phiên [36m#318675[39m: Hũ quá thấp.
+Số dư ví: [35mN/A[39m. Thắng cược: [31mN/A[39m
+[32mLịch sử gần đây: [GREEN, GREEN][39m
+[31mGiá trị hũ dưới ngưỡng dừng. Bỏ cược[39m
+[34m[10:03:33 PM] [39mPhiên mới bắt đầu: [36m#318676[39m. Đang chờ đặt cược...
+[90m[10:03:33 PM] [39mBỏ qua đặt cược cho phiên [36m#318676[39m: Hũ quá thấp.
+[32m[10:04:11 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[36mMainGame connected.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 0] Default rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK. (Cược: 1000, 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m5000000000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[32mLịch sử gần đây: [GREEN][39m
+[31mGiá trị hũ dưới ngưỡng dừng. Bỏ cược[39m
+[34m[10:04:29 PM] [39mPhiên mới bắt đầu: [36m#318677[39m. Đang chờ đặt cược...
+[90m[10:04:29 PM] [39mBỏ qua đặt cược cho phiên [36m#318677[39m: Hũ quá thấp.
+[31mGiá trị hũ dưới ngưỡng dừng. Bỏ cược[39m
+[32mLịch sử gần đây: [GREEN, WHITE][39m
+[34m[10:05:25 PM] [39mPhiên mới bắt đầu: [36m#318678[39m. Đang chờ đặt cược...
+[90m[10:05:25 PM] [39mBỏ qua đặt cược cho phiên [36m#318678[39m: Hũ quá thấp.
+[33m[10:05:30 PM] Phát hiện thay đổi trong rule.json (change). Đang tải lại...[39m
+[32m[10:05:30 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[32mLịch sử gần đây: [GREEN, WHITE, WHITE][39m
+[34m[10:06:21 PM] [39mPhiên mới bắt đầu: [36m#318679[39m. Đang chờ đặt cược...
+[31m[10:06:21 PM] [39mCảnh báo ví tiền không đủ để cược (dưới ngưỡng dừng cược) Số dư hiện tại: 0 ₫. Đang dừng trò chơi.
+[31mStopping GameWorker...[39m
+[32mGameWorker stopped successfully.[39m
+[33mConnection closed (MainGame): Stopped by user[39m
+[33m[10:06:56 PM] Phát hiện thay đổi trong rule.json (change). Đang tải lại...[39m
+[32m[10:06:56 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[33m[10:10:38 PM] Phát hiện thay đổi trong rule.json (change). Đang tải lại...[39m
+[33m[10:10:39 PM] Phát hiện thay đổi trong rule.json (change). Đang tải lại...[39m
+[32m[10:10:39 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[32m[11:31:56 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[36mMainGame connected.[39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m1. [Ưu tiên: 0] Default rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK. (Cược: 1000, 1000 đ)[39m
+[33m2. [Ưu tiên: 1] WHITE -> WHITE -> GREEN (Cược: 2000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m5000000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[33mChế độ Zombie: BẬT[39m
+[32m[11:41:54 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m5000000 đ[39m[33m[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[33mChế độ Zombie: BẬT[39m
+[32mLịch sử gần đây: [RED][39m
+[34m[11:42:04 PM] [39mPhiên mới bắt đầu: [36m#318782[39m. Đang chờ đặt cược...
+[90m[11:42:04 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [RED, GREEN][39m
+[34m[11:42:59 PM] [39mPhiên mới bắt đầu: [36m#318783[39m. Đang chờ đặt cược...
+[90m[11:42:59 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [RED, GREEN, WHITE][39m
+[34m[11:43:55 PM] [39mPhiên mới bắt đầu: [36m#318784[39m. Đang chờ đặt cược...
+[90m[11:43:55 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [RED, GREEN, WHITE, PURPLE][39m
+[34m[11:44:51 PM] [39mPhiên mới bắt đầu: [36m#318785[39m. Đang chờ đặt cược...
+[90m[11:44:51 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [RED, GREEN, WHITE, PURPLE, GREEN][39m
+[34m[11:45:47 PM] [39mPhiên mới bắt đầu: [36m#318786[39m. Đang chờ đặt cược...
+[90m[11:45:47 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [RED, GREEN, WHITE, PURPLE, GREEN, WHITE][39m
+[34m[11:46:42 PM] [39mPhiên mới bắt đầu: [36m#318787[39m. Đang chờ đặt cược...
+[90m[11:46:42 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [RED, GREEN, WHITE, PURPLE, GREEN, WHITE, WHITE][39m
+[34m[11:47:38 PM] [39mPhiên mới bắt đầu: [36m#318788[39m. Đang chờ đặt cược...
+[90m[11:47:38 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [RED, GREEN, WHITE, PURPLE, GREEN, WHITE, WHITE, RED][39m
+[34m[11:48:34 PM] [39mPhiên mới bắt đầu: [36m#318789[39m. Đang chờ đặt cược...
+[90m[11:48:34 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [RED, GREEN, WHITE, PURPLE, GREEN, WHITE, WHITE, RED, PINK][39m
+[34m[11:49:30 PM] [39mPhiên mới bắt đầu: [36m#318790[39m. Đang chờ đặt cược...
+[90m[11:49:30 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [RED, GREEN, WHITE, PURPLE, GREEN, WHITE, WHITE, RED, PINK, GREEN][39m
+[34m[11:50:26 PM] [39mPhiên mới bắt đầu: [36m#318791[39m. Đang chờ đặt cược...
+[90m[11:50:26 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [GREEN, WHITE, PURPLE, GREEN, WHITE, WHITE, RED, PINK, GREEN, BLUE][39m
+[34m[11:51:22 PM] [39mPhiên mới bắt đầu: [36m#318792[39m. Đang chờ đặt cược...
+[90m[11:51:22 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [WHITE, PURPLE, GREEN, WHITE, WHITE, RED, PINK, GREEN, BLUE, BLUE][39m
+[34m[11:52:17 PM] [39mPhiên mới bắt đầu: [36m#318793[39m. Đang chờ đặt cược...
+[90m[11:52:17 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [PURPLE, GREEN, WHITE, WHITE, RED, PINK, GREEN, BLUE, BLUE, WHITE][39m
+[34m[11:53:13 PM] [39mPhiên mới bắt đầu: [36m#318794[39m. Đang chờ đặt cược...
+[90m[11:53:13 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [GREEN, WHITE, WHITE, RED, PINK, GREEN, BLUE, BLUE, WHITE, WHITE][39m
+[34m[11:54:09 PM] [39mPhiên mới bắt đầu: [36m#318795[39m. Đang chờ đặt cược...
+[90m[11:54:09 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [WHITE, WHITE, RED, PINK, GREEN, BLUE, BLUE, WHITE, WHITE, GREEN][39m
+[34m[11:55:05 PM] [39mPhiên mới bắt đầu: [36m#318796[39m. Đang chờ đặt cược...
+[90m[11:55:05 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [WHITE, RED, PINK, GREEN, BLUE, BLUE, WHITE, WHITE, GREEN, WHITE][39m
+[34m[11:56:01 PM] [39mPhiên mới bắt đầu: [36m#318797[39m. Đang chờ đặt cược...
+[90m[11:56:01 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [RED, PINK, GREEN, BLUE, BLUE, WHITE, WHITE, GREEN, WHITE, WHITE][39m
+[34m[11:56:56 PM] [39mPhiên mới bắt đầu: [36m#318798[39m. Đang chờ đặt cược...
+[90m[11:56:56 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [PINK, GREEN, BLUE, BLUE, WHITE, WHITE, GREEN, WHITE, WHITE, YELLOW][39m
+[34m[11:57:52 PM] [39mPhiên mới bắt đầu: [36m#318799[39m. Đang chờ đặt cược...
+[90m[11:57:52 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[33m[11:58:36 PM] Phát hiện thay đổi trong rule.json (change). Đang tải lại...[39m
+[32m[11:58:36 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[32mLịch sử gần đây: [GREEN, BLUE, BLUE, WHITE, WHITE, GREEN, WHITE, WHITE, YELLOW, GREEN][39m
+[34m[11:58:48 PM] [39mPhiên mới bắt đầu: [36m#318800[39m. Đang chờ đặt cược...
+[90m[11:58:48 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [BLUE, BLUE, WHITE, WHITE, GREEN, WHITE, WHITE, YELLOW, GREEN, WHITE][39m
+[34m[11:59:44 PM] [39mPhiên mới bắt đầu: [36m#318801[39m. Đang chờ đặt cược...
+[90m[11:59:44 PM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[33m[11:59:46 PM] Phát hiện thay đổi trong rule.json (change). Đang tải lại...[39m
+[32m[11:59:46 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[32mLịch sử gần đây: [BLUE, WHITE, WHITE, GREEN, WHITE, WHITE, YELLOW, GREEN, WHITE, WHITE][39m
+[34m[12:00:40 AM] [39mPhiên mới bắt đầu: [36m#318802[39m. Đang chờ đặt cược...
+[31m[12:00:40 AM] [39mCảnh báo ví tiền không đủ để cược (dưới ngưỡng dừng cược) Số dư hiện tại: 0 ₫. Đang dừng trò chơi.
+[31mStopping GameWorker...[39m
+[32mGameWorker stopped successfully.[39m
+[33mConnection closed (MainGame): Stopped by user[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[32m[12:02:29 AM] Cấu hình rule.json đã được tải lại.[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] BLUE-RED-WHITE-PURPLE-YELLOW-GREEN-RED-RED-YELLOW-YELLOW (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m5000000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[34m[12:02:31 AM] [39mPhiên mới bắt đầu: [36m#318804[39m. Đang chờ đặt cược...
+[90m[12:02:31 AM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [GREEN][39m
+[34m[12:03:27 AM] [39mPhiên mới bắt đầu: [36m#318805[39m. Đang chờ đặt cược...
+[90m[12:03:27 AM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [GREEN, WHITE][39m
+[34m[12:04:23 AM] [39mPhiên mới bắt đầu: [36m#318806[39m. Đang chờ đặt cược...
+[31m[12:04:23 AM] [39mCảnh báo ví tiền không đủ để cược (dưới ngưỡng dừng cược) Số dư hiện tại: 0 ₫. Đang dừng trò chơi.
+[31mStopping GameWorker...[39m
+[32mGameWorker stopped successfully.[39m
+[33mConnection closed (MainGame): Stopped by user[39m
+[32m[12:05:24 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33m1. [Ưu tiên: 1] BLUE-RED-WHITE-PURPLE-YELLOW-GREEN-RED-RED-YELLOW-YELLOW (Cược: 1000 đ)[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m5000000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[32mLịch sử gần đây: [WHITE][39m
+[32m[12:12:25 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[36mMainGame connected.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] WHITE (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m5000000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[32mLịch sử gần đây: [WHITE][39m
+[34m[12:12:45 AM] [39mPhiên mới bắt đầu: [36m#318815[39m. Đang chờ đặt cược...
+[33m[12:12:49 AM] Phát hiện thay đổi trong rule.json (change). Đang tải lại...[39m
+[32m[12:12:49 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[35m[12:12:53 AM] [39mĐã chọn quy tắc: [33mWHITE[39m - Đặt cược (Normal): [33mWHITE[39m với số tiền [31m1000[39m đ.
+[34m[12:12:53 AM] [39mĐang cố gắng đặt 1000 đ vào cửa [33mWHITE[39m cho phiên [36m#318815[39m.
+[34m[12:12:54 AM] [39mPhiên [36m#318815[39m - [32mNgười dùng: Z8_phuocdev[39m - Đặt cược: [31m1000[39m đ. [35mCược thành công cửa: [39m[33mWHITE[39m
+[32mLịch sử gần đây: [WHITE, WHITE][39m
+Số dư ví: [35mphuocmmo: 2.000 ₫[39m. Thắng cược: [31mphuocmmo: 264.870 ₫[39m
+[34m[12:13:41 AM] [39mPhiên mới bắt đầu: [36m#318816[39m. Đang chờ đặt cược...
+[35m[12:13:47 AM] [39mĐã chọn quy tắc: [33mWHITE[39m - Đặt cược (Normal): [33mWHITE[39m với số tiền [31m1000[39m đ.
+[34m[12:13:47 AM] [39mĐang cố gắng đặt 1000 đ vào cửa [33mWHITE[39m cho phiên [36m#318816[39m.
+[34m[12:13:47 AM] [39mPhiên [36m#318816[39m - [32mNgười dùng: Z8_phuocdev[39m - Đặt cược: [31m3000[39m đ. [35mCược thành công cửa: [39m[33mWHITE[39m
+[35m[12:14:02 AM] [39mĐã chọn quy tắc: [33mWHITE[39m - Đặt cược (Normal): [33mWHITE[39m với số tiền [31m1000[39m đ.
+[34m[12:14:02 AM] [39mĐang cố gắng đặt 1000 đ vào cửa [33mWHITE[39m cho phiên [36m#318816[39m.
+[34m[12:14:02 AM] [39mPhiên [36m#318816[39m - [32mNgười dùng: Z8_phuocdev[39m - Đặt cược: [31m3000[39m đ. [35mCược thành công cửa: [39m[33mWHITE[39m
+[35m[12:14:15 AM] [39mĐã chọn quy tắc: [33mWHITE[39m - Đặt cược (Normal): [33mWHITE[39m với số tiền [31m1000[39m đ.
+[34m[12:14:15 AM] [39mĐang cố gắng đặt 1000 đ vào cửa [33mWHITE[39m cho phiên [36m#318816[39m.
+[32mLịch sử gần đây: [WHITE, WHITE, GREEN][39m
+[34m[12:14:37 AM] [39mPhiên mới bắt đầu: [36m#318817[39m. Đang chờ đặt cược...
+[90m[12:14:37 AM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [WHITE, WHITE, GREEN, BLUE][39m
+[34m[12:15:32 AM] [39mPhiên mới bắt đầu: [36m#318818[39m. Đang chờ đặt cược...
+[90m[12:15:32 AM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [WHITE, WHITE, GREEN, BLUE, WHITE][39m
+[34m[12:16:28 AM] [39mPhiên mới bắt đầu: [36m#318819[39m. Đang chờ đặt cược...
+[33mChưa được phép đặt cược, đang chờ xác nhận cược trước đó.[39m
+[32mLịch sử gần đây: [WHITE, WHITE, GREEN, BLUE, WHITE, WHITE][39m
+[34m[12:17:24 AM] [39mPhiên mới bắt đầu: [36m#318820[39m. Đang chờ đặt cược...
+[33mChưa được phép đặt cược, đang chờ xác nhận cược trước đó.[39m
+[32m[12:55:39 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[36mMainGame connected.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] WHITE-YELLOW-BLUE-RED (Cược: 1000, 1000, 5000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m5000000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[32mLịch sử gần đây: [WHITE][39m
+[34m[12:56:34 AM] [39mPhiên mới bắt đầu: [36m#318862[39m. Đang chờ đặt cược...
+[90m[12:56:34 AM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32mLịch sử gần đây: [WHITE, GREEN][39m
+[34m[12:57:30 AM] [39mPhiên mới bắt đầu: [36m#318863[39m. Đang chờ đặt cược...
+[90m[12:57:30 AM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
