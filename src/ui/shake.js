@@ -6,22 +6,22 @@ const suppressFinalAnswerRenderer = {
   close() {},
 };
 
-export async function dragonMenu() {
+export async function shakeDiskMenu() {
   const answers = await inquirer.prompt([
     {
       type: 'list',
       name: 'mainCmd',
       message: '📋 Chọn trò chơi:',
       choices: [
-        { name: '🐲  Bắt đầu săn rồng', value: 'dragon_hunt_start' },
-        { name: '⭕  Dừng săn rồng', value: 'dragon_hunt_stop' }, 
-        { name: '⭕  Cấu hình rule', value: 'setting_dragon_hunt' }, 
+        { name: '🎲  Bắt đầu tứ linh', value: 'shake_disk_start' },
+        { name: '🛑  Dừng tứ linh', value: 'shake_disk_stop' },
+        { name: '⚙️  Cấu hình rule', value: 'shake_disk_setting' },
         new inquirer.Separator(),
         { name: '❌  Thoát', value: 'exit' },
       ],
       pageSize: 30,
     },
-  ], { renderer: suppressFinalAnswerRenderer });
+  ], { renderer: suppressFinalAnswerRenderer });  
 
   return answers.mainCmd;
 }

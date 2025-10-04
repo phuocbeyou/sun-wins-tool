@@ -6,14 +6,14 @@ import { dirname } from "path"
 import path from "path"
 import { readUsers } from "../utils/dataManager.js"
 import { sendTelegramAlert } from "../utils/botHelper.js"
-import { convertVnd, expandBets } from "../utils/betHelper.js"
+import { convertVnd, expandBets, getLabelByRes, getLabelByValue, printBetResult } from "../utils/betHelper.js"
 import { logError, printTable } from "../utils/helperCmd.js"
-import { CMD_BET, CMD_END, CMD_START } from "../contants/sunrong.js"
+import { CMD_BET, CMD_BUDGET, CMD_END, CMD_START,CMD_JACKPOT } from "../contants/shake-disk.js"
 
 const WebSocketClient = websocket.client
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
-const configPath = path.resolve(__dirname, "../config/dragon-hunt.json")
+const configPath = path.resolve(__dirname, "../config/shake-disk.json")
 
 /*------- CONFIG MANAGEMENT FUNCTIONS --------------------*/
 let config
@@ -77,7 +77,6 @@ function initConfigWatcher() {
  * @param {string} message 
  */
 function logMessage(message) {
-  console.log(message)
   try {
     fs.appendFile("./game.log", message.replace(/ \[\d+m/gm, "") + "\n", () => { })
   } catch (error) {
@@ -104,7 +103,6 @@ function getRandomBettingDelay(min = 5000, max = 12000) {
  * @returns {object}
  */
 function checkBudgetSufficiency(currentBudget, betAmount) {
-  console.log(currentBudget, betAmount, 'checkBudgetSufficiency')
   if (currentBudget === null) return { sufficient: true }
 
   const notEnoughToPlay = currentBudget <= BET_STOP
@@ -163,14 +161,12 @@ function determineBettingChoice(gameHistory, config) {
         ruleName: rule.description,
       }
     }
-
     // Rule có pattern
     if (recentHistory.length >= rule.pattern.length) {
-      const historySlice = recentHistory.slice(0, rule.pattern.length)
-      const reversedPattern = [...rule.pattern].reverse()
-      const patternMatches = reversedPattern.every(
-        (val, index) => val === historySlice[index],
-      )
+      const historySlice = recentHistory.slice(0, rule.pattern.length);
+      const patternMatches = rule.pattern.every(
+        (val, index) => val === historySlice[index]
+      );
 
       if (patternMatches) {
         return {
@@ -247,19 +243,45 @@ function handleMainGameMessage(msg, worker) {
     return
   }
 
-  // Command 1955: start game
+  // Command 904: start game
   if (messageString.includes(`"cmd":${CMD_START}`)) {
-    handleInitialGameState(parsedMessage, worker)
+    handleGameStart(parsedMessage,worker)
   }
-  // Command 1956: Game result update
+  // Command 908: Game result update
   else if (messageString.includes(`"cmd":${CMD_END}`)) {
     handleGameResultUpdate(parsedMessage, worker)
   }
-  // Command 1952: Bet confirmation
-  else if (messageString.includes(`"cmd":${CMD_BET}`)) {
-    handleBetConfirmation(worker)
+
+   else if (messageString.includes(`"cmd":${CMD_JACKPOT}`)) {
+    handleJackpotUpdate(parsedMessage, worker)
   }
+
+  // Command 100: Budget update
+  else if (messageString.includes(`"cmd":${CMD_BUDGET}`)) {
+    handleBudgetUpdate(parsedMessage, worker)
+  }  
+
+    // Command 900: Bet success update
+    else if (messageString.includes(`"cmd":${CMD_BET}`)) {
+      handleConfirmBet(parsedMessage,worker)
+    }  
 }
+
+
+/**
+ * Handle initial game state
+ * @param {object} parsedMessage 
+ * @param {GameWorker} worker 
+ */
+function handleGameStart(parsedMessage,worker) {
+  if (worker.currentJackpot < JACKPOT_THRESHOLD) {
+    return logMessage(chalk.red(`Giá trị hũ ${worker.currentJackpot} dưới ngưỡng dừng. Bỏ cược`))
+  }
+  logMessage(chalk.blue("Game bắt đầu, chờ đặt cược ..."))
+  executeBettingLogic(worker, parsedMessage[1])
+}
+
+
 
 /**
  * Handle initial game state
@@ -267,23 +289,57 @@ function handleMainGameMessage(msg, worker) {
  * @param {GameWorker} worker 
  */
 function handleInitialGameState(parsedMessage, worker) {
-  const sessionId = parsedMessage[1]?.sid || "N/A"
-  const jackpot = convertVnd(parsedMessage[1]?.jackpotAmount) || "N/A"
-  printTable({
-    "Phiên": sessionId,
-    "Jackpot": jackpot
-  })
+  console.log(parsedMessage)
+  // const sessionId = parsedMessage[1]?.sid || "N/A"
+  // const jackpot = convertVnd(parsedMessage[1]?.jackpotAmount) || "N/A"
+  // printTable({
+  //   "Phiên": sessionId,
+  //   "Jackpot": jackpot
+  // })
 
-  worker.currentSessionId = sessionId || null
-  worker.currentJackpot = jackpot || 0
+  // worker.currentSessionId = sessionId || null
+  // worker.currentJackpot = jackpot || 0
 
   if (worker.currentJackpot < JACKPOT_THRESHOLD) {
     logMessage(chalk.red("Giá trị hũ dưới ngưỡng dừng. Bỏ cược"))
   }
-  handleNewGameSession(parsedMessage, worker)
+
   // Reset Martingale state on new session
-  // worker.resetMartingaleState()
+  worker.resetMartingaleState()
 }
+
+
+/**
+ * Tính tổng chẵn/lẻ và số đỏ/trắng của 4 con xúc xắc
+ * Quy ước mặc định: chẵn = đỏ, lẻ = trắng
+ * @param {number[]} dice - mảng 4 số xúc xắc [1-6]
+ * @returns {object} {red: số đỏ, white: số trắng, totalType: "Chẵn"|"Lẻ"}
+ */
+function getDiceColorsAndTotal(dice) {
+  if (!Array.isArray(dice) || dice.length !== 4) {
+    throw new Error("Phải truyền vào mảng gồm 4 số xúc xắc!");
+  }
+
+  let red = 0;
+  let white = 0;
+  let total = 0;
+
+  for (let d of dice) {
+    total += d;
+    if (d % 2 === 0) {
+      red++;
+    } else {
+      white++;
+    }
+  }
+
+  return {
+    red,
+    white,
+    totalType: total % 2 === 0 ? "CHẴN" : "LẺ"
+  };
+}
+
 
 /**
  * Handle game result update
@@ -298,123 +354,35 @@ function handleGameResultUpdate(parsedMessage, worker) {
     logMessage(chalk.red(`[${getCurrentTime()}] Không tìm thấy dữ liệu game trong parsedMessage`))
     return
   }
+  const arrDices = gameData?.dices || []
 
-  const sessionId = gameData.sessionId || "N/A"
-  const jackpot = convertVnd(gameData.jackpotAmount) || "N/A"
-  const resultType = gameData.result || null // "WHITE", "RED", "BLUE", etc.
-  const gameStatus = gameData.status || "UNKNOWN"
-  const isEnded = gameData.ended || false
-  const budget = gameData?.wns[0]?.m || null
-  const walletBalance =
-    gameData?.wns && gameData.wns.length > 0
-      ? gameData.wns
-        .filter(w => w.wm > 0)
-        .map(w => `${w.dn}: ${convertVnd(w.wm)}`)
-        .join(" -> ") || "N/A"
-      : "";
+if (arrDices.length === 0) {
+  return;
+}
 
-  const winBet =
-    gameData?.wns && gameData.wns.length > 0
-      ? gameData.wns
-        .filter(w => w.m > 0)
-        .map(w => `${w.dn}: ${convertVnd(w.m)}`)
-        .join(" -> ") || "N/A"
-      : "";
-
+  const totalType = getLabelByRes(gameData?.ew[0]?.eid) 
 
   // Log thông tin phiên
   printTable({
-    "Phiên": sessionId,
-    "Kết quả": resultType,
-    "Trạng thái": gameStatus,
-    "Jackpot": jackpot,
+    "Kết quả": gameData?.ew
+      ?.map(item => getLabelByValue(item.eid))
+      .join(", "),
   })
-
-  if (walletBalance && winBet) {
-    logMessage(
-      `Số dư ví: ${chalk.magenta(walletBalance)}. ` +
-      `Thắng cược: ${chalk.red(winBet)}`
-    );
-
-  }
-
-  worker.currentBudget = budget
-
-  // Chỉ xử lý khi game đã kết thúc
-  if (!isEnded || gameStatus !== "ENDED") {
-    logMessage(chalk.yellow(`[${getCurrentTime()}] Game chưa kết thúc, bỏ qua xử lý kết quả`))
-    return
-  }
-
-  // Reset zombie failure count on successful result
+  
+  //Reset zombie failure count on successful result
   if (ZOMBIE_MODE && worker.zombieFailureCount > 0) {
     logMessage(chalk.green(`[${getCurrentTime()}] Zombie Mode: Kết nối ổn định, reset failure count.`))
     worker.zombieFailureCount = 0
   }
 
-  // Cập nhật jackpot hiện tại
-  worker.currentJackpot = gameData.jackpotAmount || 0
-
-  if (worker.currentJackpot < JACKPOT_THRESHOLD) {
-    logMessage(chalk.red("Giá trị hũ dưới ngưỡng dừng. Bỏ cược"))
-  }
-
-
-  // Process Martingale logic
-  if (IS_MARTINGALE && worker.lastBetChoice && worker.lastBetAmount > 0) {
-    const won = processGameResult(resultType, worker.lastBetChoice, sessionId)
-    worker.martingaleCurrentBet = calculateMartingaleBet(
-      won,
-      worker.baseBetAmount,
-      worker.martingaleCurrentBet,
-      worker.lastBetAmount
-    )
-  }
-
-  // Reset bet info for next session
-  worker.lastBetChoice = null
-  worker.lastBetAmount = 0
-
   // Update game history với kết quả mới
-  if (resultType) {
-    worker.gameHistory.push(resultType)
+  if (totalType && gameData?.ew[0]?.eid) {
+    worker.gameHistory.push(totalType)
     if (worker.gameHistory.length > 10) {
       worker.gameHistory.shift()
     }
 
-    logMessage(chalk.green(`Lịch sử gần đây: [${worker.gameHistory.join(", ")}]`))
-  }
-}
-
-/**
- * Handle bet confirmation
- * @param {GameWorker} worker 
- */
-function handleBetConfirmation(worker) {
-  logMessage(
-    chalk.blue(`[${getCurrentTime()}] `) +
-    `Phiên ${chalk.cyan(`#${worker.currentSessionId}`)} - ` +
-    chalk.green(`Người dùng: ${worker.username}`) +
-    ` - Đặt cược: ${chalk.red(worker.currentBetAmount)} đ. ` +
-    chalk.magenta(`Cược thành công cửa: `) +
-    chalk.yellow(worker.bettingChoice),
-  )
-  worker.isBettingAllowed = true
-  worker.shouldRequestBudget = true
-}
-
-/**
- * Handle new game session
- * @param {object} parsedMessage 
- * @param {GameWorker} worker 
- */
-function handleNewGameSession(parsedMessage, worker) {
-  if (parsedMessage[1].sid !== worker.previousSessionId) {
-    logMessage(
-      chalk.blue(`[${getCurrentTime()}] `) +
-      `Phiên mới bắt đầu: ${chalk.cyan(`#${worker.currentSessionId}`)}. Đang chờ đặt cược...`,
-    )
-    executeBettingLogic(worker, parsedMessage[1])
+    console.log(chalk.green(`Lịch sử gần đây: [${worker.gameHistory.join(", ")}]`))
   }
 }
 
@@ -431,49 +399,58 @@ function handleBudgetUpdate(parsedMessage, worker) {
 }
 
 /**
+ * Handle budget update (merged from Simms functionality)
+ * @param {object} parsedMessage 
+ */
+function handleConfirmBet(parsedMessage,worker) {
+  if (parsedMessage[1]) {
+    console.log(chalk.blue(`[${getCurrentTime()}] `) + `Đặt cược thành công: ${chalk.green(convertVnd(parsedMessage[1]?.b))} cửa ${chalk.redBright(getLabelByValue(parsedMessage[1]?.eid))} `)
+  }
+  worker.isBettingAllowed = true
+  worker.shouldRequestBudget = true
+}
+
+
+/**
+ * Handle jackpot/budget update
+ * @param {object} parsedMessage 
+ * @param {GameWorker} worker 
+ */
+function handleJackpotUpdate(parsedMessage, worker) {
+  const data = parsedMessage[1];
+  if (data && typeof data.ba === "number") {
+    worker.currentJackpot = data?.ba;
+    logMessage(
+      chalk.blue(`[${getCurrentTime()}] `) +
+      `Jackpot hiện tại: ${chalk.green(worker.currentJackpot.toLocaleString("vi-VN") + " đ")}`
+    );
+  }
+}
+
+/**
  * Execute betting logic for a session
  * @param {GameWorker} worker 
  * @param {object} gameData 
  */
 function executeBettingLogic(worker, gameData) {
-  const sessionId = gameData?.sid ?? gameData?.sessionId
-  const jackpot = gameData?.jackpotAmount ?? 0
-  const status = gameData?.status ?? ""
 
-  if (!sessionId) {
-    logMessage(chalk.red("Không tìm thấy sessionId để đặt cược."))
-    return
-  }
-
-  if (jackpot <= JACKPOT_THRESHOLD) {
+  if (worker?.currentJackpot <= JACKPOT_THRESHOLD) {
     logMessage(
       chalk.gray(`[${getCurrentTime()}] `) +
-      `Bỏ qua đặt cược cho phiên ${chalk.cyan(`#${sessionId}`)}: Hũ quá thấp.`,
+      `Bỏ qua đặt cược cho phiên Hũ quá thấp.`,
     )
     return
   }
-
-  if (status !== "BETTING") {
-    logMessage(
-      chalk.gray(`[${getCurrentTime()}] `) +
-      `Không thể đặt cược. Trạng thái phiên hiện tại: ${chalk.yellow(status)}`,
-    )
-    return
-  }
-
   const bettingDecision = determineBettingChoice(worker.gameHistory, config)
-  console.log(bettingDecision, 'bettingDecision')
+
   if (!bettingDecision.choices?.length) {
     logMessage(
       chalk.gray(`[${getCurrentTime()}] `) +
       "Không tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.",
     )
     return
-  }
-
-  if (!worker.isBettingAllowed) {
-    logMessage(chalk.yellow("Chưa được phép đặt cược, đang chờ xác nhận cược trước đó."))
-    return
+  }else{
+    printBetResult(bettingDecision)
   }
 
   // Set betting choices and amounts
@@ -481,7 +458,7 @@ function executeBettingLogic(worker, gameData) {
   worker.currentBetAmount = config.gameSettings.IS_MARTINGALE
     ? worker.martingaleCurrentBet
     : bettingDecision.amounts
-
+  
   // Check budget
   const budgetCheck = checkBudgetSufficiency(worker.currentBudget, worker.currentBetAmount)
   if (!budgetCheck.sufficient) {
@@ -499,6 +476,12 @@ function executeBettingLogic(worker, gameData) {
     return
   }
 
+  if (!worker.isBettingAllowed) {
+    logMessage(chalk.yellow("Chưa được phép đặt cược, đang chờ xác nhận cược trước đó."))
+    return
+  }
+
+
   // Map bettingChoice → bet commands
   const bets = expandBets(worker.bettingChoice, worker?.currentBetAmount)
 
@@ -506,7 +489,7 @@ function executeBettingLogic(worker, gameData) {
     bets.forEach((bet, index) => {
       const delay = getRandomBettingDelay(500, 1500) * (index + 1)
       setTimeout(() => {
-        const betCommand = `[6,"XGame","DragonWheelPlugin",{"cmd":1952,"b":${bet.amount},"eid":"${bet.choice}","sid":${sessionId}}]`
+        const betCommand = `[6,"ShakeDisk","SD_HoangKimLongPlugin",{"cmd":900,"v":${bet.amount},"eid":"${bet.choice}"}]`
 
         worker.mainGameConnection.sendUTF(betCommand)
         worker.isBettingAllowed = false
@@ -516,20 +499,13 @@ function executeBettingLogic(worker, gameData) {
         const logPrefix = config.gameSettings.IS_MARTINGALE ? "Martingale" : "Normal"
         logMessage(
           chalk.magenta(`[${getCurrentTime()}] `) +
-          `Đã chọn quy tắc: ${chalk.yellow(bettingDecision.ruleName)} - Đặt cược (${logPrefix}): ${chalk.yellow(bet.choice)} với số tiền ${chalk.red(bet.amount)} đ.`,
-        )
-        logMessage(
-          chalk.blue(`[${getCurrentTime()}] `) +
-          `Đang cố gắng đặt ${bet.amount} đ vào cửa ${chalk.yellow(bet.choice)} cho phiên ${chalk.cyan(`#${sessionId}`)}.`,
+          `Đã chọn quy tắc: ${chalk.yellow(bettingDecision.ruleName)} - Đặt cược (${logPrefix}): ${chalk.yellow(getLabelByValue(bet.choice))} với số tiền ${chalk.red(convertVnd(bet.amount))}`,
         )
       }, delay)
     })
   } else {
     logMessage(chalk.red("Không thể gửi lệnh đặt cược: Kết nối chưa sẵn sàng."))
   }
-
-
-  worker.previousSessionId = sessionId
 }
 
 /*------- GAME WORKER CLASS --------------------*/
@@ -759,14 +735,14 @@ class GameWorker {
 
         // 🔹 Đợi một chút để server nhận account rồi mới gửi 2 lệnh tiếp theo
         setTimeout(() => {
-          this.mainGameConnection.sendUTF(`[6,"XGame","DragonWheelPlugin",{"cmd":1950}]`)
-          setTimeout(() => this.mainGameConnection.sendUTF(`[6,"XGame","DragonWheelPlugin",{"cmd":1959}]`), 500)
+          this.mainGameConnection.sendUTF(`[6,"ShakeDisk","ShakeDiskPlugin",{"cmd":1950}]`)
+          setTimeout(() => this.mainGameConnection.sendUTF(`[6,"ShakeDisk","SD_HoangKimLongPlugin",{"cmd":1950}]`), 500)
         }, 200)
 
         resolve()
       })
 
-      this.mainGameClient.connect("wss://xgame.azhkthg1.net/sunrong")
+      this.mainGameClient.connect("wss://xdtl.azhkthg1.net/websocket")
     })
   }
 
@@ -819,7 +795,7 @@ let activeGameWorker = null
  * Start the game
  * @returns {Promise<void>}
  */
-export const startGameDragon = async () => {
+export const startGameShakeDisk = async () => {
   if (activeGameWorker) {
     logError("Trò chơi đang chạy. Vui lòng dừng nó trước.")
     return
@@ -849,7 +825,7 @@ export const startGameDragon = async () => {
   // Gom dữ liệu thành mảng 5 phần tử
   const account = [
     id,
-    'XGame',
+    'ShakeDisk',
     username,
     password,
     {
@@ -878,7 +854,7 @@ export const startGameDragon = async () => {
 /**
  * Stop the game
  */
-export const stopGameDragon = () => {
+export const stopGameShakeDisk = () => {
   if (activeGameWorker) {
     activeGameWorker.stop()
     activeGameWorker = null

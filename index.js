@@ -10,8 +10,10 @@ import { openHtml } from './src/utils/htmlHelper.js';
 // import { startBauCua, stopBauCua } from './src/games/bauCua.js';
 
 import './server.js';
-import { startGameDragon } from './src/socket/dragon-socket.js';
+import { startGameDragon, stopGameDragon } from './src/socket/dragon-socket.js';
 import { dragonMenu } from './src/ui/dragon.js';
+import { startGameShakeDisk, stopGameShakeDisk } from './src/socket/shake-disk.js';
+import { shakeDiskMenu } from './src/ui/shake.js';
 
 
 async function main() {
@@ -37,6 +39,10 @@ async function main() {
           case 'dragon_hunt_start':
             await startGameDragon();
             break;
+
+            case 'dragon_hunt_stop':
+            await stopGameDragon();
+            break;
     
           case 'setting_dragon_hunt':
             openHtml('dragon-hunt-settings.html');
@@ -50,12 +56,35 @@ async function main() {
             console.log('⚠️ Lệnh không hợp lệ:', dragonCmd);
             break;
         }
+        break;
+      }
+      case 'shake-disk': {
+        const shakeDiskCmd = await shakeDiskMenu();
+    
+        switch (shakeDiskCmd) {
+          case 'shake_disk_start':
+            await startGameShakeDisk();
+            break;
+
+            case 'shake_disk_stop':
+            await stopGameShakeDisk();
+            break;
+    
+          case 'shake_disk_setting':
+            openHtml('shake-disk-settings.html');
+            break;
+    
+          case 'exit':
+            console.log('👋 Thoát menu tứ linh');
+            break;
+    
+          default:
+            console.log('⚠️ Lệnh không hợp lệ:', shakeDiskCmd);
+            break;
+        }
     
         break;
       }
-      case 'xoc_dia_tu_linh':
-        // await startXocDiaTuLinh();
-        break;
 
       case 'xoc_dia_live':
         // await startXocDiaLive();

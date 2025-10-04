@@ -1,4 +1,6 @@
+import { BET_OPTIONS } from "../contants/shake-disk.js";
 import { LIST_BET } from "../contants/sunrong.js";
+import { printTable } from "./helperCmd.js";
 
 export function mapBetStringToNumber(betString) {
     if (typeof betString !== 'string' || betString.length === 0) {
@@ -80,3 +82,26 @@ export const convertVnd = (number) => {
   
     return expanded
   }
+
+  export function getLabelByValue(value) {
+    const option = BET_OPTIONS.find(opt => opt.value == value);
+    return option ? option.label : "Không xác định";
+  }
+
+  export function getLabelByRes(value) {
+    const option = BET_OPTIONS.find(opt => opt.value == value);
+    return option?.res ? "CHẴN" : "LẺ"
+  }
+
+  export function printBetResult(result) {
+    const { choices, amounts, ruleName } = result;
+  
+    // Map choices sang label
+    const choiceLabels = choices.map(c => getLabelByValue(c));
+  
+    // Sum amounts
+    const totalAmount = amounts.reduce((a, b) => a + b, 0);
+  
+    printTable({"Ô cược": choiceLabels.join(", "),"Tổng cược": totalAmount, "Rule cược":ruleName })
+  }
+  

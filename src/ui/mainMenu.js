@@ -14,7 +14,7 @@ export async function mainMenu() {
       message: '📋 Chọn trò chơi:',
       choices: [
         { name: '🐲  Săn rồng', value: 'dragon_hunt' },
-        { name: '⭕  Xóc đĩa tứ linh', value: 'xoc_dia_tu_linh' }, 
+        { name: '⭕  Xóc đĩa tứ linh', value: 'shake-disk' }, 
         { name: '🎥  Xóc đĩa live', value: 'xoc_dia_live' },   
         { name: '🎴  Bacarat live', value: 'bacarat_live' },   
         { name: '🎲  Bầu cua', value: 'bau_cua' },

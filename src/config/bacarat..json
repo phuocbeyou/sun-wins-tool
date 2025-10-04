@@ -16,32 +16,26 @@
     ],
     "bettingRules": [
         {
-            "betOn": "PURPLE",
-            "priority": 10,
+            "description": "CHẴN-LẺ-CHẴN-CHẴN-LẺ",
+            "priority": 1,
             "active": true,
-            "description": "RED → PINK → WHITE cược PURPLE.",
-            "betAmount": 5000,
             "pattern": [
-                "RED",
-                "PINK",
-                "WHITE"
-            ]
-        },
-        {
-            "betOn": [
-                "RED",
-                "BLUE",
-                "PINK"
+                "CHẴN",
+                "LẺ",
+                "CHẴN",
+                "CHẴN",
+                "LẺ"
             ],
-            "priority": 0,
-            "active": true,
-            "description": "Default rule: nếu không khớp pattern nào thì cược RED + BLUE + PINK.",
+            "betOn": [
+                "5",
+                "3",
+                "0"
+            ],
             "betAmount": [
                 1000,
-                2000,
-                500
-            ],
-            "pattern": []
+                1000,
+                1000
+            ]
         }
     ]
 }
