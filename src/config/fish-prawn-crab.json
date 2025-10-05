@@ -16,23 +16,64 @@
   ],
   "bettingRules": [
     {
-      "description": "HƯU-GÀ-GÀ → CUA-GÀ-CÁ",
+      "description": "HƯU-BẦU-GÀ",
       "priority": 1,
       "active": true,
       "pattern": [
-        [
-          "HƯU",
-          "GÀ",
-          "GÀ"
-        ],
-        [
-          "CUA",
-          "GÀ",
-          "CÁ"
-        ]
+        "HƯU-BẦU-GÀ"
+      ],
+      "betOn": [
+        "0",
+        "1"
+      ],
+      "betAmount": [
+        1000,
+        1000
+      ]
+    },
+    {
+      "description": "GÀ-GÀ-CÁ",
+      "priority": 1,
+      "active": true,
+      "pattern": [
+        "GÀ-GÀ-CÁ"
+      ],
+      "betOn": [
+        "0",
+        "3"
+      ],
+      "betAmount": [
+        1000,
+        1000
+      ]
+    },
+    {
+      "description": "HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU",
+      "priority": 1,
+      "active": true,
+      "pattern": [
+        "HƯU-BẦU-GÀ",
+        "TÔM-CÁ-GÀ",
+        "CUA-TÔM-CÁ",
+        "GÀ-BẦU-HƯU"
       ],
       "betOn": [
         "0"
+      ],
+      "betAmount": [
+        1000
+      ]
+    },
+    {
+      "description": "BẦU-HƯU-HƯU → CÁ-GÀ-HƯU",
+      "priority": 1,
+      "active": true,
+      "pattern": [
+        "BẦU-HƯU-HƯU",
+        "CÁ-GÀ-HƯU"
+      ],
+      "betOn": [
+        "1"
       ],
       "betAmount": [
         1000

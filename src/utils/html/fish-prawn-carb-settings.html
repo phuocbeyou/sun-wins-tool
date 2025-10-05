@@ -987,11 +987,13 @@
                 return;
             }
 
+            const flatPattern = selectedPatternColors.map(group => group.join('-'));
+
             const newRule = {
                 description: description,
                 priority: priority,
                 active: true,
-                pattern: selectedPatternColors,
+                pattern: flatPattern,
                 betOn: betOn, // Always keep as array
                 betAmount: betAmount // Always keep as array
             };

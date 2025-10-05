@@ -17,7 +17,7 @@ export async function mainMenu() {
         { name: '⭕  Xóc đĩa tứ linh', value: 'shake-disk' }, 
         { name: '🎥  Xóc đĩa live', value: 'xoc_dia_live' },   
         { name: '🎴  Bacarat live', value: 'bacarat_live' },   
-        { name: '🎲  Bầu cua', value: 'bau_cua' },
+        { name: '🎲  Bầu cua', value: 'fish_prawn_carb' },
         { name: '🔐  Tài khoản', value: 'account_manager' },
         new inquirer.Separator(),
         { name: '❌  Thoát', value: 'exit' },

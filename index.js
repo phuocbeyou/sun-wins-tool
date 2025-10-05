@@ -14,6 +14,8 @@ import { startGameDragon, stopGameDragon } from './src/socket/dragon-socket.js';
 import { dragonMenu } from './src/ui/dragon.js';
 import { startGameShakeDisk, stopGameShakeDisk } from './src/socket/shake-disk.js';
 import { shakeDiskMenu } from './src/ui/shake.js';
+import { fishMenu } from './src/ui/fish.js';
+import { startGameFish, stopGameFish } from './src/socket/fish-prawn-carb.js';
 
 
 async function main() {
@@ -94,9 +96,33 @@ async function main() {
         // await startBacaratLive();
         break;
 
-      case 'bau_cua':
-        // await startBauCua();
-        break;
+        case 'fish_prawn_carb': {
+          const fishCmd = await fishMenu();
+      
+          switch (fishCmd) {
+            case 'fish_start':
+              await startGameFish();
+              break;
+  
+              case 'fish_stop':
+              await stopGameFish();
+              break;
+      
+            case 'fish_setting':
+              openHtml('fish-prawn-carb-settings.html');
+              break;
+      
+            case 'exit':
+              console.log('👋 Thoát menu bầu cua');
+              break;
+      
+            default:
+              console.log('⚠️ Lệnh không hợp lệ:', fishCmd);
+              break;
+          }
+      
+          break;
+        }
 
       case 'account_manager':
         openHtml('account-manager.html');

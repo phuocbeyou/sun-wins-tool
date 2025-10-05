@@ -1,3 +1,4 @@
+import { BET_OPTIONS_FISH } from "../contants/fish-prawn-carb.js";
 import { BET_OPTIONS } from "../contants/shake-disk.js";
 import { LIST_BET } from "../contants/sunrong.js";
 import { printTable } from "./helperCmd.js";
@@ -105,3 +106,14 @@ export const convertVnd = (number) => {
     printTable({"Ô cược": choiceLabels.join(", "),"Tổng cược": totalAmount, "Rule cược":ruleName })
   }
   
+  // FISH PRAWN CARB
+  export function getLabelByValueFish(value) {
+    const option = BET_OPTIONS_FISH.find(opt => String(opt.value) === String(value));
+    return option ? option.label.toUpperCase() : "KHÔNG XÁC ĐỊNH";
+  }
+
+  export function getLabelByResFish(value) {
+    const option = BET_OPTIONS_FISH.find(opt => opt.value == value);
+    return option?.res ? "CHẴN" : "LẺ"
+  }
+
