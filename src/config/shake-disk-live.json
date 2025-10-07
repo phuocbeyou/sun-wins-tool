@@ -1,0 +1,53 @@
+{
+  "gameSettings": {
+    "BET_AMOUNT": 1000,
+    "JACKPOT_THRESHOLD": 500000,
+    "BET_STOP": 10000,
+    "TIME_SEND_MESS": 1,
+    "IS_MARTINGALE": false,
+    "RATE_MARTINGALE": 2,
+    "ZOMBIE": true
+  },
+  "gameRules": [
+    "Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).",
+    "Tổng điểm từ 11 đến 17 là TÀI.",
+    "Tổng điểm từ 4 đến 10 là XỈU.",
+    "Trò chơi dựa trên kết quả của 3 viên xúc xắc."
+  ],
+  "bettingRules": [
+    {
+      "description": "ODD-EVEN-EVEN",
+      "priority": 1,
+      "active": true,
+      "pattern": [
+        "ODD",
+        "RED_X3",
+        "ODD",
+        "RED_X3"
+      ],
+      "betOn": [
+        "EVEN"
+      ],
+      "betAmount": [
+        1000
+      ]
+    },
+    {
+      "description": "EVEN-ODD-ODD",
+      "priority": 1,
+      "active": true,
+      "pattern": [
+        "ODD",
+        "WHITE_X3",
+        "ODD",
+        "WHITE_X3"
+      ],
+      "betOn": [
+        "EVEN"
+      ],
+      "betAmount": [
+        1000
+      ]
+    }
+  ]
+}

@@ -16,6 +16,10 @@ import { startGameShakeDisk, stopGameShakeDisk } from './src/socket/shake-disk.j
 import { shakeDiskMenu } from './src/ui/shake.js';
 import { fishMenu } from './src/ui/fish.js';
 import { startGameFish, stopGameFish } from './src/socket/fish-prawn-carb.js';
+import { bacaratMenu } from './src/ui/baracat.js';
+import { startGameBaracat, stopGameBaracat } from './src/socket/bracat.js';
+import { shakeDiskLiveMenu } from './src/ui/shake-live.js';
+import { startGameShakeDiskLive, stopGameShakeDiskLive } from './src/socket/shake-disk-live.js';
 
 
 async function main() {
@@ -88,13 +92,61 @@ async function main() {
         break;
       }
 
-      case 'xoc_dia_live':
-        // await startXocDiaLive();
-        break;
+      case 'shake-disk-live': {
+        const shakeDiskLiveCmd = await shakeDiskLiveMenu();
+    
+        switch (shakeDiskLiveCmd) {
+          case 'shake_disk_live_start':
+            await startGameShakeDiskLive();
+            break;
 
-      case 'bacarat_live':
-        // await startBacaratLive();
+            case 'shake_disk_live_stop':
+            await stopGameShakeDiskLive();
+            break;
+    
+          case 'shake_disk_live_setting':
+            openHtml('shake-disk-live-settings.html');
+            break;
+    
+          case 'exit':
+            console.log('👋 Thoát menu tứ linh');
+            break;
+    
+          default:
+            console.log('⚠️ Lệnh không hợp lệ:', shakeDiskLiveCmd);
+            break;
+        }
+    
         break;
+      }
+
+        case 'bacarat_live': {
+          const bacaratCmd = await bacaratMenu();
+      
+          switch (bacaratCmd) {
+            case 'bacarat_start':
+              await startGameBaracat();
+              break;
+  
+              case 'bacarat_stop':
+              await stopGameBaracat();
+              break;
+      
+            case 'bacarat_setting':
+              openHtml('bacarat-settings.html');
+              break;
+      
+            case 'exit':
+              console.log('👋 Thoát menu bầu cua');
+              break;
+      
+            default:
+              console.log('⚠️ Lệnh không hợp lệ:', bacaratCmd);
+              break;
+          }
+      
+          break;
+        }
 
         case 'fish_prawn_carb': {
           const fishCmd = await fishMenu();

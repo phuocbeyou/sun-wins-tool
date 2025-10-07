@@ -1,4 +1,6 @@
+import { BET_OPTIONS_BARACAT } from "../contants/bracat.js";
 import { BET_OPTIONS_FISH } from "../contants/fish-prawn-carb.js";
+import { BET_OPTIONS_SHAKE_DISK } from "../contants/shake-disk-live.js";
 import { BET_OPTIONS } from "../contants/shake-disk.js";
 import { LIST_BET } from "../contants/sunrong.js";
 import { printTable } from "./helperCmd.js";
@@ -105,6 +107,7 @@ export const convertVnd = (number) => {
   
     printTable({"Ô cược": choiceLabels.join(", "),"Tổng cược": totalAmount, "Rule cược":ruleName })
   }
+
   
   // FISH PRAWN CARB
   export function getLabelByValueFish(value) {
@@ -117,3 +120,38 @@ export const convertVnd = (number) => {
     return option?.res ? "CHẴN" : "LẺ"
   }
 
+  // baracat
+  export function getLabelByValueBaracat(value) {
+    const option = BET_OPTIONS_BARACAT.find(opt => opt.value == value);
+    return option?.label
+  }
+
+  export function printBetResultBaracat(result) {
+    const { choices, amounts, ruleName } = result;
+  
+    // Map choices sang label
+    const choiceLabels = choices.map(c => getLabelByValueBaracat(c));
+  
+    // Sum amounts
+    const totalAmount = amounts.reduce((a, b) => a + b, 0);
+  
+    printTable({"Ô cược": choiceLabels.join(", "),"Tổng cược": totalAmount, "Rule cược":ruleName })
+  }
+
+  // shake disk live
+  
+  export function printBetResultShakeDiskLive(result) {
+    const { choices, amounts, ruleName } = result;
+  
+    // Map choices sang label
+    const choiceLabels = choices.map(c => getLabelByValueShakeDiskLive(c));
+  
+    // Sum amounts
+    const totalAmount = amounts.reduce((a, b) => a + b, 0);
+  
+    printTable({"Ô cược": choiceLabels.join(", "),"Tổng cược": totalAmount, "Rule cược":ruleName })
+  }
+  export function getLabelByValueShakeDiskLive(value) {
+    const option = BET_OPTIONS_SHAKE_DISK.find(opt => opt.value == value);
+    return option ? option.label : "Không xác định";
+  }
