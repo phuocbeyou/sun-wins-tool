@@ -97,6 +97,16 @@
             font-family: 'Courier New', monospace;
         }
 
+        /* Added styling for category game select */
+        .form-group select {
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .form-group select option {
+            padding: 10px;
+        }
+
         .btn {
             padding: 12px 25px;
             border: none;
@@ -188,6 +198,17 @@
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.8em;
+        }
+
+        /* Added styling for category badge */
+        .account-category {
+            background: #9b59b6;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75em;
+            margin-top: 5px;
+            display: inline-block;
         }
 
         .account-info {
@@ -354,6 +375,19 @@
                 <h2>➕ Thêm Tài Khoản</h2>
                 <div id="statusMessage" class="status-message"></div>
 
+                <!-- Added category game selection -->
+                <div class="form-group">
+                    <label for="categoryGame">Chọn Loại Game: <span style="color: red;">*</span></label>
+                    <select id="categoryGame" required>
+                        <option value="">-- Chọn loại game --</option>
+                        <option value="dragon">🐉 Săn rồng</option>
+                        <option value="shake_disk">🎲 Xóc đĩa tứ linh</option>
+                        <option value="shake_disk_live">🎰 Xóc đĩa live</option>
+                        <option value="baccarat_live">🃏 Baccarat live</option>
+                        <option value="fish_crab">🦀 Bầu cua</option>
+                    </select>
+                </div>
+
                 <div class="form-group">
                     <label for="jsonData">Dán JSON Data:</label>
                     <textarea id="jsonData"
@@ -440,21 +474,6 @@
 
                     let hasActiveAccount = false;
                     accounts.forEach(accountArray => {
-                        if (accountArray[4] && accountArray[4].isActive) {
-                            if (hasActiveAccount) {
-                                accountArray[4].isActive = false;
-                            } else {
-                                hasActiveAccount = true;
-                            }
-                        }
-                    });
-
-                    // If no account is active, make the first one active
-                    if (!hasActiveAccount && accounts.length > 0) {
-                        accounts[0][4] = accounts[0][4] || {};
-                        accounts[0][4].isActive = true;
-                    }
-
                     displayAccounts();
                     updateStats();
                     showStatus(`Đã tải ${accounts.length} tài khoản thành công!`, 'success');
@@ -503,6 +522,12 @@
 
         async function addAccountFromJson() {
             const jsonData = document.getElementById('jsonData').value.trim();
+            const categoryGame = document.getElementById('categoryGame').value;
+
+            if (!categoryGame) {
+                showStatus('Vui lòng chọn loại game trước khi thêm tài khoản!', 'error');
+                return;
+            }
 
             if (!jsonData) {
                 showStatus('Vui lòng nhập JSON data!', 'error');
@@ -537,13 +562,16 @@
                     }
 
                     const username = accountArray[2]; // index[2] as ID
-                    const existingAccountIndex = accounts.findIndex(acc => acc[2] === username);
+                    const existingAccountIndex = accounts.findIndex(acc =>
+                        acc[2] === username && acc[4]?.categoryGame === categoryGame
+                    );
 
                     if (!accountArray[4]) {
                         accountArray[4] = {};
                     }
 
-                    // Set isActive to false by default (will be managed by toggle function)
+                    accountArray[4].categoryGame = categoryGame;
+
                     if (accountArray[4].isActive === undefined) {
                         accountArray[4].isActive = false;
                     }
@@ -552,6 +580,7 @@
                         const wasActive = accounts[existingAccountIndex][4] && accounts[existingAccountIndex][4].isActive;
                         accounts[existingAccountIndex] = accountArray;
                         accounts[existingAccountIndex][4].isActive = wasActive;
+                        accounts[existingAccountIndex][4].categoryGame = categoryGame;
                         updatedCount++;
                     } else {
                         accounts.push(accountArray);
@@ -564,20 +593,21 @@
                 updateStats();
 
                 let message = '';
-                if (addedCount > 0) message += `Đã thêm ${addedCount} tài khoản mới. `;
+                if (addedCount > 0) message += `Đã thêm ${addedCount} tài khoản mới vào "${categoryGame}". `;
                 if (updatedCount > 0) message += `Đã cập nhật ${updatedCount} tài khoản. `;
                 showStatus(message || 'Không có thay đổi nào!', 'success');
 
                 document.getElementById('jsonData').value = '';
+                document.getElementById('categoryGame').value = '';
 
             } catch (error) {
                 showStatus('JSON data không hợp lệ: ' + error.message, 'error');
             }
         }
 
-        async function deleteAccount(username) {
-            if (confirm(`Bạn có chắc chắn muốn xóa tài khoản "${username}"?`)) {
-                accounts = accounts.filter(acc => acc[2] !== username);
+        async function deleteAccount(username, categoryGame) {
+            if (confirm(`Bạn có chắc chắn muốn xóa tài khoản "${username}" (${categoryGame})?`)) {
+                accounts = accounts.filter(acc => !(acc[2] === username && acc[4]?.categoryGame === categoryGame));
                 await saveAccountsToAPI();
                 displayAccounts();
                 updateStats();
@@ -585,25 +615,34 @@
             }
         }
 
-        async function toggleActiveAccount(username) {
-            const accountIndex = accounts.findIndex(acc => acc[2] === username);
+        async function toggleActiveAccount(username, categoryGame) {
+            const accountIndex = accounts.findIndex(acc =>
+                acc[2] === username && acc[4]?.categoryGame === categoryGame
+            );
+
             if (accountIndex !== -1) {
                 const account = accounts[accountIndex];
-                if (!account[4] || !account[4].isActive) {
-                    accounts.forEach(acc => {
-                        if (acc[4]) {
-                            acc[4].isActive = false;
-                        }
-                    });
 
-                    // Activate this account
+                if (!account[4] || !account[4].isActive) {
+                    const existingActiveInCategory = accounts.find(acc =>
+                        acc[4] &&
+                        acc[4].isActive &&
+                        acc[4].categoryGame === categoryGame &&
+                        acc[2] !== username
+                    );
+
+                    if (existingActiveInCategory) {
+                        showStatus(`Đã có tài khoản "${existingActiveInCategory[2]}" đang active cho game "${categoryGame}". Vui lòng tắt tài khoản đó trước!`, 'error');
+                        return;
+                    }
+
                     if (!account[4]) account[4] = {};
                     account[4].isActive = true;
 
-                    showStatus(`Đã kích hoạt tài khoản "${username}"!`, 'success');
+                    showStatus(`Đã kích hoạt tài khoản "${username}" cho game "${categoryGame}"!`, 'success');
                 } else {
-                    showStatus(`Tài khoản "${username}" đã được kích hoạt rồi!`, 'error');
-                    return;
+                    account[4].isActive = false;
+                    showStatus(`Đã tắt tài khoản "${username}"!`, 'success');
                 }
 
                 await saveAccountsToAPI();
@@ -627,7 +666,6 @@
                 const password = accountArray[3];
                 const infoObject = accountArray[4] || {};
 
-                // Parse info string if it exists
                 let parsedInfo = {};
                 if (typeof infoObject.info === 'string') {
                     try {
@@ -642,6 +680,7 @@
                 const phone = parsedInfo.phone || infoObject.phone || 'N/A';
                 const userId = parsedInfo.userId || infoObject.userId || 'N/A';
                 const isActive = infoObject.isActive || false;
+                const categoryGame = infoObject.categoryGame || 'Chưa phân loại';
 
                 const borderColor = isActive ? '#f39c12' : '#27ae60';
                 const activeLabel = isActive ? 'ACTIVE' : 'Inactive';
@@ -650,7 +689,10 @@
                 return `
                 <div class="account-card" style="border-left-color: ${borderColor}">
                     <div class="account-header">
-                        <div class="account-username">${displayName}</div>
+                        <div>
+                            <div class="account-username">${displayName}</div>
+                            <div class="account-category">🎮 ${categoryGame}</div>
+                        </div>
                         <div class="account-game">${gameType}</div>
                     </div>
                     
@@ -664,8 +706,8 @@
                     </div>
                     
                     <div class="account-actions">
-                        ${!isActive ? `<button class="btn btn-warning" onclick="toggleActiveAccount('${username}')">⭐ Set Active</button>` : '<button class="btn" style="background: #f39c12; color: white;" disabled>⭐ ACTIVE</button>'}
-                        <button class="btn btn-danger" onclick="deleteAccount('${username}')">🗑️ Xóa</button>
+                        ${!isActive ? `<button class="btn btn-warning" onclick="toggleActiveAccount('${username}', '${categoryGame}')">⭐ Set Active</button>` : `<button class="btn btn-danger" onclick="toggleActiveAccount('${username}', '${categoryGame}')">⏸️ Deactivate</button>`}
+                        <button class="btn btn-danger" onclick="deleteAccount('${username}', '${categoryGame}')">🗑️ Xóa</button>
                     </div>
                 </div>
             `;
@@ -703,6 +745,11 @@
             if (event.target === modal) {
                 closeAccountModal();
             }
+        }
+
+        function closeAccountModal() {
+            const modal = document.getElementById('accountModal');
+            modal.style.display = 'none';
         }
     </script>
 </body>

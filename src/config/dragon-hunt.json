@@ -23,17 +23,18 @@
   ],
   "bettingRules": [
     {
-      "description": "default",
+      "description": "GREEN-WHITE",
       "priority": 1,
       "active": true,
-      "pattern": [],
+      "pattern": [
+        "GREEN",
+        "WHITE"
+      ],
       "betOn": [
-        "WHITE",
-        "GREEN"
+        "WHITE"
       ],
       "betAmount": [
-        3000,
-        3000
+        1000
       ]
     }
   ]

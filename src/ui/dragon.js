@@ -7,21 +7,24 @@ const suppressFinalAnswerRenderer = {
 };
 
 export async function dragonMenu() {
-  const answers = await inquirer.prompt([
-    {
-      type: 'list',
-      name: 'mainCmd',
-      message: '📋 Chọn trò chơi:',
-      choices: [
-        { name: '🐲  Bắt đầu săn rồng', value: 'dragon_hunt_start' },
-        { name: '⭕  Dừng săn rồng', value: 'dragon_hunt_stop' }, 
-        { name: '⭕  Cấu hình rule', value: 'setting_dragon_hunt' }, 
-        new inquirer.Separator(),
-        { name: '❌  Thoát', value: 'exit' },
-      ],
-      pageSize: 30,
-    },
-  ], { renderer: suppressFinalAnswerRenderer });
+  const answers = await inquirer.prompt(
+    [
+      {
+        type: 'list',
+        name: 'mainCmd',
+        message: '📋  Chọn trò chơi:',
+        choices: [
+          { name: '🐉  Bắt đầu săn rồng', value: 'dragon_hunt_start' },
+          { name: '🛑  Dừng săn rồng', value: 'dragon_hunt_stop' },
+          { name: '⚙️  Cấu hình rule', value: 'setting_dragon_hunt' },
+          new inquirer.Separator(),
+          { name: '❌  Thoát', value: 'exit' },
+        ],
+        pageSize: 30,
+      },
+    ],
+    { renderer: suppressFinalAnswerRenderer }
+  );
 
   return answers.mainCmd;
 }

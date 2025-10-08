@@ -761,7 +761,11 @@ export const startGameBaracat = async () => {
   const users = await readUsers()
 
   // Tìm user đang active
-  const selectedUser = users.find((u) => Array.isArray(u) && u[4]?.isActive)
+  const categoryGame = "baccarat_live";
+
+  const selectedUser = users.find(
+    (u) => Array.isArray(u) && u[4]?.isActive && u[4]?.categoryGame === categoryGame
+  );
 
   if (!selectedUser) {
     return logError("Không tìm thấy người dùng được chọn. Vui lòng bật trạng thái `isActive` cho 1 user.")
@@ -778,7 +782,7 @@ export const startGameBaracat = async () => {
   // Gom dữ liệu thành mảng 5 phần tử
   const account = [
     id,
-    'Livestream',
+    gameName,
     username,
     password,
     {
