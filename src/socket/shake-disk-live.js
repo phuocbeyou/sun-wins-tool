@@ -416,7 +416,7 @@ function executeBettingLogic(worker, gameData) {
       const delay = getRandomBettingDelay(500, 1500) * (index + 1)
       setTimeout(() => {
         const betCommand = `[6,"Livestream","ShakeDiskLivestreamPlugin",{"cmd":1952,"b":${bet.amount},"eid":"${bet.choice}","sid":${gameData?.sessionId}}]`
-        console.log(betCommand,'betCommand');
+        console.log(chalk.blue(`[${getCurrentTime()}] `) + `Đã đặt cược ${convertVnd(bet.amount)} vào [${bet.choice}]`);
         worker.mainGameConnection.sendUTF(betCommand)
         // worker.isBettingAllowed = false
         worker.lastBetAmount = bet.amount

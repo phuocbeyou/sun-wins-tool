@@ -41,12 +41,12 @@ function loadConfig() {
     RATE_MARTINGALE = config.gameSettings.RATE_MARTINGALE
     ZOMBIE_MODE = config.gameSettings.ZOMBIE || false
 
-    logMessage(chalk.green(`[${getCurrentTime()}] Cấu hình rule.json đã được tải lại.`))
-    logMessage(chalk.yellow(`Chế độ Martingale: ${IS_MARTINGALE ? "BẬT" : "TẮT"}`))
-    logMessage(chalk.yellow(`Chế độ Zombie: ${ZOMBIE_MODE ? "BẬT" : "TẮT"}`))
+    console.log(chalk.green(`[${getCurrentTime()}] Cấu hình rule.json đã được tải lại.`))
+    console.log(chalk.yellow(`Chế độ Martingale: ${IS_MARTINGALE ? "BẬT" : "TẮT"}`))
+    console.log(chalk.yellow(`Chế độ Zombie: ${ZOMBIE_MODE ? "BẬT" : "TẮT"}`))
 
     if (IS_MARTINGALE) {
-      logMessage(chalk.yellow(`Tỷ lệ gấp thếp: ${RATE_MARTINGALE}`))
+      console.log(chalk.yellow(`Tỷ lệ gấp thếp: ${RATE_MARTINGALE}`))
     }
   } catch (error) {
     console.error(chalk.red(`Lỗi khi đọc hoặc phân tích cú pháp rule.json: ${error.message}`))
@@ -59,7 +59,7 @@ function loadConfig() {
 function initConfigWatcher() {
   fs.watch(configPath, (eventType, filename) => {
     if (filename) {
-      logMessage(chalk.yellow(`[${getCurrentTime()}] Phát hiện thay đổi trong rule.json (${eventType}). Đang tải lại...`))
+      console.log(chalk.yellow(`[${getCurrentTime()}] Phát hiện thay đổi trong rule.json (${eventType}). Đang tải lại...`))
       clearTimeout(configReloadTimeout)
       configReloadTimeout = setTimeout(() => {
         loadConfig()
@@ -213,7 +213,7 @@ function processGameResult(resultType, lastBetChoice, sessionId) {
   const resultMessage = won ? "THẮNG! Reset cược gấp thếp." : "THUA! Tăng cược gấp thếp."
   const color = won ? chalk.green : chalk.red
 
-  logMessage(color(`[${getCurrentTime()}] Phiên #${sessionId}: ${resultMessage}`))
+  console.log(color(`[${getCurrentTime()}] Phiên #${sessionId}: ${resultMessage}`))
   return won
 }
 
@@ -225,7 +225,7 @@ function processGameResult(resultType, lastBetChoice, sessionId) {
  */
 function handleMainGameMessage(msg, worker) {
   if (msg.type !== "utf8") {
-    logMessage(chalk.yellow(`Nhận tin nhắn không phải UTF8: ${msg.type}. Bỏ qua.`))
+    console.log(chalk.yellow(`Nhận tin nhắn không phải UTF8: ${msg.type}. Bỏ qua.`))
     return
   }
 
@@ -235,7 +235,7 @@ function handleMainGameMessage(msg, worker) {
   try {
     parsedMessage = JSON.parse(messageString)
   } catch (e) {
-    logMessage(
+    console.log(
       chalk.red(
         `Lỗi phân tích tin nhắn (JSON không hợp lệ): ${messageString.substring(0, 100)}... Lỗi: ${e.message}`,
       ),
@@ -275,9 +275,9 @@ function handleMainGameMessage(msg, worker) {
  */
 function handleGameStart(parsedMessage,worker) {
   if (worker.currentJackpot < JACKPOT_THRESHOLD) {
-    return logMessage(chalk.red(`Giá trị hũ ${worker.currentJackpot} dưới ngưỡng dừng. Bỏ cược`))
+    return console.log(chalk.red(`Giá trị hũ ${worker.currentJackpot} dưới ngưỡng dừng. Bỏ cược`))
   }
-  logMessage(chalk.blue("Game bắt đầu, chờ đặt cược ..."))
+  console.log(chalk.blue("Game bắt đầu, chờ đặt cược ..."))
   executeBettingLogic(worker, parsedMessage[1])
 }
 
@@ -301,7 +301,7 @@ function handleInitialGameState(parsedMessage, worker) {
   // worker.currentJackpot = jackpot || 0
 
   if (worker.currentJackpot < JACKPOT_THRESHOLD) {
-    logMessage(chalk.red("Giá trị hũ dưới ngưỡng dừng. Bỏ cược"))
+    console.log(chalk.red("Giá trị hũ dưới ngưỡng dừng. Bỏ cược"))
   }
 
   // Reset Martingale state on new session
@@ -351,7 +351,7 @@ function handleGameResultUpdate(parsedMessage, worker) {
   const gameData = parsedMessage[1]
 
   if (!gameData) {
-    logMessage(chalk.red(`[${getCurrentTime()}] Không tìm thấy dữ liệu game trong parsedMessage`))
+    console.log(chalk.red(`[${getCurrentTime()}] Không tìm thấy dữ liệu game trong parsedMessage`))
     return
   }
   const arrDices = gameData?.dices || []
@@ -371,7 +371,7 @@ if (arrDices.length === 0) {
   
   //Reset zombie failure count on successful result
   if (ZOMBIE_MODE && worker.zombieFailureCount > 0) {
-    logMessage(chalk.green(`[${getCurrentTime()}] Zombie Mode: Kết nối ổn định, reset failure count.`))
+    console.log(chalk.green(`[${getCurrentTime()}] Zombie Mode: Kết nối ổn định, reset failure count.`))
     worker.zombieFailureCount = 0
   }
 
@@ -394,7 +394,7 @@ if (arrDices.length === 0) {
 function handleBudgetUpdate(parsedMessage, worker) {
   if (parsedMessage[1] && parsedMessage[1].As && typeof parsedMessage[1].As.gold === "number") {
     worker.currentBudget = parsedMessage[1].As.gold
-    logMessage(chalk.blue(`[${getCurrentTime()}] `) + `Số dư ví: ${chalk.green(worker.currentBudget + " đ")}`)
+    console.log(chalk.blue(`[${getCurrentTime()}] `) + `Số dư ví: ${chalk.green(worker.currentBudget + " đ")}`)
   }
 }
 
@@ -420,7 +420,7 @@ function handleJackpotUpdate(parsedMessage, worker) {
   const data = parsedMessage[1];
   if (data && typeof data.ba === "number") {
     worker.currentJackpot = data?.ba;
-    logMessage(
+    console.log(
       chalk.blue(`[${getCurrentTime()}] `) +
       `Jackpot hiện tại: ${chalk.green(worker.currentJackpot.toLocaleString("vi-VN") + " đ")}`
     );
@@ -435,7 +435,7 @@ function handleJackpotUpdate(parsedMessage, worker) {
 function executeBettingLogic(worker, gameData) {
 
   if (worker?.currentJackpot <= JACKPOT_THRESHOLD) {
-    logMessage(
+    console.log(
       chalk.gray(`[${getCurrentTime()}] `) +
       `Bỏ qua đặt cược cho phiên Hũ quá thấp.`,
     )
@@ -444,7 +444,7 @@ function executeBettingLogic(worker, gameData) {
   const bettingDecision = determineBettingChoice(worker.gameHistory, config)
 
   if (!bettingDecision.choices?.length) {
-    logMessage(
+    console.log(
       chalk.gray(`[${getCurrentTime()}] `) +
       "Không tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.",
     )
@@ -468,7 +468,7 @@ function executeBettingLogic(worker, gameData) {
       worker.currentBetAmount,
       worker.lastBetAmount,
     )
-    logMessage(
+    console.log(
       chalk.red(`[${getCurrentTime()}] `) +
       `${budgetCheck.reason} Số dư hiện tại: ${convertVnd(worker.currentBudget)}. Đang dừng trò chơi.`,
     )
@@ -477,7 +477,7 @@ function executeBettingLogic(worker, gameData) {
   }
 
   if (!worker.isBettingAllowed) {
-    logMessage(chalk.yellow("Chưa được phép đặt cược, đang chờ xác nhận cược trước đó."))
+    console.log(chalk.yellow("Chưa được phép đặt cược, đang chờ xác nhận cược trước đó."))
     return
   }
 
@@ -497,14 +497,14 @@ function executeBettingLogic(worker, gameData) {
         worker.lastBetChoice = bet.choice
 
         const logPrefix = config.gameSettings.IS_MARTINGALE ? "Martingale" : "Normal"
-        logMessage(
+        console.log(
           chalk.magenta(`[${getCurrentTime()}] `) +
           `Đã chọn quy tắc: ${chalk.yellow(bettingDecision.ruleName)} - Đặt cược (${logPrefix}): ${chalk.yellow(getLabelByValue(bet.choice))} với số tiền ${chalk.red(convertVnd(bet.amount))}`,
         )
       }, delay)
     })
   } else {
-    logMessage(chalk.red("Không thể gửi lệnh đặt cược: Kết nối chưa sẵn sàng."))
+    console.log(chalk.red("Không thể gửi lệnh đặt cược: Kết nối chưa sẵn sàng."))
   }
 }
 
@@ -569,7 +569,7 @@ class GameWorker {
     this.lastBetAmount = 0
     this.lastBetChoice = null
     if (IS_MARTINGALE) {
-      logMessage(chalk.magenta(`[${getCurrentTime()}] Martingale state reset.`))
+      console.log(chalk.magenta(`[${getCurrentTime()}] Martingale state reset.`))
     }
   }
 
@@ -587,7 +587,7 @@ class GameWorker {
 
   /** ---------------- Connection Management ---------------- */
   forceKillConnections() {
-    logMessage(chalk.red(`[${getCurrentTime()}] Force killing all connections...`))
+    console.log(chalk.red(`[${getCurrentTime()}] Force killing all connections...`))
 
     this.clearAllIntervals()
 
@@ -602,7 +602,7 @@ class GameWorker {
         this.mainGameConnection = null
       }
     } catch (e) {
-      logMessage(chalk.yellow(`Error closing mainGame connection: ${e.message}`))
+      console.log(chalk.yellow(`Error closing mainGame connection: ${e.message}`))
     }
 
     this.mainGameClient = new WebSocketClient()
@@ -610,14 +610,14 @@ class GameWorker {
 
   /** ---------------- Event Handlers ---------------- */
   handleConnectFailed(error, clientName = "MainGame") {
-    logMessage(chalk.red(`Connect failed (${clientName}): ${error}`))
+    console.log(chalk.red(`Connect failed (${clientName}): ${error}`))
     if (!this.isStopped) {
       ZOMBIE_MODE ? this.handleZombieReconnect(clientName, error) : this.tryReconnect(clientName)
     }
   }
 
   handleConnectionClose(reasonCode, description, clientName = "MainGame") {
-    logMessage(chalk.yellow(`Connection closed (${clientName}): ${description}`))
+    console.log(chalk.yellow(`Connection closed (${clientName}): ${description}`))
     if (!this.isStopped) {
       ZOMBIE_MODE
         ? this.handleZombieReconnect(clientName, new Error(`Closed: ${description}`))
@@ -626,7 +626,7 @@ class GameWorker {
   }
 
   handleConnectionError(error, clientName = "MainGame") {
-    logMessage(chalk.red(`Error (${clientName}): ${error}`))
+    console.log(chalk.red(`Error (${clientName}): ${error}`))
     if (!this.isStopped) {
       ZOMBIE_MODE ? this.handleZombieReconnect(clientName, error) : this.tryReconnect(clientName)
     }
@@ -635,7 +635,7 @@ class GameWorker {
   /** ---------------- Reconnect Logic ---------------- */
   handleZombieReconnect(clientName, error) {
     this.zombieFailureCount++
-    logMessage(chalk.magenta(`[${getCurrentTime()}] Zombie Mode: failure #${this.zombieFailureCount} (${clientName})`))
+    console.log(chalk.magenta(`[${getCurrentTime()}] Zombie Mode: failure #${this.zombieFailureCount} (${clientName})`))
 
     if (this.zombieFailureCount % 3 === 0) {
       sendTelegramAlert({
@@ -654,23 +654,23 @@ class GameWorker {
 
     this.forceKillConnections()
 
-    logMessage(chalk.magenta(`[${getCurrentTime()}] Zombie Mode: retrying in 5m...`))
+    console.log(chalk.magenta(`[${getCurrentTime()}] Zombie Mode: retrying in 5m...`))
     this.zombieReconnectTimeout = setTimeout(() => {
       this.zombieReconnectAttempts++
-      logMessage(chalk.magenta(`[${getCurrentTime()}] Zombie reconnect attempt #${this.zombieReconnectAttempts}`))
-      this.start().catch((e) => logMessage(chalk.red(`Zombie reconnect failed: ${e.message}`)))
+      console.log(chalk.magenta(`[${getCurrentTime()}] Zombie reconnect attempt #${this.zombieReconnectAttempts}`))
+      this.start().catch((e) => console.log(chalk.red(`Zombie reconnect failed: ${e.message}`)))
     }, this.zombieReconnectDelay)
   }
 
   tryReconnect(clientName) {
     if (this.reconnectAttempts < this.maxReconnectAttempts) {
       this.reconnectAttempts++
-      logMessage(
+      console.log(
         chalk.yellow(`[${getCurrentTime()}] Reconnecting ${clientName} (${this.reconnectAttempts}/${this.maxReconnectAttempts})...`)
       )
       this.reconnectTimeout = setTimeout(() => this.start(), this.reconnectDelay)
     } else {
-      logMessage(chalk.red(`[${getCurrentTime()}] Max reconnects reached for ${clientName}`))
+      console.log(chalk.red(`[${getCurrentTime()}] Max reconnects reached for ${clientName}`))
       if (ZOMBIE_MODE) {
         this.handleZombieReconnect(clientName, new Error("Max reconnect attempts reached"))
       } else {
@@ -716,7 +716,7 @@ class GameWorker {
 
       this.mainGameClient.on("connect", (connection) => {
         this.mainGameConnection = connection
-        logMessage(chalk.cyan("MainGame connected."))
+        console.log(chalk.cyan("MainGame connected."))
 
         this.reconnectAttempts = 0
         if (this.reconnectTimeout) clearTimeout(this.reconnectTimeout)
@@ -750,11 +750,11 @@ class GameWorker {
 
   stop(isAutoStop = false) {
     if (this.isStopped) {
-      logMessage(chalk.yellow(`GameWorker already stopped${isAutoStop ? " (auto)" : ""}.`))
+      console.log(chalk.yellow(`GameWorker already stopped${isAutoStop ? " (auto)" : ""}.`))
       return
     }
 
-    logMessage(chalk.red("Stopping GameWorker..."))
+    console.log(chalk.red("Stopping GameWorker..."))
     this.isStopped = true
 
     if (this.reconnectTimeout) clearTimeout(this.reconnectTimeout)
@@ -784,7 +784,7 @@ class GameWorker {
       })
     }
 
-    logMessage(chalk.green("GameWorker stopped successfully."))
+    console.log(chalk.green("GameWorker stopped successfully."))
   }
 }
 
@@ -842,7 +842,7 @@ export const startGameShakeDisk = async () => {
     activeGameWorker = new GameWorker(account)
 
     await activeGameWorker.start()
-    logMessage(chalk.green("Trò chơi đã bắt đầu thành công!"))
+    console.log(chalk.green("Trò chơi đã bắt đầu thành công!"))
 
     // Log game rules / settings
     logGameSettings()
@@ -862,24 +862,24 @@ export const stopGameShakeDisk = () => {
   if (activeGameWorker) {
     activeGameWorker.stop()
     activeGameWorker = null
-    logMessage(chalk.green("Trò chơi đã dừng bởi người dùng."))
+    console.log(chalk.green("Trò chơi đã dừng bởi người dùng."))
   } else {
     logError("Không có trò chơi nào đang hoạt động để dừng.")
   }
 }
 
 function logGameSettings() {
-  logMessage(chalk.yellow("\n--- Quy tắc trò chơi ---"))
+  console.log(chalk.yellow("\n--- Quy tắc trò chơi ---"))
   config.gameRules.forEach((rule, index) =>
-    logMessage(chalk.yellow(`${index + 1}. ${rule}`)),
+    console.log(chalk.yellow(`${index + 1}. ${rule}`)),
   )
 
-  logMessage(chalk.yellow("\n--- Quy tắc đặt cược đang hoạt động ---"))
+  console.log(chalk.yellow("\n--- Quy tắc đặt cược đang hoạt động ---"))
   config.bettingRules
     .filter((rule) => rule.active)
     .sort((a, b) => a.priority - b.priority)
     .forEach((rule, index) =>
-      logMessage(
+      console.log(
         chalk.yellow(
           `${index + 1}. [Ưu tiên: ${rule.priority}] ${rule.description} (Cược: ${Array.isArray(rule.betAmount)
             ? rule.betAmount.join(", ") + " đ"
@@ -889,34 +889,34 @@ function logGameSettings() {
       ),
     )
 
-  logMessage(
+  console.log(
     chalk.yellow(
       `Số tiền đặt cược mặc định: ${chalk.green(config.gameSettings.BET_AMOUNT + " đ")}`,
     ),
   )
-  logMessage(
+  console.log(
     chalk.yellow(
       `Ngưỡng hũ để tiếp tục chơi: ${chalk.green(config.gameSettings.JACKPOT_THRESHOLD + " đ")}`,
     ),
   )
-  logMessage(
+  console.log(
     chalk.yellow(
       `Ngưỡng dừng cược: ${chalk.green(config.gameSettings.BET_STOP + " đ")}`,
     ),
   )
-  logMessage(
+  console.log(
     chalk.yellow(
       `Chế độ Martingale: ${config.gameSettings.IS_MARTINGALE ? "BẬT" : "TẮT"}`,
     ),
   )
 
   if (config.gameSettings.IS_MARTINGALE) {
-    logMessage(
+    console.log(
       chalk.yellow(`Tỷ lệ gấp thếp: ${config.gameSettings.RATE_MARTINGALE}`),
     )
   }
 
-  logMessage(
+  console.log(
     chalk.yellow(
       `Chế độ Zombie: ${config.gameSettings.ZOMBIE ? "BẬT" : "TẮT"}`,
     ),
