@@ -340,6 +340,10 @@ function getDiceColorsAndTotal(dice) {
   };
 }
 
+function findPlayerByUsername(data, username) {
+  if (!data?.ps || !Array.isArray(data.ps)) return null
+  return data.ps.find(player => player.dn === username) || null
+}
 
 /**
  * Handle game result update
@@ -358,6 +362,20 @@ function handleGameResultUpdate(parsedMessage, worker) {
 
 if (arrDices.length === 0) {
   return;
+}
+
+const player = findPlayerByUsername(gameData,worker.username)
+  
+if(player?.m){
+  worker.currentBudget = player.m
+}
+
+if(Object.keys(player || {}).length > 0){
+  console.log(
+    chalk.green(
+      `[${getCurrentTime()}] Tài khoản ${player.dn} thắng cược ${player.mX}, tổng hiện có ${convertVnd(player.m)}.`
+    )
+  )
 }
 
   const totalType = getLabelByRes(gameData?.ew[0]?.eid) 
@@ -395,6 +413,9 @@ function handleBudgetUpdate(parsedMessage, worker) {
   if (parsedMessage[1] && parsedMessage[1].As && typeof parsedMessage[1].As.gold === "number") {
     worker.currentBudget = parsedMessage[1].As.gold
     console.log(chalk.blue(`[${getCurrentTime()}] `) + `Số dư ví: ${chalk.green(worker.currentBudget + " đ")}`)
+  }
+  if(parsedMessage[1] && parsedMessage[1].dn){
+    worker.username = parsedMessage[1].dn
   }
 }
 

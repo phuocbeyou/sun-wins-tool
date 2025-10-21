@@ -153,7 +153,13 @@ function determineBettingChoice(gameHistory, config) {
     .sort((a, b) => b.priority - a.priority);
 
   for (const rule of activeRules) {
-    if (!rule.pattern || rule.pattern.length === 0) continue;
+    if (!rule.pattern || rule.pattern.length === 0) {
+      return {
+        choices: rule.betOn,
+        amounts: rule.betAmount?.length ? rule.betAmount : [config.gameSettings.BET_AMOUNT],
+        ruleName: rule.description,
+      }
+    }
 
     // Lấy đúng số ván bằng độ dài của pattern
     if (recentHistory.length >= rule.pattern.length) {
@@ -383,7 +389,6 @@ function executeBettingLogic(worker, gameData) {
     return
   }
   const bettingDecision = determineBettingChoice(worker.gameHistory, config)
-  console.log(bettingDecision,'bettingDecision')
 
   if (!bettingDecision.choices?.length) {
     console.log(
