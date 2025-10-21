@@ -410,7 +410,6 @@ function executeBettingLogic(worker, gameData) {
 
   // Map bettingChoice → bet commands
   const bets = expandBets(worker.bettingChoice, worker?.currentBetAmount)
-
   if (worker.mainGameConnection?.connected) {
     bets.forEach((bet, index) => {
       const delay = getRandomBettingDelay(500, 1500) * (index + 1)
