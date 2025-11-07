@@ -1,7 +1,7 @@
 {
   "gameSettings": {
     "BET_AMOUNT": 5000,
-    "JACKPOT_THRESHOLD": 20000000,
+    "JACKPOT_THRESHOLD": 40000000,
     "BET_STOP": 10000,
     "TIME_SEND_MESS": 1,
     "IS_MARTINGALE": false,
