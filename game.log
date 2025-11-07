@@ -719,3 +719,307 @@ Số dư ví: [35mphuocmmo: 2.000 ₫[39m. Thắng cược: [31mphuocmmo: 26
 [32mLịch sử gần đây: [WHITE, GREEN][39m
 [34m[12:57:30 AM] [39mPhiên mới bắt đầu: [36m#318863[39m. Đang chờ đặt cược...
 [90m[12:57:30 AM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32m[7:03:00 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[33m⚠️ Không có roomId, bỏ qua khởi tạo SocketClient[39m
+[36mMainGame connected.[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[34m[7:03:00 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:03:00 AM] [39mSố dư ví: [32m4666 đ[39m
+[32m[7:03:32 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[33m⚠️ Không có roomId, bỏ qua khởi tạo SocketClient[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mChế độ Zombie: BẬT[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[34m[7:03:32 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:03:32 AM] [39mSố dư ví: [32m4666 đ[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[32m[7:05:17 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[32m✅ SocketClient initialized for room: bau_cua_room_1[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mChế độ Zombie: BẬT[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[34m[7:05:17 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:05:17 AM] [39mSố dư ví: [32m4666 đ[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[31mStopping GameWorker...[39m
+[33m🚪 SocketClient disconnected[39m
+[32mGameWorker stopped successfully.[39m
+[32mTrò chơi đã dừng bởi người dùng.[39m
+[33mConnection closed (MainGame): Stopped by user[39m
+[32m[7:10:02 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[32m✅ SocketClient initialized for room: bau_cua_room_1[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[34m[7:10:02 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:10:02 AM] [39mSố dư ví: [32m4666 đ[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[32m[7:14:45 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[32m✅ SocketClient initialized for room: bau_cua_room_1[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[34m[7:14:45 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:14:45 AM] [39mSố dư ví: [32m4666 đ[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[31mStopping GameWorker...[39m
+[33m🚪 SocketClient disconnected[39m
+[32mGameWorker stopped successfully.[39m
+[33mConnection closed (MainGame): Stopped by user[39m
+[32m[7:20:14 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[32m✅ SocketClient initialized for room: bau_cua_room_1[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[34m[7:20:14 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:20:14 AM] [39mSố dư ví: [32m4666 đ[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[32m[7:28:43 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[32m✅ SocketClient initialized for room: bau_cua_room_1[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[34m[7:28:44 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:28:44 AM] [39mSố dư ví: [32m4666 đ[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[31mStopping GameWorker...[39m
+[33m🚪 SocketClient disconnected[39m
+[32mGameWorker stopped successfully.[39m
+[33mConnection closed (MainGame): Stopped by user[39m
+[32m[7:30:17 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[32m✅ SocketClient initialized for room: bau_cua_room_1[39m
+[36mMainGame connected.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[34m[7:30:17 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:30:17 AM] [39mSố dư ví: [32m4666 đ[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[32m[7:32:12 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[32m✅ SocketClient initialized for room: bau_cua_room_1[39m
+[32m[7:32:37 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[32m✅ SocketClient initialized for room: bau_cua_room_1[39m
+[31mStopping GameWorker...[39m
+[33mGameWorker already stopped.[39m
+[33m🚪 SocketClient disconnected[39m
+[32mTrò chơi đã dừng bởi người dùng.[39m
+[32mGameWorker stopped successfully.[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[33mChế độ Zombie: BẬT[39m
+[34m[7:32:37 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:32:37 AM] [39mSố dư ví: [32m4666 đ[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[32m[7:32:54 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[32m✅ SocketClient initialized for room: bau_cua_room_1[39m
+[36mMainGame connected.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[34m[7:32:54 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:32:54 AM] [39mSố dư ví: [32m4666 đ[39m
+[31mStopping GameWorker...[39m
+[33mGameWorker already stopped.[39m
+[33m🚪 SocketClient disconnected[39m
+[32mTrò chơi đã dừng bởi người dùng.[39m
+[32mGameWorker stopped successfully.[39m
+[33mConnection closed (MainGame): Stopped by user[39m

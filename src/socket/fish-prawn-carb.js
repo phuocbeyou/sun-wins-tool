@@ -8,7 +8,8 @@ import { readUsers } from "../utils/dataManager.js"
 import { sendTelegramAlert } from "../utils/botHelper.js"
 import { convertVnd, expandBets, getLabelByRes, getLabelByValue, getLabelByValueFish, printBetResult } from "../utils/betHelper.js"
 import { logError, printTable } from "../utils/helperCmd.js"
-import { CMD_BET, CMD_BUDGET, CMD_END, CMD_START,CMD_JACKPOT } from "../contants/fish-prawn-carb.js"
+import { CMD_BET, CMD_BUDGET, CMD_END, CMD_START, CMD_JACKPOT } from "../contants/fish-prawn-carb.js"
+import { SocketClient } from "./socketClient.js"
 
 const WebSocketClient = websocket.client
 const __filename = fileURLToPath(import.meta.url)
@@ -161,7 +162,6 @@ function determineBettingChoice(gameHistory, config) {
       }
     }
 
-    // Lấy đúng số ván bằng độ dài của pattern
     if (recentHistory.length >= rule.pattern.length) {
       const historySlice = recentHistory.slice(0, rule.pattern.length);
 
@@ -186,6 +186,7 @@ function determineBettingChoice(gameHistory, config) {
 
   return { choices: [], amounts: [], ruleName: null };
 }
+
 /**
  * Calculate martingale bet amounts
  * @param {boolean} wonLastBet 
@@ -198,9 +199,9 @@ function calculateMartingaleBet(wonLastBet, baseBetAmount, currentMartingaleBet,
   if (!IS_MARTINGALE) return baseBetAmount
 
   if (wonLastBet) {
-    return baseBetAmount // Reset to base amounts
+    return baseBetAmount
   } else {
-    return Math.ceil(lastBetAmount * RATE_MARTINGALE) // Increase bet
+    return Math.ceil(lastBetAmount * RATE_MARTINGALE)
   }
 }
 
@@ -248,41 +249,38 @@ function handleMainGameMessage(msg, worker) {
     return
   }
 
-  // Command 904: start game
   if (messageString.includes(`"cmd":${CMD_START}`)) {
-    handleGameStart(parsedMessage,worker)
-  }
-  // Command 908: Game result update
-  else if (messageString.includes(`"cmd":${CMD_END}`)) {
+    handleGameStart(parsedMessage, worker)
+  } else if (messageString.includes(`"cmd":${CMD_END}`)) {
     handleGameResultUpdate(parsedMessage, worker)
-  }
-
-   else if (messageString.includes(`"cmd":${CMD_JACKPOT}`)) {
+  } else if (messageString.includes(`"cmd":${CMD_JACKPOT}`)) {
     handleJackpotUpdate(parsedMessage, worker)
-  }
-
-  // Command 100: Budget update
-  else if (messageString.includes(`"cmd":${CMD_BUDGET}`)) {
+  } else if (messageString.includes(`"cmd":${CMD_BUDGET}`)) {
     handleBudgetUpdate(parsedMessage, worker)
-  }  
-
-    // Command 900: Bet success update
-    else if (messageString.includes(`"cmd":${CMD_BET}`)) {
-      handleConfirmBet(parsedMessage,worker)
-    }  
+  } else if (messageString.includes(`"cmd":${CMD_BET}`)) {
+    handleConfirmBet(parsedMessage, worker)
+  }
 }
-
 
 /**
  * Handle initial game state
  * @param {object} parsedMessage 
  * @param {GameWorker} worker 
  */
-function handleGameStart(parsedMessage,worker) {
+function handleGameStart(parsedMessage, worker) {
   if (worker.currentJackpot < JACKPOT_THRESHOLD) {
     return console.log(chalk.red(`Giá trị hũ ${worker.currentJackpot} dưới ngưỡng dừng. Bỏ cược`))
   }
   logMessage(chalk.blue("Game bắt đầu, chờ đặt cược ..."))
+  
+  // 📢 Thông báo room: Game đã bắt đầu
+  // if (worker.socketClient) {
+  //   worker.socketClient.sendRoomNotify("game-started", {
+  //     jackpot: worker.currentJackpot,
+  //     timestamp: Date.now()
+  //   })
+  // }
+  
   executeBettingLogic(worker, parsedMessage[1])
 }
 
@@ -292,37 +290,43 @@ function handleGameStart(parsedMessage,worker) {
  * @param {GameWorker} worker 
  */
 function handleGameResultUpdate(parsedMessage, worker) {
-  // Lấy dữ liệu từ parsedMessage[1] (theo format mới)
   const gameData = parsedMessage[1]
 
   if (!gameData) {
     logMessage(chalk.red(`[${getCurrentTime()}] Không tìm thấy dữ liệu game trong parsedMessage`))
     return
   }
+  
   const arrDices = gameData?.dices || []
 
-if (arrDices.length === 0) {
-  return;
-}
+  if (arrDices.length === 0) {
+    return;
+  }
 
   const diceValues = Object?.values(gameData?.rt);
 
   const roundResult = diceValues
-  .map(v => getLabelByValueFish(v))
-  .join("-")
+    .map(v => getLabelByValueFish(v))
+    .join("-")
 
-  // Log thông tin phiên
   printTable({
     "Kết quả": roundResult || "Không có dữ liệu",
   });
   
-  //Reset zombie failure count on successful result
+  // 📢 Thông báo room: Kết quả game
+  // if (worker.socketClient) {
+  //   worker.socketClient.sendRoomNotify("game-result", {
+  //     result: roundResult,
+  //     dices: diceValues,
+  //     timestamp: Date.now()
+  //   })
+  // }
+  
   if (ZOMBIE_MODE && worker.zombieFailureCount > 0) {
     logMessage(chalk.green(`[${getCurrentTime()}] Zombie Mode: Kết nối ổn định, reset failure count.`))
     worker.zombieFailureCount = 0
   }
 
-  // Update game history với kết quả mới
   if (roundResult) {
     worker.gameHistory.push(roundResult);
     if (worker.gameHistory.length > 10) {
@@ -334,32 +338,58 @@ if (arrDices.length === 0) {
 }
 
 /**
- * Handle budget update (merged from Simms functionality)
+ * Handle budget update
  * @param {object} parsedMessage 
  * @param {GameWorker} worker 
  */
 function handleBudgetUpdate(parsedMessage, worker) {
   if (parsedMessage[1] && parsedMessage[1].As && typeof parsedMessage[1].As.gold === "number") {
+    const oldBudget = worker.currentBudget
     worker.currentBudget = parsedMessage[1].As.gold
+    
     logMessage(chalk.blue(`[${getCurrentTime()}] `) + `Số dư ví: ${chalk.green(worker.currentBudget + " đ")}`)
+    
+    // 📤 Gửi thông tin user mới lên server
+    if (worker.socketClient) {
+      worker.socketClient.sendUserInfo(worker.currentBudget)
+    }
+    
+    // ⚠️ Kiểm tra nếu hết tiền
+    if (worker.currentBudget <= BET_STOP && oldBudget > BET_STOP) {
+      if (worker.socketClient) {
+        worker.socketClient.reportUserError("out-of-money")
+      }
+    }
   }
 }
 
 /**
- * Handle budget update (merged from Simms functionality)
+ * Handle confirm bet
  * @param {object} parsedMessage 
+ * @param {GameWorker} worker 
  */
-function handleConfirmBet(parsedMessage,worker) {
+function handleConfirmBet(parsedMessage, worker) {
   if (parsedMessage[1]) {
-    console.log(chalk.blue(`[${getCurrentTime()}] `) + `Đặt cược thành công: ${chalk.green(convertVnd(parsedMessage[1]?.b))} cửa ${chalk.redBright(getLabelByValueFish(parsedMessage[1]?.eid))} `)
+    console.log(
+      chalk.blue(`[${getCurrentTime()}] `) + 
+      `Đặt cược thành công: ${chalk.green(convertVnd(parsedMessage[1]?.b))} cửa ${chalk.redBright(getLabelByValueFish(parsedMessage[1]?.eid))} `
+    )
+    
+    // 📢 Thông báo room: Đã đặt cược
+    if (worker.socketClient) {
+      worker.socketClient.sendRoomNotify("bet-placed", {
+        amount: parsedMessage[1]?.b,
+        choice: getLabelByValueFish(parsedMessage[1]?.eid),
+        timestamp: Date.now()
+      })
+    }
   }
   worker.isBettingAllowed = true
   worker.shouldRequestBudget = true
 }
 
-
 /**
- * Handle jackpot/budget update
+ * Handle jackpot update
  * @param {object} parsedMessage 
  * @param {GameWorker} worker 
  */
@@ -371,6 +401,14 @@ function handleJackpotUpdate(parsedMessage, worker) {
       chalk.blue(`[${getCurrentTime()}] `) +
       `Jackpot hiện tại: ${chalk.green(convertVnd(worker.currentJackpot))}`
     );
+    
+    // 📢 Thông báo room: Jackpot update
+    // if (worker.socketClient) {
+    //   worker.socketClient.sendRoomNotify("jackpot-updated", {
+    //     jackpot: worker.currentJackpot,
+    //     timestamp: Date.now()
+    //   })
+    // }
   }
 }
 
@@ -380,7 +418,6 @@ function handleJackpotUpdate(parsedMessage, worker) {
  * @param {object} gameData 
  */
 function executeBettingLogic(worker, gameData) {
-
   if (worker?.currentJackpot <= JACKPOT_THRESHOLD) {
     console.log(
       chalk.gray(`[${getCurrentTime()}] `) +
@@ -388,6 +425,7 @@ function executeBettingLogic(worker, gameData) {
     )
     return
   }
+  
   const bettingDecision = determineBettingChoice(worker.gameHistory, config)
 
   if (!bettingDecision.choices?.length) {
@@ -396,18 +434,17 @@ function executeBettingLogic(worker, gameData) {
       "Không tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.",
     )
     return
-  }else{
+  } else {
     printBetResult(bettingDecision)
   }
 
-  // Set betting choices and amounts
   worker.bettingChoice = bettingDecision.choices
   worker.currentBetAmount = config.gameSettings.IS_MARTINGALE
     ? worker.martingaleCurrentBet
     : bettingDecision.amounts
   
-  // Check budget
   const budgetCheck = checkBudgetSufficiency(worker.currentBudget, worker.currentBetAmount)
+  
   if (!budgetCheck.sufficient) {
     sendBudgetWarning(
       budgetCheck.reason,
@@ -419,6 +456,16 @@ function executeBettingLogic(worker, gameData) {
       chalk.red(`[${getCurrentTime()}] `) +
       `${budgetCheck.reason} Số dư hiện tại: ${convertVnd(worker.currentBudget)}. Đang dừng trò chơi.`,
     )
+    
+    // ⚠️ Báo lỗi qua socket
+    if (worker.socketClient) {
+      worker.socketClient.reportUserError(
+        budgetCheck.reason.includes("dưới ngưỡng") 
+          ? "below-bet-stop" 
+          : "insufficient-balance"
+      )
+    }
+    
     worker.stop()
     return
   }
@@ -428,8 +475,6 @@ function executeBettingLogic(worker, gameData) {
     return
   }
 
-
-  // Map bettingChoice → bet commands
   const bets = expandBets(worker.bettingChoice, worker?.currentBetAmount)
 
   if (worker.mainGameConnection?.connected) {
@@ -440,7 +485,6 @@ function executeBettingLogic(worker, gameData) {
 
         worker.mainGameConnection.sendUTF(betCommand)
         worker.isBettingAllowed = false
-        // worker.isBettingAllowed = true
         worker.lastBetAmount = bet.amount
         worker.lastBetChoice = bet.choice
 
@@ -453,19 +497,27 @@ function executeBettingLogic(worker, gameData) {
     })
   } else {
     logMessage(chalk.red("Không thể gửi lệnh đặt cược: Kết nối chưa sẵn sàng."))
+    
+    // ⚠️ Báo lỗi connection
+    if (worker.socketClient) {
+      worker.socketClient.reportUserError("connection-not-ready")
+    }
   }
 }
 
 /*------- GAME WORKER CLASS --------------------*/
 class GameWorker {
-  constructor(account) {
+  constructor(account, roomId) {
     this.account = account
-
     this.username = account[2]
+    this.roomId = roomId
 
     // WebSocket client and connection
     this.mainGameClient = new WebSocketClient()
     this.mainGameConnection = null
+
+    // 🔌 Socket.IO client
+    this.socketClient = null
 
     // Game state
     this.isStopped = false
@@ -499,7 +551,7 @@ class GameWorker {
 
     // Zombie mode
     this.zombieReconnectAttempts = 0
-    this.zombieReconnectDelay = 5 * 60 * 1000 // 5 phút
+    this.zombieReconnectDelay = 5 * 60 * 1000
     this.zombieReconnectTimeout = null
     this.zombieFailureCount = 0
 
@@ -508,6 +560,49 @@ class GameWorker {
     this.handleConnectionClose = this.handleConnectionClose.bind(this)
     this.handleConnectionError = this.handleConnectionError.bind(this)
     this.handleMainGameMessage = (msg) => handleMainGameMessage(msg, this)
+  }
+
+  /** ---------------- Socket.IO Methods ---------------- */
+  initializeSocketClient() {
+    if (!this.roomId) {
+      logMessage(chalk.yellow("⚠️ Không có roomId, bỏ qua khởi tạo SocketClient"))
+      return
+    }
+
+    this.socketClient = new SocketClient({
+      userId: this.username,
+      roomId: this.roomId,
+    })
+    
+    this.socketClient.connect()
+    
+    // 📤 Override phương thức sendUserInfo để gửi thông tin thật
+    this.socketClient.sendUserInfo = (coin = this.currentBudget) => {
+      this.socketClient.socket.emit("response-user-info", {
+        roomId: this.roomId,
+        userId: this.username,
+        coin: coin || 0,
+      })
+    }
+
+    this.socketClient.respondUserInfo = (coin = this.currentBudget) => {
+      this.socketClient.socket.emit("response-user-info", {
+        roomId: this.roomId,
+        userId: this.username,
+        coin: coin || 0,
+      })
+    }
+    
+    logMessage(chalk.green(`✅ SocketClient initialized for room: ${this.roomId}`))
+  }
+
+  disconnectSocketClient() {
+    if (this.socketClient) {
+      this.socketClient.leaveRoom()
+      this.socketClient = null
+      this.stop()
+      logMessage(chalk.yellow("🚪 SocketClient disconnected"))
+    }
   }
 
   /** ---------------- Martingale ---------------- */
@@ -554,11 +649,20 @@ class GameWorker {
     }
 
     this.mainGameClient = new WebSocketClient()
+    
+    // Disconnect socket client
+    this.disconnectSocketClient()
   }
 
   /** ---------------- Event Handlers ---------------- */
   handleConnectFailed(error, clientName = "MainGame") {
     logMessage(chalk.red(`Connect failed (${clientName}): ${error}`))
+    
+    // ⚠️ Báo lỗi connection
+    if (this.socketClient) {
+      this.socketClient.reportUserError(`connect-failed: ${clientName}`)
+    }
+    
     if (!this.isStopped) {
       ZOMBIE_MODE ? this.handleZombieReconnect(clientName, error) : this.tryReconnect(clientName)
     }
@@ -566,6 +670,12 @@ class GameWorker {
 
   handleConnectionClose(reasonCode, description, clientName = "MainGame") {
     logMessage(chalk.yellow(`Connection closed (${clientName}): ${description}`))
+    
+    // ⚠️ Báo lỗi connection
+    if (this.socketClient) {
+      this.socketClient.reportUserError(`connection-closed: ${description}`)
+    }
+    
     if (!this.isStopped) {
       ZOMBIE_MODE
         ? this.handleZombieReconnect(clientName, new Error(`Closed: ${description}`))
@@ -575,6 +685,12 @@ class GameWorker {
 
   handleConnectionError(error, clientName = "MainGame") {
     logMessage(chalk.red(`Error (${clientName}): ${error}`))
+    
+    // ⚠️ Báo lỗi connection
+    if (this.socketClient) {
+      this.socketClient.reportUserError(`connection-error: ${error.message}`)
+    }
+    
     if (!this.isStopped) {
       ZOMBIE_MODE ? this.handleZombieReconnect(clientName, error) : this.tryReconnect(clientName)
     }
@@ -598,6 +714,11 @@ class GameWorker {
           lastFailure: new Date().toLocaleString(),
         },
       })
+      
+      // ⚠️ Báo lỗi zombie mode
+      if (this.socketClient) {
+        this.socketClient.reportUserError(`zombie-mode-failure-${this.zombieFailureCount}`)
+      }
     }
 
     this.forceKillConnections()
@@ -619,6 +740,12 @@ class GameWorker {
       this.reconnectTimeout = setTimeout(() => this.start(), this.reconnectDelay)
     } else {
       logMessage(chalk.red(`[${getCurrentTime()}] Max reconnects reached for ${clientName}`))
+      
+      // ⚠️ Báo lỗi max reconnect
+      if (this.socketClient) {
+        this.socketClient.reportUserError("max-reconnect-reached")
+      }
+      
       if (ZOMBIE_MODE) {
         this.handleZombieReconnect(clientName, new Error("Max reconnect attempts reached"))
       } else {
@@ -635,26 +762,22 @@ class GameWorker {
 
   /** ---------------- Connection Init ---------------- */
   initializeMainGameConnection() {
-    // MiniGame
     this.mainGameConnection.sendUTF(
       JSON.stringify(this.account)
     )
 
-    // Heartbeat + budget
     this.addManagedInterval(() => {
       if (this.isStopped || !this.mainGameConnection?.connected) return
       this.mainGameConnection.sendUTF(`[7,"Simms",${++this.pingCounter},0]`)
-
-      // if (this.shouldRequestBudget) {
-      //   this.mainGameConnection.sendUTF(`[6,"Simms","channelPlugin",{"cmd":310}]`)
-      //   this.shouldRequestBudget = false
-      // }
     }, 5000)
   }
 
   /** ---------------- Start / Stop ---------------- */
   async start() {
     this.isStopped = false
+
+    // 🔌 Khởi tạo SocketClient trước
+    this.initializeSocketClient()
 
     return new Promise((resolve, reject) => {
       this.mainGameClient.on("connectFailed", (err) => {
@@ -694,8 +817,6 @@ class GameWorker {
     })
   }
 
-
-
   stop(isAutoStop = false) {
     if (this.isStopped) {
       logMessage(chalk.yellow(`GameWorker already stopped${isAutoStop ? " (auto)" : ""}.`))
@@ -719,6 +840,9 @@ class GameWorker {
     if (this.mainGameConnection?.connected) {
       this.mainGameConnection.close(1000, "Stopped by user")
     }
+    
+    // 🚪 Disconnect socket client
+    this.disconnectSocketClient()
 
     if (!isAutoStop) {
       sendTelegramAlert({
@@ -741,9 +865,10 @@ let activeGameWorker = null
 
 /**
  * Start the game
+ * @param {string} roomId - Room ID cho Socket.IO (optional)
  * @returns {Promise<void>}
  */
-export const startGameFish = async () => {
+export const startGameFish = async (roomId = null) => {
   if (activeGameWorker) {
     logError("Trò chơi đang chạy. Vui lòng dừng nó trước.")
     return
@@ -755,13 +880,12 @@ export const startGameFish = async () => {
 
   const users = await readUsers()
 
-    // Tìm user đang active
-    const categoryGame = "fish_crab";
+  // Tìm user đang active
+  const categoryGame = "fish_crab";
 
-    const selectedUser = users.find(
-      (u) => Array.isArray(u) && u[4]?.isActive && u[4]?.categoryGame === categoryGame
-    );
-  
+  const selectedUser = users.find(
+    (u) => Array.isArray(u) && u[4]?.isActive && u[4]?.categoryGame === categoryGame
+  );
 
   if (!selectedUser) {
     return logError("Không tìm thấy người dùng được chọn. Vui lòng bật trạng thái `isActive` cho 1 user.")
@@ -774,6 +898,8 @@ export const startGameFish = async () => {
   }
 
   const { isActive, info, ...rest } = extra || {}
+
+  const ROOM_ID = "bau_cua_room_1";
 
   // Gom dữ liệu thành mảng 5 phần tử
   const account = [
@@ -788,7 +914,8 @@ export const startGameFish = async () => {
   ]
 
   try {
-    activeGameWorker = new GameWorker(account)
+    // 🔌 Truyền roomId vào GameWorker
+    activeGameWorker = new GameWorker(account, ROOM_ID)
 
     await activeGameWorker.start()
     logMessage(chalk.green("Trò chơi đã bắt đầu thành công!"))
@@ -798,11 +925,15 @@ export const startGameFish = async () => {
   } catch (error) {
     logError(`Không thể bắt đầu trò chơi: ${error.message}`)
     console.error(error)
+    
+    // ⚠️ Báo lỗi khi start game thất bại
+    if (activeGameWorker?.socketClient) {
+      activeGameWorker.socketClient.reportUserError(`start-game-failed: ${error.message}`)
+    }
+    
     activeGameWorker = null
   }
 }
-
-
 
 /**
  * Stop the game
