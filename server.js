@@ -6,7 +6,7 @@ import cors from "cors"; // 👈 thêm
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 
 app.use(cors()); // 👈 bật CORS cho tất cả request
 app.use(express.json());
