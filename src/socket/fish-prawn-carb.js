@@ -899,7 +899,7 @@ export const startGameFish = async (roomId = null) => {
 
   const { isActive, info, ...rest } = extra || {}
 
-  const ROOM_ID = "bau_cua_room_1";
+  // const ROOM_ID = "bau_cua_room_1";
 
   // Gom dữ liệu thành mảng 5 phần tử
   const account = [
@@ -915,7 +915,7 @@ export const startGameFish = async (roomId = null) => {
 
   try {
     // 🔌 Truyền roomId vào GameWorker
-    activeGameWorker = new GameWorker(account, ROOM_ID)
+    activeGameWorker = new GameWorker(account)
 
     await activeGameWorker.start()
     logMessage(chalk.green("Trò chơi đã bắt đầu thành công!"))
