@@ -719,3 +719,1005 @@ Số dư ví: [35mphuocmmo: 2.000 ₫[39m. Thắng cược: [31mphuocmmo: 26
 [32mLịch sử gần đây: [WHITE, GREEN][39m
 [34m[12:57:30 AM] [39mPhiên mới bắt đầu: [36m#318863[39m. Đang chờ đặt cược...
 [90m[12:57:30 AM] [39mKhông tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.
+[32m[7:03:00 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[33m⚠️ Không có roomId, bỏ qua khởi tạo SocketClient[39m
+[36mMainGame connected.[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[34m[7:03:00 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:03:00 AM] [39mSố dư ví: [32m4666 đ[39m
+[32m[7:03:32 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[33m⚠️ Không có roomId, bỏ qua khởi tạo SocketClient[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mChế độ Zombie: BẬT[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[34m[7:03:32 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:03:32 AM] [39mSố dư ví: [32m4666 đ[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[32m[7:05:17 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[32m✅ SocketClient initialized for room: bau_cua_room_1[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mChế độ Zombie: BẬT[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[34m[7:05:17 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:05:17 AM] [39mSố dư ví: [32m4666 đ[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[31mStopping GameWorker...[39m
+[33m🚪 SocketClient disconnected[39m
+[32mGameWorker stopped successfully.[39m
+[32mTrò chơi đã dừng bởi người dùng.[39m
+[33mConnection closed (MainGame): Stopped by user[39m
+[32m[7:10:02 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[32m✅ SocketClient initialized for room: bau_cua_room_1[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[34m[7:10:02 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:10:02 AM] [39mSố dư ví: [32m4666 đ[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[32m[7:14:45 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[32m✅ SocketClient initialized for room: bau_cua_room_1[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[34m[7:14:45 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:14:45 AM] [39mSố dư ví: [32m4666 đ[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[31mStopping GameWorker...[39m
+[33m🚪 SocketClient disconnected[39m
+[32mGameWorker stopped successfully.[39m
+[33mConnection closed (MainGame): Stopped by user[39m
+[32m[7:20:14 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[32m✅ SocketClient initialized for room: bau_cua_room_1[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[34m[7:20:14 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:20:14 AM] [39mSố dư ví: [32m4666 đ[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[32m[7:28:43 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[32m✅ SocketClient initialized for room: bau_cua_room_1[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[34m[7:28:44 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:28:44 AM] [39mSố dư ví: [32m4666 đ[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[31mStopping GameWorker...[39m
+[33m🚪 SocketClient disconnected[39m
+[32mGameWorker stopped successfully.[39m
+[33mConnection closed (MainGame): Stopped by user[39m
+[32m[7:30:17 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[32m✅ SocketClient initialized for room: bau_cua_room_1[39m
+[36mMainGame connected.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[34m[7:30:17 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:30:17 AM] [39mSố dư ví: [32m4666 đ[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[32m[7:32:12 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[32m✅ SocketClient initialized for room: bau_cua_room_1[39m
+[32m[7:32:37 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[32m✅ SocketClient initialized for room: bau_cua_room_1[39m
+[31mStopping GameWorker...[39m
+[33mGameWorker already stopped.[39m
+[33m🚪 SocketClient disconnected[39m
+[32mTrò chơi đã dừng bởi người dùng.[39m
+[32mGameWorker stopped successfully.[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[33mChế độ Zombie: BẬT[39m
+[34m[7:32:37 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:32:37 AM] [39mSố dư ví: [32m4666 đ[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[32m[7:32:54 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[32m✅ SocketClient initialized for room: bau_cua_room_1[39m
+[36mMainGame connected.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m1. [Ưu tiên: 1] HƯU-BẦU-GÀ (Cược: 1000, 1000 đ)[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m4. [Ưu tiên: 1] BẦU-HƯU-HƯU → CÁ-GÀ-HƯU (Cược: 1000 đ)[39m
+[33m2. [Ưu tiên: 1] GÀ-GÀ-CÁ (Cược: 1000, 1000 đ)[39m
+[33m3. [Ưu tiên: 1] HƯU-BẦU-GÀ → TÔM-CÁ-GÀ → CUA-TÔM-CÁ → GÀ-BẦU-HƯU (Cược: 1000 đ)[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m500000 đ[39m[33m[39m
+[34m[7:32:54 AM] [39mSố dư ví: [32m4666 đ[39m
+[34m[7:32:54 AM] [39mSố dư ví: [32m4666 đ[39m
+[31mStopping GameWorker...[39m
+[33mGameWorker already stopped.[39m
+[33m🚪 SocketClient disconnected[39m
+[32mTrò chơi đã dừng bởi người dùng.[39m
+[32mGameWorker stopped successfully.[39m
+[33mConnection closed (MainGame): Stopped by user[39m
+[33mChế độ Martingale: TẮT[39m
+[32m[8:06:04 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[32m✅ SocketClient initialized for room: bau_cua_room_1[39m
+[31mStopping GameWorker...[39m
+[33mGameWorker already stopped.[39m
+[33m🚪 SocketClient disconnected[39m
+[32mGameWorker stopped successfully.[39m
+[32mTrò chơi đã dừng bởi người dùng.[39m
+[36mMainGame connected.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m1. [Ưu tiên: 1] HƯU -> BẦU -> GÀ (Cược: 5000, 5000, 5000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m5000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m20000000 đ[39m[33m[39m
+[34m[8:06:05 AM] [39mSố dư ví: [32m2000000 đ[39m
+[34m[8:06:05 AM] [39mSố dư ví: [32m2000000 đ[39m
+[32m[9:21:25 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[33m⚠️ Không có roomId, bỏ qua khởi tạo SocketClient[39m
+[36mMainGame connected.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m1. [Ưu tiên: 1] HƯU -> BẦU -> GÀ (Cược: 2000, 2000, 2000, 2000, 2000, 2000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m5000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m40000000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[34m[9:21:26 PM] [39mSố dư ví: [32m491 đ[39m
+[34m[9:21:26 PM] [39mSố dư ví: [32m491 đ[39m
+[32m[11:47:21 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[33m⚠️ Không có roomId, bỏ qua khởi tạo SocketClient[39m
+[36mMainGame connected.[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] HƯU -> BẦU -> GÀ (Cược: 2000, 2000, 2000, 2000, 2000, 2000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m5000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m40000000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[34m[11:47:22 PM] [39mSố dư ví: [32m491 đ[39m
+[34m[11:47:22 PM] [39mSố dư ví: [32m491 đ[39m
+[32m[7:27:04 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33mChế độ Zombie: BẬT[39m
+[33m  1. 70.000.000 ₫ - 75.000.000 ₫[39m
+[32m[7:29:47 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33m  1. 70.000.000 ₫ - 75.000.000 ₫[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33mChế độ Zombie: BẬT[39m
+[32m[7:29:58 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33m  1. 70.000.000 ₫ - 75.000.000 ₫[39m
+[36mMainGame connected.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] GREEN-WHITE (Cược: 1000 đ)[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m50000000 đ[39m[33m[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33m  1. [32m70.000.000 ₫[39m[33m - [32m75.000.000 ₫[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[33m[7:30:27 AM] Phát hiện thay đổi trong rule.json (change). Đang tải lại...[39m
+[33m[7:30:27 AM] Phát hiện thay đổi trong rule.json (change). Đang tải lại...[39m
+[32m[7:30:27 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33m  1. 70.000.000 ₫ - 75.000.000 ₫[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33mChế độ Martingale: TẮT[39m
+[31mGiá trị hũ 58.542.685 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[32mLịch sử gần đây: [WHITE][39m
+[31mGiá trị hũ 58.764.823 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[34m[7:30:38 AM] [39mPhiên mới bắt đầu: [36m#394998[39m. Đang chờ đặt cược...
+[90m[7:30:38 AM] [39mBỏ qua đặt cược cho phiên [36m#394998[39m: Hũ 58.764.823 ₫ không nằm trong khoảng cho phép.
+[32mLịch sử gần đây: [WHITE, WHITE][39m
+[31mGiá trị hũ 58.764.823 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[31mGiá trị hũ 59.031.122 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[90m[7:31:34 AM] [39mBỏ qua đặt cược cho phiên [36m#394999[39m: Hũ 59.031.122 ₫ không nằm trong khoảng cho phép.
+[34m[7:31:34 AM] [39mPhiên mới bắt đầu: [36m#394999[39m. Đang chờ đặt cược...
+[31mGiá trị hũ 59.031.122 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[32mLịch sử gần đây: [WHITE, WHITE, BLUE][39m
+[31mGiá trị hũ 59.247.498 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[90m[7:32:29 AM] [39mBỏ qua đặt cược cho phiên [36m#395000[39m: Hũ 59.247.498 ₫ không nằm trong khoảng cho phép.
+[34m[7:32:29 AM] [39mPhiên mới bắt đầu: [36m#395000[39m. Đang chờ đặt cược...
+[32mLịch sử gần đây: [WHITE, WHITE, BLUE, WHITE][39m
+[31mGiá trị hũ 59.247.498 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[34m[7:33:25 AM] [39mPhiên mới bắt đầu: [36m#395001[39m. Đang chờ đặt cược...
+[90m[7:33:25 AM] [39mBỏ qua đặt cược cho phiên [36m#395001[39m: Hũ 59.455.059 ₫ không nằm trong khoảng cho phép.
+[31mGiá trị hũ 59.455.059 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[31mGiá trị hũ 59.455.059 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[32mLịch sử gần đây: [WHITE, WHITE, BLUE, WHITE, YELLOW][39m
+[31mGiá trị hũ 59.727.593 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[34m[7:34:21 AM] [39mPhiên mới bắt đầu: [36m#395002[39m. Đang chờ đặt cược...
+[90m[7:34:21 AM] [39mBỏ qua đặt cược cho phiên [36m#395002[39m: Hũ 59.727.593 ₫ không nằm trong khoảng cho phép.
+[31mGiá trị hũ 59.727.593 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[32mLịch sử gần đây: [WHITE, WHITE, BLUE, WHITE, YELLOW, WHITE][39m
+[31mGiá trị hũ 60.030.958 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[90m[7:35:17 AM] [39mBỏ qua đặt cược cho phiên [36m#395003[39m: Hũ 60.030.958 ₫ không nằm trong khoảng cho phép.
+[34m[7:35:17 AM] [39mPhiên mới bắt đầu: [36m#395003[39m. Đang chờ đặt cược...
+[33m[7:35:21 AM] Phát hiện thay đổi trong rule.json (change). Đang tải lại...[39m
+[33m[7:35:21 AM] Phát hiện thay đổi trong rule.json (change). Đang tải lại...[39m
+[32m[7:35:21 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33mChế độ Martingale: TẮT[39m
+[33m  1. 10.000.000 ₫ - 25.000.000 ₫[39m
+[32m[7:35:37 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33m  1. 10.000.000 ₫ - 25.000.000 ₫[39m
+[33mChế độ Martingale: TẮT[39m
+[33mKhoảng Jackpot cho phép:[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] GREEN-WHITE (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m50000000 đ[39m[33m[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33m  1. [32m10.000.000 ₫[39m[33m - [32m25.000.000 ₫[39m[33m[39m
+[33mChế độ Zombie: BẬT[39m
+[31mGiá trị hũ 60.030.958 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[32mLịch sử gần đây: [RED][39m
+[31mGiá trị hũ 60.354.705 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[34m[7:36:12 AM] [39mPhiên mới bắt đầu: [36m#395004[39m. Đang chờ đặt cược...
+[90m[7:36:12 AM] [39mBỏ qua đặt cược cho phiên [36m#395004[39m: Hũ 60.354.705 ₫ không nằm trong khoảng cho phép.
+[32mLịch sử gần đây: [RED, BLUE][39m
+[31mGiá trị hũ 60.354.705 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[31mGiá trị hũ 60.614.855 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[34m[7:37:08 AM] [39mPhiên mới bắt đầu: [36m#395005[39m. Đang chờ đặt cược...
+[90m[7:37:08 AM] [39mBỏ qua đặt cược cho phiên [36m#395005[39m: Hũ 60.614.855 ₫ không nằm trong khoảng cho phép.
+[33m[7:37:13 AM] Phát hiện thay đổi trong rule.json (change). Đang tải lại...[39m
+[32m[7:37:13 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33m  1. 10.000.000 ₫ - 95.000.000 ₫[39m
+[33mChế độ Zombie: BẬT[39m
+[33mKhoảng Jackpot cho phép:[39m
+[32mLịch sử gần đây: [RED, BLUE, WHITE][39m
+[34m[7:38:04 AM] [39mPhiên mới bắt đầu: [36m#395006[39m. Đang chờ đặt cược...
+[35m[7:38:05 AM] [39mĐã chọn quy tắc: [33mGREEN-WHITE[39m - Đặt cược (Normal): [33mWHITE[39m với số tiền [31m1000[39m đ.
+[34m[7:38:05 AM] [39mĐang cố gắng đặt 1000 đ vào cửa [33mWHITE[39m cho phiên [36m#395006[39m.
+[32mLịch sử gần đây: [RED, BLUE, WHITE, PURPLE][39m
+[34m[7:39:00 AM] [39mPhiên mới bắt đầu: [36m#395007[39m. Đang chờ đặt cược...
+[33mChưa được phép đặt cược, đang chờ xác nhận cược trước đó.[39m
+[32m[7:39:49 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33mChế độ Martingale: TẮT[39m
+[33m  1. 10.000.000 ₫ - 95.000.000 ₫[39m
+[33mChế độ Zombie: BẬT[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] GREEN-WHITE (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m50000000 đ[39m[33m[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33m  1. [32m10.000.000 ₫[39m[33m - [32m95.000.000 ₫[39m[33m[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[34m[7:39:56 AM] [39mPhiên mới bắt đầu: [36m#395008[39m. Đang chờ đặt cược...
+[35m[7:39:57 AM] [39mĐã chọn quy tắc: [33mGREEN-WHITE[39m - Đặt cược (Normal): [33mWHITE[39m với số tiền [31m1000[39m đ.
+[34m[7:39:57 AM] [39mĐang cố gắng đặt 1000 đ vào cửa [33mWHITE[39m cho phiên [36m#395008[39m.
+[32m[7:50:55 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33m  1. 10.000.000 ₫ - 95.000.000 ₫[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] GREEN-WHITE (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m50000000 đ[39m[33m[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33m  1. [32m10.000.000 ₫[39m[33m - [32m95.000.000 ₫[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[34m[7:51:05 AM] [39mPhiên mới bắt đầu: [36m#395020[39m. Đang chờ đặt cược...
+[35m[7:51:06 AM] [39mĐã chọn quy tắc: [33mGREEN-WHITE[39m - Đặt cược (Normal): [33mWHITE[39m với số tiền [31m1000[39m đ.
+[34m[7:51:06 AM] [39mĐang cố gắng đặt 1000 đ vào cửa [33mWHITE[39m cho phiên [36m#395020[39m.
+[32mLịch sử gần đây: [WHITE][39m
+[33mChưa được phép đặt cược, đang chờ xác nhận cược trước đó.[39m
+[34m[7:52:00 AM] [39mPhiên mới bắt đầu: [36m#395021[39m. Đang chờ đặt cược...
+[32m[7:52:32 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33mChế độ Martingale: TẮT[39m
+[33m  1. 10.000.000 ₫ - 95.000.000 ₫[39m
+[36mMainGame connected.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m1. [Ưu tiên: 1] GREEN-WHITE (Cược: 1000 đ)[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m50000000 đ[39m[33m[39m
+[33m  1. [32m10.000.000 ₫[39m[33m - [32m95.000.000 ₫[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mChế độ Zombie: BẬT[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[34m[7:52:33 AM] [39mSố dư ví: [32m491 đ[39m
+[34m[7:52:33 AM] [39mSố dư ví: [32m491 đ[39m
+[32mLịch sử gần đây: [GREEN][39m
+[34m[7:52:56 AM] [39mPhiên mới bắt đầu: [36m#395022[39m. Đang chờ đặt cược...
+[35m[7:52:57 AM] [39mĐã chọn quy tắc: [33mGREEN-WHITE[39m - Đặt cược (Normal): [33mWHITE[39m với số tiền [31m1000[39m đ.
+[34m[7:52:57 AM] [39mĐang cố gắng đặt 1000 đ vào cửa [33mWHITE[39m cho phiên [36m#395022[39m.
+[32mLịch sử gần đây: [GREEN, WHITE][39m
+[32m[7:54:24 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33mChế độ Zombie: BẬT[39m
+[33m  1. 10.000.000 ₫ - 95.000.000 ₫[39m
+[36mMainGame connected.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] GREEN-WHITE (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m50000000 đ[39m[33m[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[33m  1. [32m10.000.000 ₫[39m[33m - [32m95.000.000 ₫[39m[33m[39m
+[34m[7:54:25 AM] [39mSố dư ví: [32m491 đ[39m
+[34m[7:54:25 AM] [39mSố dư ví: [32m491 đ[39m
+[32mLịch sử gần đây: [GREEN][39m
+[34m[7:54:48 AM] [39mPhiên mới bắt đầu: [36m#395024[39m. Đang chờ đặt cược...
+[35m[7:54:49 AM] [39mĐã chọn quy tắc: [33mGREEN-WHITE[39m - Đặt cược (Normal): [33mWHITE[39m với số tiền [31m1000[39m đ.
+[34m[7:54:49 AM] [39mĐang cố gắng đặt 1000 đ vào cửa [33mWHITE[39m cho phiên [36m#395024[39m.
+[32mLịch sử gần đây: [GREEN, WHITE][39m
+[33mChưa được phép đặt cược, đang chờ xác nhận cược trước đó.[39m
+[34m[7:55:44 AM] [39mPhiên mới bắt đầu: [36m#395025[39m. Đang chờ đặt cược...
+[32m[7:56:31 AM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[33m  1. 10.000.000 ₫ - 95.000.000 ₫[39m
+[33mKhoảng Jackpot cho phép:[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] GREEN-WHITE (Cược: 1000 đ)[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m50000000 đ[39m[33m[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33m  1. [32m10.000.000 ₫[39m[33m - [32m95.000.000 ₫[39m[33m[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[34m[7:56:31 AM] [39mSố dư ví: [32m491 đ[39m
+[34m[7:56:31 AM] [39mSố dư ví: [32m491 đ[39m
+[34m[7:56:40 AM] [39mPhiên mới bắt đầu: [36m#395026[39m. Đang chờ đặt cược...
+[31m[7:56:40 AM] [39mCảnh báo ví tiền không đủ để cược (dưới ngưỡng dừng cược) Số dư hiện tại: 491 ₫. Đang dừng trò chơi.
+[31mStopping GameWorker...[39m
+[32mGameWorker stopped successfully.[39m
+[33mConnection closed (MainGame): Stopped by user[39m
+[32m[12:25:20 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] GREEN-WHITE (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m50000000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[34m[12:25:21 PM] [39mSố dư ví: [32m491 đ[39m
+[34m[12:25:21 PM] [39mSố dư ví: [32m491 đ[39m
+[31mGiá trị hũ dưới ngưỡng dừng. Bỏ cược[39m
+[32mLịch sử gần đây: [RED][39m
+[31mGiá trị hũ dưới ngưỡng dừng. Bỏ cược[39m
+[90m[12:26:00 PM] [39mBỏ qua đặt cược cho phiên [36m#401359[39m: Hũ quá thấp (37.147.663 ₫).
+[34m[12:26:00 PM] [39mPhiên mới bắt đầu: [36m#401359[39m. Đang chờ đặt cược...
+[33m[12:26:07 PM] Phát hiện thay đổi trong rule.json (change). Đang tải lại...[39m
+[32m[12:26:07 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[32mLịch sử gần đây: [RED, PURPLE][39m
+[34m[12:26:56 PM] [39mPhiên mới bắt đầu: [36m#401360[39m. Đang chờ đặt cược...
+[35m[12:26:57 PM] [39mĐã chọn quy tắc: [33mGREEN-WHITE[39m - Đặt cược (Normal): [33mWHITE[39m với số tiền [31m1000[39m đ.
+[34m[12:26:57 PM] [39mĐang cố gắng đặt 1000 đ vào cửa [33mWHITE[39m cho phiên [36m#401360[39m.
+[33m[12:27:14 PM] Phát hiện thay đổi trong rule.json (change). Đang tải lại...[39m
+[32m[12:27:14 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[33m[12:27:29 PM] Phát hiện thay đổi trong rule.json (change). Đang tải lại...[39m
+[32m[12:27:29 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33m  1. 50.000.000 ₫ - 95.000.000 ₫[39m
+[31mGiá trị hũ 37.750.953 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[32mLịch sử gần đây: [RED, PURPLE, GREEN][39m
+[34m[12:27:51 PM] [39mPhiên mới bắt đầu: [36m#401361[39m. Đang chờ đặt cược...
+[31mGiá trị hũ 38.331.797 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[90m[12:27:51 PM] [39mBỏ qua đặt cược cho phiên [36m#401361[39m: Hũ 38.331.797 ₫ không nằm trong khoảng cho phép.
+[31mGiá trị hũ 38.331.797 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[32mLịch sử gần đây: [RED, PURPLE, GREEN, GREEN][39m
+[31mGiá trị hũ 38.927.605 ₫ không nằm trong khoảng cho phép. Bỏ cược[39m
+[90m[12:28:47 PM] [39mBỏ qua đặt cược cho phiên [36m#401362[39m: Hũ 38.927.605 ₫ không nằm trong khoảng cho phép.
+[34m[12:28:47 PM] [39mPhiên mới bắt đầu: [36m#401362[39m. Đang chờ đặt cược...
+[33m[12:29:34 PM] Phát hiện thay đổi trong rule.json (change). Đang tải lại...[39m
+[32m[12:29:34 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33mChế độ Martingale: TẮT[39m
+[33m  1. 10.000.000 ₫ - 95.000.000 ₫[39m
+[33mChế độ Zombie: BẬT[39m
+[32mLịch sử gần đây: [RED, PURPLE, GREEN, GREEN, GREEN][39m
+[34m[12:29:43 PM] [39mPhiên mới bắt đầu: [36m#401363[39m. Đang chờ đặt cược...
+[33mChưa được phép đặt cược, đang chờ xác nhận cược trước đó.[39m
+[32mLịch sử gần đây: [RED, PURPLE, GREEN, GREEN, GREEN, GREEN][39m
+[34m[12:30:40 PM] [39mPhiên mới bắt đầu: [36m#401364[39m. Đang chờ đặt cược...
+[33mChưa được phép đặt cược, đang chờ xác nhận cược trước đó.[39m
+[32mLịch sử gần đây: [RED, PURPLE, GREEN, GREEN, GREEN, GREEN, WHITE][39m
+[33mChưa được phép đặt cược, đang chờ xác nhận cược trước đó.[39m
+[34m[12:31:35 PM] [39mPhiên mới bắt đầu: [36m#401365[39m. Đang chờ đặt cược...
+[32mLịch sử gần đây: [RED, PURPLE, GREEN, GREEN, GREEN, GREEN, WHITE, GREEN][39m
+[34m[12:32:31 PM] [39mPhiên mới bắt đầu: [36m#401366[39m. Đang chờ đặt cược...
+[33mChưa được phép đặt cược, đang chờ xác nhận cược trước đó.[39m
+[32m[12:33:32 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33mChế độ Zombie: BẬT[39m
+[33m  1. 10.000.000 ₫ - 95.000.000 ₫[39m
+[33mChế độ Martingale: TẮT[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m1. [Ưu tiên: 1] GREEN-WHITE (Cược: 1000 đ)[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m5000000 đ[39m[33m[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33m  1. [32m10.000.000 ₫[39m[33m - [32m95.000.000 ₫[39m[33m[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[34m[12:33:33 PM] [39mSố dư ví: [32m491 đ[39m
+[34m[12:33:33 PM] [39mSố dư ví: [32m491 đ[39m
+[32mLịch sử gần đây: [WHITE][39m
+[34m[12:34:24 PM] [39mPhiên mới bắt đầu: [36m#401368[39m. Đang chờ đặt cược...
+[35m[12:34:25 PM] [39mĐã chọn quy tắc: [33mGREEN-WHITE[39m - Đặt cược (Normal): [33mWHITE[39m với số tiền [31m1000[39m đ.
+[34m[12:34:25 PM] [39mĐang cố gắng đặt 1000 đ vào cửa [33mWHITE[39m cho phiên [36m#401368[39m.
+[32mLịch sử gần đây: [WHITE, GREEN][39m
+[34m[12:35:20 PM] [39mPhiên mới bắt đầu: [36m#401369[39m. Đang chờ đặt cược...
+[33mChưa được phép đặt cược, đang chờ xác nhận cược trước đó.[39m
+[32mLịch sử gần đây: [WHITE, GREEN, WHITE][39m
+[34m[12:36:16 PM] [39mPhiên mới bắt đầu: [36m#401370[39m. Đang chờ đặt cược...
+[33mChưa được phép đặt cược, đang chờ xác nhận cược trước đó.[39m
+[32m[12:37:23 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33m  1. 10.000.000 ₫ - 95.000.000 ₫[39m
+[33mChế độ Zombie: BẬT[39m
+[33mKhoảng Jackpot cho phép:[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] GREEN-WHITE (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m5000000 đ[39m[33m[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33m  1. [32m10.000.000 ₫[39m[33m - [32m95.000.000 ₫[39m[33m[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[34m[12:37:24 PM] [39mSố dư ví: [32m491 đ[39m
+[34m[12:37:24 PM] [39mSố dư ví: [32m491 đ[39m
+[32mLịch sử gần đây: [GREEN][39m
+[34m[12:38:08 PM] [39mPhiên mới bắt đầu: [36m#401372[39m. Đang chờ đặt cược...
+[35m[12:38:09 PM] [39mĐã chọn quy tắc: [33mGREEN-WHITE[39m - Đặt cược (Normal): [33mWHITE[39m với số tiền [31m1000[39m đ.
+[34m[12:38:09 PM] [39mĐang cố gắng đặt 1000 đ vào cửa [33mWHITE[39m cho phiên [36m#401372[39m.
+[32m[12:45:09 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33m  1. 10.000.000 ₫ - 95.000.000 ₫[39m
+[33mChế độ Zombie: BẬT[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] GREEN-WHITE (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m5000000 đ[39m[33m[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33m  1. [32m10.000.000 ₫[39m[33m - [32m95.000.000 ₫[39m[33m[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[34m[12:45:09 PM] [39mSố dư ví: [32m4666 đ[39m
+[34m[12:45:09 PM] [39mSố dư ví: [32m4666 đ[39m
+[32mLịch sử gần đây: [WHITE][39m
+[34m[12:45:38 PM] [39mPhiên mới bắt đầu: [36m#401380[39m. Đang chờ đặt cược...
+[35m[12:45:39 PM] [39mĐã chọn quy tắc: [33mGREEN-WHITE[39m - Đặt cược (Normal): [33mWHITE[39m với số tiền [31m1000[39m đ.
+[34m[12:45:39 PM] [39mĐang cố gắng đặt 1000 đ vào cửa [33mWHITE[39m cho phiên [36m#401380[39m.
+[34m[12:45:39 PM] [39mPhiên [36m#401380[39m - [32mNgười dùng: Z8_solokhop121[39m - Đặt cược: [31m1000[39m đ. [35mCược thành công cửa: [39m[33mWHITE[39m
+[32m[12:47:46 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33m  1. 10.000.000 ₫ - 95.000.000 ₫[39m
+[36mMainGame connected.[39m
+[33m1. Trò chơi dựa trên kết quả Bánh xe Long Nguyên dừng ở một ô màu, tương ứng với ngọc rồng mà Rồng Thần hóa thân.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m3. **Tỷ lệ Trả Thưởng** cho các màu ngọc (cược chính xác):[39m
+[33m2. Người chơi đặt cược vào màu ngọc rồng dự đoán.[39m
+[33m6.    - **Tím**: $1:12$ (Tỷ lệ xuất hiện $3/38$)[39m
+[33m5.    - **Đỏ**: $1:18$ (Tỷ lệ xuất hiện $2/38$)[39m
+[33m7.    - **Lam**: $1:9$ (Tỷ lệ xuất hiện $4/38$)[39m
+[33m8.    - **Lục**: $1:4$ (Tỷ lệ xuất hiện $9/38$)[39m
+[33m4.    - **Vàng** và **Hồng**: $1:36$ (Tỷ lệ xuất hiện $1/38$)[39m
+[33m9.    - **Trắng**: $1:2$ (Tỷ lệ xuất hiện $18/38$)[39m
+[33m10. **Luật Nổ Hũ:** Hũ rồng (mini slot) nổ khi **3 viên ngọc trên slot trùng nhau** và **trùng với màu** mà Bánh xe Long Nguyên dừng lại.[39m
+[33m11. **Cách tính Thưởng Hũ:** Thưởng hũ = Cược của bạn ở cửa nổ / TỔNG CƯỢC của cửa nổ $	imes$ Số tiền hũ khi nổ.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] GREEN-WHITE (Cược: 1000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m1000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m5000000 đ[39m[33m[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33m  1. [32m10.000.000 ₫[39m[33m - [32m95.000.000 ₫[39m[33m[39m
+[33mNgưỡng dừng cược: [32m1000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[34m[12:47:46 PM] [39mSố dư ví: [32m3666 đ[39m
+[34m[12:47:46 PM] [39mSố dư ví: [32m3666 đ[39m
+[32mLịch sử gần đây: [PURPLE][39m
+[34m[12:48:26 PM] [39mPhiên mới bắt đầu: [36m#401383[39m. Đang chờ đặt cược...
+[35m[12:48:27 PM] [39mĐã chọn quy tắc: [33mGREEN-WHITE[39m - Đặt cược (Normal): [33mWHITE[39m với số tiền [31m1000[39m đ.
+[34m[12:48:27 PM] [39mĐang cố gắng đặt 1000 đ vào cửa [33mWHITE[39m cho phiên [36m#401383[39m.
+[34m[12:48:27 PM] [39mPhiên [36m#401383[39m - [32mNgười dùng: Z8_solokhop121[39m - Đặt cược: [31m1000[39m đ. [35mCược thành công cửa: [39m[33mWHITE[39m
+[32mLịch sử gần đây: [PURPLE, BLUE][39m
+[34m[12:49:22 PM] [39mPhiên mới bắt đầu: [36m#401384[39m. Đang chờ đặt cược...
+[35m[12:49:23 PM] [39mĐã chọn quy tắc: [33mGREEN-WHITE[39m - Đặt cược (Normal): [33mWHITE[39m với số tiền [31m1000[39m đ.
+[34m[12:49:23 PM] [39mĐang cố gắng đặt 1000 đ vào cửa [33mWHITE[39m cho phiên [36m#401384[39m.
+[34m[12:49:23 PM] [39mPhiên [36m#401384[39m - [32mNgười dùng: Z8_solokhop121[39m - Đặt cược: [31m1000[39m đ. [35mCược thành công cửa: [39m[33mWHITE[39m
+[32m[12:54:36 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33m  1. 70.000.000 ₫ - 75.000.000 ₫[39m
+[33m  2. 6.000.000 ₫ - 8.000.000 ₫[39m
+[33m  3. 1.000.000 ₫ - 2.000.000 ₫[39m
+[33m⚠️ Không có roomId, bỏ qua khởi tạo SocketClient[39m
+[36mMainGame connected.[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] HƯU -> BẦU -> GÀ (Cược: 2000, 2000, 2000, 2000, 2000, 2000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m5000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m40000000 đ[39m[33m[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33m  1. [32m70.000.000 ₫[39m[33m - [32m75.000.000 ₫[39m[33m[39m
+[33m  2. [32m6.000.000 ₫[39m[33m - [32m8.000.000 ₫[39m[33m[39m
+[33m  3. [32m1.000.000 ₫[39m[33m - [32m2.000.000 ₫[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Martingale: TẮT[39m
+[33mChế độ Zombie: BẬT[39m
+[34m[12:54:37 PM] [39mSố dư ví: [32m491 đ[39m
+[34m[12:54:37 PM] [39mSố dư ví: [32m491 đ[39m
+[33m[12:54:41 PM] Phát hiện thay đổi trong rule.json (change). Đang tải lại...[39m
+[32m[12:54:41 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[33mKhoảng Jackpot cho phép:[39m
+[33m  3. 1.000.000 ₫ - 2.000.000 ₫[39m
+[33m  2. 6.000.000 ₫ - 8.000.000 ₫[39m
+[33m  1. 70.000.000 ₫ - 75.000.000 ₫[39m
+[33m[12:54:42 PM] Phát hiện thay đổi trong rule.json (change). Đang tải lại...[39m
+[32m[12:54:42 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[31mStopping GameWorker...[39m
+[32mGameWorker stopped successfully.[39m
+[33mConnection closed (MainGame): Stopped by user[39m
+[32m[12:55:47 PM] Cấu hình rule.json đã được tải lại.[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[33m⚠️ Không có roomId, bỏ qua khởi tạo SocketClient[39m
+[36mMainGame connected.[39m
+[32mTrò chơi đã bắt đầu thành công![39m
+[33m[39m
+[33m--- Quy tắc trò chơi ---[39m
+[33m1. Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).[39m
+[33m2. Tổng điểm từ 11 đến 17 là TÀI.[39m
+[33m3. Tổng điểm từ 4 đến 10 là XỈU.[39m
+[33m4. Trò chơi dựa trên kết quả của 3 viên xúc xắc.[39m
+[33m[39m
+[33m--- Quy tắc đặt cược đang hoạt động ---[39m
+[33m1. [Ưu tiên: 1] HƯU -> BẦU -> GÀ (Cược: 2000, 2000, 2000, 2000, 2000, 2000 đ)[39m
+[33mSố tiền đặt cược mặc định: [32m5000 đ[39m[33m[39m
+[33mNgưỡng hũ để tiếp tục chơi: [32m40000000 đ[39m[33m[39m
+[33mNgưỡng dừng cược: [32m10000 đ[39m[33m[39m
+[33mChế độ Zombie: BẬT[39m
+[33mChế độ Martingale: TẮT[39m
+[34m[12:55:47 PM] [39mSố dư ví: [32m491 đ[39m
+[34m[12:55:47 PM] [39mSố dư ví: [32m491 đ[39m
+[34mGame bắt đầu, chờ đặt cược ...[39m
+[31mStopping GameWorker...[39m
+[32mGameWorker stopped successfully.[39m
+[33mConnection closed (MainGame): Stopped by user[39m
