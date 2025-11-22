@@ -19,6 +19,7 @@ const configPath = path.resolve(__dirname, "../config/bacarat.json")
 let config
 let DEFAULT_BET_AMOUNT
 let JACKPOT_THRESHOLD
+let JACKPOT_RANGES
 let BET_STOP
 let TIME_SEND_MESS
 let IS_MARTINGALE
@@ -35,6 +36,7 @@ function loadConfig() {
     config = newConfig
     DEFAULT_BET_AMOUNT = config.gameSettings.BET_AMOUNT
     JACKPOT_THRESHOLD = config.gameSettings.JACKPOT_THRESHOLD
+    JACKPOT_RANGES = config.gameSettings.JACKPOT_RANGES || [] // 🆕 THÊM DÒNG NÀY
     BET_STOP = config.gameSettings.BET_STOP
     TIME_SEND_MESS = config.gameSettings.TIME_SEND_MESS
     IS_MARTINGALE = config.gameSettings.IS_MARTINGALE
@@ -45,6 +47,14 @@ function loadConfig() {
     console.log(chalk.yellow(`Chế độ Martingale: ${IS_MARTINGALE ? "BẬT" : "TẮT"}`))
     console.log(chalk.yellow(`Chế độ Zombie: ${ZOMBIE_MODE ? "BẬT" : "TẮT"}`))
 
+    // 🆕 THÊM ĐOẠN NÀY - Log JACKPOT_RANGES
+    if (JACKPOT_RANGES.length > 0) {
+      console.log(chalk.yellow(`Khoảng Jackpot cho phép:`))
+      JACKPOT_RANGES.forEach((range, idx) => {
+        console.log(chalk.yellow(`  ${idx + 1}. ${convertVnd(range.MIN)} - ${convertVnd(range.MAX)}`))
+      })
+    }
+
     if (IS_MARTINGALE) {
       console.log(chalk.yellow(`Tỷ lệ gấp thếp: ${RATE_MARTINGALE}`))
     }
@@ -52,6 +62,27 @@ function loadConfig() {
     console.error(chalk.red(`Lỗi khi đọc hoặc phân tích cú pháp rule.json: ${error.message}`))
   }
 }
+
+
+// ============================================
+// THAY ĐỔI 3: Thêm hàm isJackpotInAllowedRange() (sau sendBudgetWarning, dòng ~116)
+// ============================================
+/**
+ * Check if jackpot is within allowed ranges
+ * @param {number} jackpot 
+ * @returns {boolean}
+ */
+function isJackpotInAllowedRange(jackpot) {
+  if (!JACKPOT_RANGES || JACKPOT_RANGES.length === 0) {
+    return true
+  }
+
+  return JACKPOT_RANGES.some(range => {
+    return jackpot >= range.MIN && jackpot <= range.MAX
+  })
+}
+
+
 
 /**
  * Initialize config watcher
@@ -260,15 +291,22 @@ function handleMainGameMessage(msg, worker) {
  * @param {object} parsedMessage 
  * @param {GameWorker} worker 
  */
-function handleGameStart(parsedMessage,worker) {
+function handleGameStart(parsedMessage, worker) {
   console.log(chalk.green(`Lịch sử gần đây: [${worker.gameHistory.join(", ")}]`))
+  
+  // 🆕 THAY ĐỔI: Kiểm tra cả THRESHOLD và RANGES
   if (worker.currentJackpot < JACKPOT_THRESHOLD) {
-    return console.log(chalk.red(`Giá trị hũ ${worker.currentJackpot} dưới ngưỡng dừng. Bỏ cược`))
+    return console.log(chalk.red(`Giá trị hũ ${convertVnd(worker.currentJackpot)} dưới ngưỡng dừng. Bỏ cược`))
   }
+  
+  // 🆕 THÊM ĐOẠN NÀY
+  if (!isJackpotInAllowedRange(worker.currentJackpot)) {
+    return console.log(chalk.red(`Giá trị hũ ${convertVnd(worker.currentJackpot)} không nằm trong khoảng cho phép. Bỏ cược`))
+  }
+  
   console.log(chalk.blue("Game bắt đầu, chờ đặt cược ..."))
   executeBettingLogic(worker, parsedMessage[1])
 }
-
 
 
 /**
@@ -384,6 +422,13 @@ function handleJackpotUpdate(parsedMessage, worker) {
       chalk.blue(`[${getCurrentTime()}] `) +
       `Jackpot hiện tại: ${chalk.green(convertVnd(data?.jackpotAmount))} phiên #${chalk.yellow(data?.sessionId)}`
     );
+    
+    // 🆕 THÊM ĐOẠN NÀY - Kiểm tra jackpot khi update
+    if (worker.currentJackpot < JACKPOT_THRESHOLD) {
+      console.log(chalk.red(`Giá trị hũ dưới ngưỡng dừng. Bỏ cược`))
+    } else if (!isJackpotInAllowedRange(worker.currentJackpot)) {
+      console.log(chalk.red(`Giá trị hũ không nằm trong khoảng cho phép. Bỏ cược`))
+    }
   }
 }
 
@@ -401,6 +446,17 @@ function executeBettingLogic(worker, gameData) {
     )
     return
   }
+
+  // 🆕 THÊM ĐOẠN NÀY
+  if (!isJackpotInAllowedRange(worker?.currentJackpot)) {
+    console.log(
+      chalk.gray(`[${getCurrentTime()}] `) +
+      `Bỏ qua đặt cược: Hũ ${convertVnd(worker.currentJackpot)} không nằm trong khoảng cho phép.`,
+    )
+    return
+  }
+  
+
   const bettingDecision = determineBettingChoice(worker.gameHistory, config)
   if (!bettingDecision.choices?.length) {
     console.log(
@@ -852,6 +908,19 @@ function logGameSettings() {
       `Ngưỡng hũ để tiếp tục chơi: ${chalk.green(config.gameSettings.JACKPOT_THRESHOLD + " đ")}`,
     ),
   )
+  
+  // 🆕 THÊM ĐOẠN NÀY - Log JACKPOT_RANGES
+  if (JACKPOT_RANGES && JACKPOT_RANGES.length > 0) {
+    console.log(chalk.yellow(`Khoảng Jackpot cho phép:`))
+    JACKPOT_RANGES.forEach((range, idx) => {
+      console.log(
+        chalk.yellow(
+          `  ${idx + 1}. ${chalk.green(convertVnd(range.MIN))} - ${chalk.green(convertVnd(range.MAX))}`
+        )
+      )
+    })
+  }
+  
   console.log(
     chalk.yellow(
       `Ngưỡng dừng cược: ${chalk.green(config.gameSettings.BET_STOP + " đ")}`,

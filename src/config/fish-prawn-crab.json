@@ -6,7 +6,8 @@
     "TIME_SEND_MESS": 1,
     "IS_MARTINGALE": false,
     "RATE_MARTINGALE": 2,
-    "ZOMBIE": true
+    "ZOMBIE": true,
+    "JACKPOT_RANGES": []
   },
   "gameRules": [
     "Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).",
