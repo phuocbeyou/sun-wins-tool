@@ -381,6 +381,16 @@
                     <label>🎰 Ngưỡng Jackpot:</label>
                     <input type="number" id="jackpotThreshold" value="500000" min="10000" step="10000">
                 </div>
+
+                <div class="form-group">
+                    <label>💎 Khoảng Jackpot (Ranges):</label>
+                    <div id="jackpotRangesDisplay" style="margin-bottom: 10px;">
+                        <!-- Ranges sẽ được hiển thị ở đây -->
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="showAddJackpotRangeForm()"
+                        style="padding: 8px 15px; font-size: 14px;">➕ Thêm khoảng Jackpot</button>
+                </div>
+
                 <div class="form-group">
                     <label>🛑 Dừng cược khi thua:</label>
                     <input type="number" id="betStop" value="10000" min="1000" step="1000">
@@ -471,6 +481,30 @@
         </div>
     </div>
 
+    <!-- Jackpot Range Modal -->
+    <div id="jackpotRangeModal" class="modal">
+        <div class="modal-content" style="max-width: 500px;">
+            <div class="modal-header">
+                <h2 id="jackpotModalTitle">➕ Thêm khoảng Jackpot</h2>
+                <span class="close" onclick="closeJackpotRangeForm()">&times;</span>
+            </div>
+            <form id="jackpotRangeForm">
+                <div class="form-group">
+                    <label>💰 Giá trị MIN:</label>
+                    <input type="number" id="jackpotMin" min="0" step="1000000" placeholder="Ví dụ: 70000000">
+                </div>
+                <div class="form-group">
+                    <label>💰 Giá trị MAX:</label>
+                    <input type="number" id="jackpotMax" min="0" step="1000000" placeholder="Ví dụ: 75000000">
+                </div>
+                <div class="buttons">
+                    <button type="button" class="btn btn-success" onclick="saveJackpotRange()">💾 Lưu</button>
+                    <button type="button" class="btn btn-danger" onclick="closeJackpotRangeForm()">❌ Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script>
         const API_BASE_URL = "http://localhost:3000/api/config/dragon-hunt";
         const AVAILABLE_COLORS = ["RED", "WHITE", "PINK", "BLUE", "YELLOW", "PURPLE", "GREEN"];
@@ -546,6 +580,9 @@
             document.getElementById('isMartingale').checked = settings.IS_MARTINGALE || false;
             document.getElementById('rateMartingale').value = settings.RATE_MARTINGALE || 2;
             document.getElementById('zombie').checked = settings.ZOMBIE !== false;
+
+            // <CHANGE> Thêm hiển thị Jackpot Ranges
+            updateJackpotRangesDisplay(settings.JACKPOT_RANGES || []);
         }
 
         function updateConfigFromForm() {
@@ -556,7 +593,9 @@
                 "TIME_SEND_MESS": parseInt(document.getElementById('timeSendMess').value),
                 "IS_MARTINGALE": document.getElementById('isMartingale').checked,
                 "RATE_MARTINGALE": parseFloat(document.getElementById('rateMartingale').value),
-                "ZOMBIE": document.getElementById('zombie').checked
+                "ZOMBIE": document.getElementById('zombie').checked,
+                // <CHANGE> Thêm JACKPOT_RANGES
+                "JACKPOT_RANGES": currentConfig.gameSettings.JACKPOT_RANGES || []
             };
         }
 
@@ -963,11 +1002,102 @@
 
         // Close modal when clicking outside
         window.onclick = function (event) {
-            const modal = document.getElementById('ruleModal');
-            if (event.target === modal) {
+            const ruleModal = document.getElementById('ruleModal');
+            const jackpotModal = document.getElementById('jackpotRangeModal');
+
+            if (event.target === ruleModal) {
                 closeAddRuleForm();
             }
+            // <CHANGE> Thêm xử lý đóng jackpot modal
+            if (event.target === jackpotModal) {
+                closeJackpotRangeForm();
+            }
         }
+
+
+        let editingRangeIndex = -1;
+
+        function updateJackpotRangesDisplay(ranges) {
+            const container = document.getElementById('jackpotRangesDisplay');
+            if (!ranges || ranges.length === 0) {
+                container.innerHTML = '<p style="color: #6c757d; font-style: italic;">Chưa có khoảng Jackpot nào</p>';
+                return;
+            }
+
+            container.innerHTML = ranges.map((range, index) => `
+        <div style="background: white; border: 2px solid #e9ecef; border-radius: 8px; padding: 12px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+            <span><strong>Khoảng ${index + 1}:</strong> ${range.MIN.toLocaleString()} - ${range.MAX.toLocaleString()} VNĐ</span>
+            <div>
+                <button class="btn btn-warning" onclick="editJackpotRange(${index})" style="padding: 5px 10px; font-size: 12px; margin-right: 5px;">✏️</button>
+                <button class="btn btn-danger" onclick="deleteJackpotRange(${index})" style="padding: 5px 10px; font-size: 12px;">🗑️</button>
+            </div>
+        </div>
+    `).join('');
+        }
+
+        function showAddJackpotRangeForm() {
+            editingRangeIndex = -1;
+            document.getElementById('jackpotModalTitle').textContent = '➕ Thêm khoảng Jackpot';
+            document.getElementById('jackpotMin').value = '';
+            document.getElementById('jackpotMax').value = '';
+            document.getElementById('jackpotRangeModal').style.display = 'block';
+        }
+
+        function editJackpotRange(index) {
+            editingRangeIndex = index;
+            const ranges = currentConfig.gameSettings.JACKPOT_RANGES || [];
+            const range = ranges[index];
+
+            document.getElementById('jackpotModalTitle').textContent = '✏️ Sửa khoảng Jackpot';
+            document.getElementById('jackpotMin').value = range.MIN;
+            document.getElementById('jackpotMax').value = range.MAX;
+            document.getElementById('jackpotRangeModal').style.display = 'block';
+        }
+
+        function saveJackpotRange() {
+            const min = parseInt(document.getElementById('jackpotMin').value);
+            const max = parseInt(document.getElementById('jackpotMax').value);
+
+            if (!min || !max) {
+                alert('Vui lòng nhập đầy đủ giá trị MIN và MAX!');
+                return;
+            }
+
+            if (min >= max) {
+                alert('Giá trị MIN phải nhỏ hơn MAX!');
+                return;
+            }
+
+            if (!currentConfig.gameSettings.JACKPOT_RANGES) {
+                currentConfig.gameSettings.JACKPOT_RANGES = [];
+            }
+
+            const newRange = { MIN: min, MAX: max };
+
+            if (editingRangeIndex >= 0) {
+                currentConfig.gameSettings.JACKPOT_RANGES[editingRangeIndex] = newRange;
+                showStatus('✅ Đã cập nhật khoảng Jackpot!', 'success');
+            } else {
+                currentConfig.gameSettings.JACKPOT_RANGES.push(newRange);
+                showStatus('✅ Đã thêm khoảng Jackpot mới!', 'success');
+            }
+
+            updateJackpotRangesDisplay(currentConfig.gameSettings.JACKPOT_RANGES);
+            closeJackpotRangeForm();
+        }
+
+        function deleteJackpotRange(index) {
+            if (!confirm('🗑️ Bạn có chắc muốn xóa khoảng Jackpot này?')) return;
+
+            currentConfig.gameSettings.JACKPOT_RANGES.splice(index, 1);
+            updateJackpotRangesDisplay(currentConfig.gameSettings.JACKPOT_RANGES);
+            showStatus('🗑️ Đã xóa khoảng Jackpot!', 'success');
+        }
+
+        function closeJackpotRangeForm() {
+            document.getElementById('jackpotRangeModal').style.display = 'none';
+        }
+
     </script>
 </body>
 
