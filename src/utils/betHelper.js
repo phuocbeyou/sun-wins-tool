@@ -71,10 +71,89 @@ export const convertVnd = (number) => {
       maximumFractionDigits: 0
     }).format(number);
   };
-  
+
+/**
+ * Cắt lấy 20 phần tử cuối cùng của mảng, sau đó ánh xạ các chữ số trong mỗi phần tử 
+ * sang các nhãn tương ứng (HƯƠU, BẦU, GÀ, CÁ, CUA, TÔM).
+ * * Định dạng đầu ra: Các nhãn được nối với nhau bằng dấu gạch ngang (ví dụ: TÔM-HƯƠU-BẦU).
+ * * @param {string[]} data - Mảng các chuỗi chứa các số cách nhau bởi dấu phẩy (ví dụ: '4,4,1').
+ * @returns {string[]} Mảng các chuỗi đã được ánh xạ (ví dụ: 'CUA-CUA-BẦU').
+ */
+export function mapLast20Results(data) {
+  // Công thức ánh xạ:
+  const MAPPING = {
+      "0": "HƯƠU",
+      "1": "BẦU",
+      "2": "GÀ",
+      "3": "CÁ",
+      "4": "CUA",
+      "5": "TÔM"
+  };
+
+  // 1. Cắt mảng lấy 20 phần tử cuối cùng
+  const last20 = data.slice(-20);
+
+  // 2. Ánh xạ các chữ số sang các nhãn
+  const mappedResults = last20.map(item => {
+      // Chia chuỗi thành các số (dưới dạng chuỗi)
+      const digits = item.split(',');
+      
+      // Ánh xạ từng chữ số
+      const labels = digits.map(digit => {
+          return MAPPING[digit] || digit;
+      });
+      
+      // Nối các nhãn lại với nhau bằng DẤU GẠCH NGANG (-)
+      return labels.join('-');
+  });
+
+  return mappedResults;
+}
+
+const MAPPING = {
+  "0": "HƯƠU",
+  "1": "BẦU",
+  "2": "GÀ",
+  "3": "CÁ",
+  "4": "CUA",
+  "5": "TÔM"
+};
+
+const REVERSE = Object.fromEntries(
+  Object.entries(MAPPING).map(([k, v]) => [v, Number(k)])
+);
+
+
+export function analyzeAnimals(list) {
+  const counts = {};
+  const lastIndex = {};
+  let idx = 0;
+
+  list.forEach(item => {
+    const parts = item.split("-");
+    parts.forEach(p => {
+      counts[p] = (counts[p] || 0) + 1;
+      lastIndex[p] = idx++;
+    });
+  });
+
+  const sorted = Object.keys(counts)
+    .map(name => ({
+      choice: REVERSE[name],
+      amount: 10000,
+      count: counts[name],
+      last: lastIndex[name]
+    }))
+    .sort((a, b) => {
+      if (b.count !== a.count) return b.count - a.count;
+      return b.last - a.last;
+    });
+
+  return sorted.slice(0, 4);
+}
+
   export function expandBets(choices, amounts) {
     const expanded = []
-  
     choices.forEach((choice, index) => {
       const targetAmount = amounts[index] ?? 0
       const parts = decomposeBet(targetAmount)

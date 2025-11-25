@@ -1,13 +1,42 @@
 {
   "gameSettings": {
     "BET_AMOUNT": 5000,
-    "JACKPOT_THRESHOLD": 40000000,
+    "JACKPOT_THRESHOLD": 10000000,
     "BET_STOP": 10000,
     "TIME_SEND_MESS": 1,
     "IS_MARTINGALE": false,
     "RATE_MARTINGALE": 2,
     "ZOMBIE": true,
-    "JACKPOT_RANGES": []
+    "JACKPOT_RANGES": [
+      {
+        "MIN": 25000000,
+        "MAX": 35000000
+      },
+      {
+        "MIN": 38000000,
+        "MAX": 41000000
+      },
+      {
+        "MIN": 5000000,
+        "MAX": 6000000
+      },
+      {
+        "MIN": 73000000,
+        "MAX": 75000000
+      },
+      {
+        "MIN": 85000000,
+        "MAX": 93000000
+      },
+      {
+        "MIN": 105000000,
+        "MAX": 128000000
+      },
+      {
+        "MIN": 160000000,
+        "MAX": 176000000
+      }
+    ]
   },
   "gameRules": [
     "Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).",
@@ -17,26 +46,12 @@
   ],
   "bettingRules": [
     {
-      "description": "HƯU -> BẦU -> GÀ",
+      "description": "GÀ-BẦU-GÀ",
       "priority": 1,
       "active": true,
       "pattern": [],
-      "betOn": [
-        "0",
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
-      ],
-      "betAmount": [
-        2000,
-        2000,
-        2000,
-        2000,
-        2000,
-        2000
-      ]
+      "betOn": [],
+      "betAmount": []
     }
   ]
 }

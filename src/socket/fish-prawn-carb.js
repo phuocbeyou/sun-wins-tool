@@ -6,9 +6,9 @@ import { dirname } from "path"
 import path from "path"
 import { readUsers } from "../utils/dataManager.js"
 import { sendTelegramAlert } from "../utils/botHelper.js"
-import { convertVnd, expandBets, getLabelByRes, getLabelByValue, getLabelByValueFish, printBetResult } from "../utils/betHelper.js"
+import { analyzeAnimals, convertVnd, expandBets, getLabelByRes, getLabelByValue, getLabelByValueFish, mapLast20Results, printBetResult } from "../utils/betHelper.js"
 import { logError, printTable } from "../utils/helperCmd.js"
-import { CMD_BET, CMD_BUDGET, CMD_END, CMD_START, CMD_JACKPOT } from "../contants/fish-prawn-carb.js"
+import { CMD_BET, CMD_BUDGET, CMD_END, CMD_START, CMD_JACKPOT,CMD_INIT } from "../contants/fish-prawn-carb.js"
 import { SocketClient } from "./socketClient.js"
 
 const WebSocketClient = websocket.client
@@ -290,6 +290,9 @@ function handleMainGameMessage(msg, worker) {
   } else if (messageString.includes(`"cmd":${CMD_BET}`)) {
     handleConfirmBet(parsedMessage, worker)
   }
+  else if (messageString.includes(`"cmd":${CMD_INIT}`)) {
+    handlePushHistory(parsedMessage, worker)
+  }
 }
 
 
@@ -357,10 +360,10 @@ function handleGameResultUpdate(parsedMessage, worker) {
 
   if (roundResult) {
     worker.gameHistory.push(roundResult);
-    if (worker.gameHistory.length > 10) {
+    if (worker.gameHistory.length > 20) {
       worker.gameHistory.shift();
     }
-  
+    console.log(analyzeAnimals(worker.gameHistory))
     console.log(chalk.green(`Lịch sử gần đây: [${worker.gameHistory.join(", ")}]`));
   }
 }
@@ -416,6 +419,15 @@ function handleConfirmBet(parsedMessage, worker) {
   worker.shouldRequestBudget = true
 }
 
+function handlePushHistory(parsedMessage, worker) {
+  if (parsedMessage[1]) { 
+    const initHistory = mapLast20Results(parsedMessage[1]?.gr)
+    worker.gameHistory = initHistory
+    console.log(chalk.blue("Push history thành công"))
+    console.log(chalk.greenBright(initHistory))
+  }
+}
+
 /**
  * Handle jackpot update
  * @param {object} parsedMessage 
@@ -461,22 +473,22 @@ function executeBettingLogic(worker, gameData) {
     return
   }
   
-  const bettingDecision = determineBettingChoice(worker.gameHistory, config)
+  // const bettingDecision = determineBettingChoice(worker.gameHistory, config)
 
-  if (!bettingDecision.choices?.length) {
-    console.log(
-      chalk.gray(`[${getCurrentTime()}] `) +
-      "Không tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.",
-    )
-    return
-  } else {
-    printBetResult(bettingDecision)
-  }
+  // if (!bettingDecision.choices?.length) {
+  //   console.log(
+  //     chalk.gray(`[${getCurrentTime()}] `) +
+  //     "Không tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.",
+  //   )
+  //   return
+  // } else {
+  //   printBetResult(bettingDecision)
+  // }
 
-  worker.bettingChoice = bettingDecision.choices
-  worker.currentBetAmount = config.gameSettings.IS_MARTINGALE
-    ? worker.martingaleCurrentBet
-    : bettingDecision.amounts
+  // worker.bettingChoice = bettingDecision.choices
+  // worker.currentBetAmount = config.gameSettings.IS_MARTINGALE
+  //   ? worker.martingaleCurrentBet
+  //   : bettingDecision.amounts
   
   const budgetCheck = checkBudgetSufficiency(worker.currentBudget, worker.currentBetAmount)
   
@@ -510,7 +522,8 @@ function executeBettingLogic(worker, gameData) {
     return
   }
 
-  const bets = expandBets(worker.bettingChoice, worker?.currentBetAmount)
+  // const bets = expandBets(worker.bettingChoice, worker?.currentBetAmount,worker?.gameHistory)
+  const bets = analyzeAnimals(worker.gameHistory)
 
   if (worker.mainGameConnection?.connected) {
     bets.forEach((bet, index) => {
@@ -526,7 +539,7 @@ function executeBettingLogic(worker, gameData) {
         const logPrefix = config.gameSettings.IS_MARTINGALE ? "Martingale" : "Normal"
         logMessage(
           chalk.magenta(`[${getCurrentTime()}] `) +
-          `Đã chọn quy tắc: ${chalk.yellow(bettingDecision.ruleName)} - Đặt cược (${logPrefix}): ${chalk.yellow(getLabelByValue(bet.choice))} với số tiền ${chalk.red(convertVnd(bet.amount))}`,
+          `Đã chọn quy tắc: Đặt cược (${logPrefix}): ${chalk.yellow(getLabelByValue(bet.choice))} với số tiền ${chalk.red(convertVnd(bet.amount))}`,
         )
       }, delay)
     })

@@ -6,6 +6,7 @@ export const CMD_END = "908"
 export const CMD_END_BET = "908"
 export const CMD_BET = "900"
 export const CMD_BUDGET = "100"
+export const CMD_INIT = "202"
 
 export const CMD_JACKPOT = "207"
 
