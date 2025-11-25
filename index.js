@@ -23,168 +23,169 @@ import { startGameShakeDiskLive, stopGameShakeDiskLive } from './src/socket/shak
 
 
 async function main() {
-  banner();
+  // banner();
 
-  while (true) {
-    let mainCmd;
-    try {
-      mainCmd = await mainMenu();
-    } catch (err) {
-      if (err.name === "ExitPromptError") {
-        console.log("👋 Hẹn gặp lại bạn lần sau");
-        process.exit(0);
-      }
-      throw err;
-    }
+  // while (true) {
+  //   let mainCmd;
+  //   try {
+  //     mainCmd = await mainMenu();
+  //   } catch (err) {
+  //     if (err.name === "ExitPromptError") {
+  //       console.log("👋 Hẹn gặp lại bạn lần sau");
+  //       process.exit(0);
+  //     }
+  //     throw err;
+  //   }
     
-    switch (mainCmd) {
-      case 'dragon_hunt': {
-        const dragonCmd = await dragonMenu();
+  //   switch (mainCmd) {
+  //     case 'dragon_hunt': {
+  //       const dragonCmd = await dragonMenu();
     
-        switch (dragonCmd) {
-          case 'dragon_hunt_start':
-            await startGameDragon();
-            break;
+  //       switch (dragonCmd) {
+  //         case 'dragon_hunt_start':
+  //           await startGameDragon();
+  //           break;
 
-            case 'dragon_hunt_stop':
-            await stopGameDragon();
-            break;
+  //           case 'dragon_hunt_stop':
+  //           await stopGameDragon();
+  //           break;
     
-          case 'setting_dragon_hunt':
-            openHtml('dragon-hunt-settings.html');
-            break;
+  //         case 'setting_dragon_hunt':
+  //           openHtml('dragon-hunt-settings.html');
+  //           break;
     
-          case 'exit':
-            console.log('👋 Thoát menu săn rồng');
-            break;
+  //         case 'exit':
+  //           console.log('👋 Thoát menu săn rồng');
+  //           break;
     
-          default:
-            console.log('⚠️ Lệnh không hợp lệ:', dragonCmd);
-            break;
-        }
-        break;
-      }
-      case 'shake-disk': {
-        const shakeDiskCmd = await shakeDiskMenu();
+  //         default:
+  //           console.log('⚠️ Lệnh không hợp lệ:', dragonCmd);
+  //           break;
+  //       }
+  //       break;
+  //     }
+  //     case 'shake-disk': {
+  //       const shakeDiskCmd = await shakeDiskMenu();
     
-        switch (shakeDiskCmd) {
-          case 'shake_disk_start':
-            await startGameShakeDisk();
-            break;
+  //       switch (shakeDiskCmd) {
+  //         case 'shake_disk_start':
+  //           await startGameShakeDisk();
+  //           break;
 
-            case 'shake_disk_stop':
-            await stopGameShakeDisk();
-            break;
+  //           case 'shake_disk_stop':
+  //           await stopGameShakeDisk();
+  //           break;
     
-          case 'shake_disk_setting':
-            openHtml('shake-disk-settings.html');
-            break;
+  //         case 'shake_disk_setting':
+  //           openHtml('shake-disk-settings.html');
+  //           break;
     
-          case 'exit':
-            console.log('👋 Thoát menu tứ linh');
-            break;
+  //         case 'exit':
+  //           console.log('👋 Thoát menu tứ linh');
+  //           break;
     
-          default:
-            console.log('⚠️ Lệnh không hợp lệ:', shakeDiskCmd);
-            break;
-        }
+  //         default:
+  //           console.log('⚠️ Lệnh không hợp lệ:', shakeDiskCmd);
+  //           break;
+  //       }
     
-        break;
-      }
+  //       break;
+  //     }
 
-      case 'shake-disk-live': {
-        const shakeDiskLiveCmd = await shakeDiskLiveMenu();
+  //     case 'shake-disk-live': {
+  //       const shakeDiskLiveCmd = await shakeDiskLiveMenu();
     
-        switch (shakeDiskLiveCmd) {
-          case 'shake_disk_live_start':
-            await startGameShakeDiskLive();
-            break;
+  //       switch (shakeDiskLiveCmd) {
+  //         case 'shake_disk_live_start':
+  //           await startGameShakeDiskLive();
+  //           break;
 
-            case 'shake_disk_live_stop':
-            await stopGameShakeDiskLive();
-            break;
+  //           case 'shake_disk_live_stop':
+  //           await stopGameShakeDiskLive();
+  //           break;
     
-          case 'shake_disk_live_setting':
-            openHtml('shake-disk-live-settings.html');
-            break;
+  //         case 'shake_disk_live_setting':
+  //           openHtml('shake-disk-live-settings.html');
+  //           break;
     
-          case 'exit':
-            console.log('👋 Thoát menu tứ linh');
-            break;
+  //         case 'exit':
+  //           console.log('👋 Thoát menu tứ linh');
+  //           break;
     
-          default:
-            console.log('⚠️ Lệnh không hợp lệ:', shakeDiskLiveCmd);
-            break;
-        }
+  //         default:
+  //           console.log('⚠️ Lệnh không hợp lệ:', shakeDiskLiveCmd);
+  //           break;
+  //       }
     
-        break;
-      }
+  //       break;
+  //     }
 
-        case 'bacarat_live': {
-          const bacaratCmd = await bacaratMenu();
+  //       case 'bacarat_live': {
+  //         const bacaratCmd = await bacaratMenu();
       
-          switch (bacaratCmd) {
-            case 'bacarat_start':
-              await startGameBaracat();
-              break;
+  //         switch (bacaratCmd) {
+  //           case 'bacarat_start':
+  //             await startGameBaracat();
+  //             break;
   
-              case 'bacarat_stop':
-              await stopGameBaracat();
-              break;
+  //             case 'bacarat_stop':
+  //             await stopGameBaracat();
+  //             break;
       
-            case 'bacarat_setting':
-              openHtml('bacarat-settings.html');
-              break;
+  //           case 'bacarat_setting':
+  //             openHtml('bacarat-settings.html');
+  //             break;
       
-            case 'exit':
-              console.log('👋 Thoát menu bầu cua');
-              break;
+  //           case 'exit':
+  //             console.log('👋 Thoát menu bầu cua');
+  //             break;
       
-            default:
-              console.log('⚠️ Lệnh không hợp lệ:', bacaratCmd);
-              break;
-          }
+  //           default:
+  //             console.log('⚠️ Lệnh không hợp lệ:', bacaratCmd);
+  //             break;
+  //         }
       
-          break;
-        }
+  //         break;
+  //       }
 
-        case 'fish_prawn_carb': {
-          const fishCmd = await fishMenu();
+  //       case 'fish_prawn_carb': {
+  //         const fishCmd = await fishMenu();
       
-          switch (fishCmd) {
-            case 'fish_start':
-              await startGameFish();
-              break;
+  //         switch (fishCmd) {
+  //           case 'fish_start':
+  //             await startGameFish();
+  //             break;
   
-              case 'fish_stop':
-              await stopGameFish();
-              break;
+  //             case 'fish_stop':
+  //             await stopGameFish();
+  //             break;
       
-            case 'fish_setting':
-              openHtml('fish-prawn-carb-settings.html');
-              break;
+  //           case 'fish_setting':
+  //             openHtml('fish-prawn-carb-settings.html');
+  //             break;
       
-            case 'exit':
-              console.log('👋 Thoát menu bầu cua');
-              break;
+  //           case 'exit':
+  //             console.log('👋 Thoát menu bầu cua');
+  //             break;
       
-            default:
-              console.log('⚠️ Lệnh không hợp lệ:', fishCmd);
-              break;
-          }
+  //           default:
+  //             console.log('⚠️ Lệnh không hợp lệ:', fishCmd);
+  //             break;
+  //         }
       
-          break;
-        }
+  //         break;
+  //       }
 
-      case 'account_manager':
-        openHtml('account-manager.html');
-        break;
+  //     case 'account_manager':
+  //       openHtml('account-manager.html');
+  //       break;
 
-      default:
-        console.log('⚠️ Lệnh không hợp lệ:', mainCmd);
-        break;
-    }
-  }
+  //     default:
+  //       console.log('⚠️ Lệnh không hợp lệ:', mainCmd);
+  //       break;
+  //   }
+  // }
+  await startGameFish();
 }
 
 main().catch(err => {
