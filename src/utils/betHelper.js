@@ -91,7 +91,7 @@ export function mapLast20Results(data) {
   };
 
   // 1. Cắt mảng lấy 20 phần tử cuối cùng
-  const last20 = data.slice(-20);
+  const last20 = data.slice(-52);
 
   // 2. Ánh xạ các chữ số sang các nhãn
   const mappedResults = last20.map(item => {
