@@ -82,7 +82,7 @@ export const convertVnd = (number) => {
 export function mapLast20Results(data) {
   // Công thức ánh xạ:
   const MAPPING = {
-      "0": "HƯƠU",
+      "0": "HƯU",
       "1": "BẦU",
       "2": "GÀ",
       "3": "CÁ",
@@ -111,7 +111,7 @@ export function mapLast20Results(data) {
 }
 
 const MAPPING = {
-  "0": "HƯƠU",
+  "0": "HƯU",
   "1": "BẦU",
   "2": "GÀ",
   "3": "CÁ",
