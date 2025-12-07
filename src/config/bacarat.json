@@ -6,7 +6,13 @@
     "TIME_SEND_MESS": 1,
     "IS_MARTINGALE": false,
     "RATE_MARTINGALE": 2,
-    "ZOMBIE": true
+    "ZOMBIE": true,
+    "JACKPOT_RANGES": [
+      {
+        "MIN": 150000000,
+        "MAX": 200000000
+      }
+    ]
   },
   "gameRules": [
     "Nếu 3 viên xúc xắc ra cùng một số (bộ ba đồng nhất), kết quả là BÃO và nhà cái thắng (người chơi thua cược TÀI/XỈU).",
@@ -16,30 +22,10 @@
   ],
   "bettingRules": [
     {
-      "description": "BANKER-BANKER-PLAYER",
+      "description": "quy tắc mặc định",
       "priority": 1,
       "active": true,
-      "pattern": [
-        "BANKER",
-        "BANKER",
-        "PLAYER"
-      ],
-      "betOn": [
-        "PLAYER"
-      ],
-      "betAmount": [
-        1000
-      ]
-    },
-    {
-      "description": "PLAYER-PLAYER-BANKER",
-      "priority": 1,
-      "active": true,
-      "pattern": [
-        "PLAYER",
-        "PLAYER",
-        "BANKER"
-      ],
+      "pattern": [],
       "betOn": [
         "BANKER"
       ],
