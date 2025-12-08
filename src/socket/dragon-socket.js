@@ -633,6 +633,16 @@ function executeBettingLogic(worker, gameData) {
     : [worker.currentBetAmount]
   const bets = expandBets(worker.bettingChoice, betAmounts)
   console.log("🚀 ~ bets:", bets)
+  
+  // 🆕 Set các biến này NGAY LẬP TỨC trước khi đặt cược để đảm bảo có giá trị khi xử lý kết quả
+  // Dùng worker.currentBetAmount (tổng tiền cược) thay vì bets[0].amount (đã chia nhỏ)
+  if (bets.length > 0) {
+    worker.lastBetAmount = worker.currentBetAmount // ✅ Dùng tổng tiền cược, không phải tiền đã chia nhỏ
+    worker.lastBetChoice = bets[0].choice
+    worker.lastBetRuleName = bettingDecision.ruleName
+    logMessage(chalk.cyan(`[${getCurrentTime()}] [DEBUG] Set lastBetAmount=${worker.lastBetAmount}, lastBetChoice=${worker.lastBetChoice}, lastBetRuleName=${worker.lastBetRuleName}`))
+  }
+  
   if (worker.mainGameConnection?.connected) {
     bets.forEach((bet, index) => {
       const delay = getRandomBettingDelay(500, 1500) * (index + 1)
@@ -641,9 +651,6 @@ function executeBettingLogic(worker, gameData) {
 
         worker.mainGameConnection.sendUTF(betCommand)
         worker.isBettingAllowed = false
-        worker.lastBetAmount = bet.amount
-        worker.lastBetChoice = bet.choice
-        worker.lastBetRuleName = bettingDecision.ruleName // 🆕 Lưu rule đã dùng
 
         const logPrefix = "Rule-Martingale"
         logMessage(
