@@ -409,9 +409,34 @@ function handleGameResultUpdate(parsedMessage, worker) {
     logMessage(chalk.red(`Giá trị hũ ${jackpot} không nằm trong khoảng cho phép. Bỏ cược`))
   }
 
-  // Process Martingale logic
-  if (IS_MARTINGALE && worker.lastBetChoice && worker.lastBetAmount > 0) {
+  // 🆕 Process Rule-based Martingale logic (for pattern matching)
+  if (worker.lastBetChoice && worker.lastBetAmount > 0 && worker.lastBetRuleName) {
     const won = processGameResult(resultType, worker.lastBetChoice, sessionId)
+    
+    if (won) {
+      // THẮNG: Tăng số lần thắng liên tiếp và reset cược về gốc
+      worker.consecutiveWins++
+      worker.ruleMartingaleCurrentBet = worker.ruleBaseBetAmount
+      
+      logMessage(chalk.green(`[${getCurrentTime()}] Thắng liên tiếp: ${worker.consecutiveWins} lần. Reset cược về ${worker.ruleBaseBetAmount}đ`))
+      
+      // Nếu thắng 3 lần liên tiếp => tạm dừng betting cho pattern này
+      if (worker.consecutiveWins >= 3) {
+        worker.isPausedByWinStreak = true
+        logMessage(chalk.yellow(`[${getCurrentTime()}] ⚠️ Đã thắng ${worker.consecutiveWins} lần liên tiếp với pattern "${worker.lastBetRuleName}". TẠM DỪNG cho đến khi pattern thay đổi.`))
+      }
+    } else {
+      // THUA: Reset số lần thắng liên tiếp và x2 cược
+      worker.consecutiveWins = 0
+      worker.ruleMartingaleCurrentBet = Math.ceil(worker.lastBetAmount * RATE_MARTINGALE)
+      
+      logMessage(chalk.red(`[${getCurrentTime()}] Thua! Gấp thếp x${RATE_MARTINGALE}: ${worker.ruleMartingaleCurrentBet}đ`))
+    }
+  }
+
+  // Process legacy Martingale logic (keep for compatibility)
+  if (IS_MARTINGALE && worker.lastBetChoice && worker.lastBetAmount > 0) {
+    const won = worker.lastBetChoice === resultType
     worker.martingaleCurrentBet = calculateMartingaleBet(
       won,
       worker.baseBetAmount,
@@ -422,6 +447,7 @@ function handleGameResultUpdate(parsedMessage, worker) {
 
   worker.lastBetChoice = null
   worker.lastBetAmount = 0
+  worker.lastBetRuleName = null
 
   if (resultType) {
     worker.gameHistory.push(resultType)
@@ -525,6 +551,38 @@ function executeBettingLogic(worker, gameData) {
       chalk.gray(`[${getCurrentTime()}] `) +
       "Không tìm thấy quy tắc đặt cược phù hợp trong lịch sử gần đây.",
     )
+    
+    // 🆕 Nếu không có pattern match và đang pause do thắng 3 lần => reset pause để sẵn sàng cho pattern tiếp theo
+    // KHÔNG reset ruleMartingaleCurrentBet để giữ x2 khi thua
+    if (worker.isPausedByWinStreak) {
+      worker.isPausedByWinStreak = false
+      worker.consecutiveWins = 0
+      // KHÔNG reset ruleMartingaleCurrentBet ở đây
+      logMessage(chalk.cyan(`[${getCurrentTime()}] Pattern đã thay đổi. Reset trạng thái pause và sẵn sàng cược lại.`))
+    }
+    return
+  }
+
+  // 🆕 Kiểm tra xem pattern có thay đổi không để reset trạng thái pause
+  const currentRuleName = bettingDecision.ruleName
+  if (worker.lastMatchedRuleName && worker.lastMatchedRuleName !== currentRuleName) {
+    // Pattern đã thay đổi => reset pause và consecutive wins
+    if (worker.isPausedByWinStreak) {
+      logMessage(chalk.cyan(`[${getCurrentTime()}] Pattern đã thay đổi từ "${worker.lastMatchedRuleName}" sang "${currentRuleName}". Có thể tiếp tục cược.`))
+      worker.isPausedByWinStreak = false
+      worker.consecutiveWins = 0
+      worker.ruleMartingaleCurrentBet = bettingDecision.amounts[0] || config.gameSettings.BET_AMOUNT
+      worker.ruleBaseBetAmount = worker.ruleMartingaleCurrentBet
+    }
+  }
+  worker.lastMatchedRuleName = currentRuleName
+
+  // 🆕 Kiểm tra nếu đang pause do thắng 3 lần liên tiếp
+  if (worker.isPausedByWinStreak) {
+    logMessage(
+      chalk.yellow(`[${getCurrentTime()}] `) +
+      `⏸️ Đang tạm dừng (thắng ${worker.consecutiveWins} lần liên tiếp với pattern "${currentRuleName}"). Chờ pattern thay đổi...`,
+    )
     return
   }
 
@@ -534,9 +592,24 @@ function executeBettingLogic(worker, gameData) {
   }
 
   worker.bettingChoice = bettingDecision.choices
-  worker.currentBetAmount = config.gameSettings.IS_MARTINGALE
-    ? worker.martingaleCurrentBet
-    : bettingDecision.amounts
+  
+  // 🆕 Sử dụng ruleMartingaleCurrentBet cho số tiền cược
+  // Chỉ khởi tạo base bet amount khi lần đầu cược (ruleBaseBetAmount chưa được set từ rule)
+  if (worker.ruleBaseBetAmount === DEFAULT_BET_AMOUNT || !worker.lastBetRuleName) {
+    worker.ruleBaseBetAmount = bettingDecision.amounts[0] || config.gameSettings.BET_AMOUNT
+    // Chỉ reset ruleMartingaleCurrentBet nếu đây là lần đầu tiên
+    if (!worker.lastBetRuleName) {
+      worker.ruleMartingaleCurrentBet = worker.ruleBaseBetAmount
+    }
+  }
+  
+  worker.currentBetAmount = worker.ruleMartingaleCurrentBet
+
+  // 🆕 Log debug để kiểm tra
+  logMessage(
+    chalk.cyan(`[${getCurrentTime()}] `) +
+    `[DEBUG] Pattern matched: "${bettingDecision.ruleName}", Bet: ${worker.currentBetAmount}đ, Base: ${worker.ruleBaseBetAmount}đ`
+  )
 
   const budgetCheck = checkBudgetSufficiency(worker.currentBudget, worker.currentBetAmount)
 
@@ -555,8 +628,12 @@ function executeBettingLogic(worker, gameData) {
     return
   }
 
-  const bets = expandBets(worker.bettingChoice, worker?.currentBetAmount)
-
+  // 🆕 expandBets expects amounts là array, wrap currentBetAmount trong array
+  const betAmounts = Array.isArray(worker.currentBetAmount) 
+    ? worker.currentBetAmount 
+    : [worker.currentBetAmount]
+  const bets = expandBets(worker.bettingChoice, betAmounts)
+  console.log("🚀 ~ bets:", bets)
   if (worker.mainGameConnection?.connected) {
     bets.forEach((bet, index) => {
       const delay = getRandomBettingDelay(500, 1500) * (index + 1)
@@ -567,8 +644,9 @@ function executeBettingLogic(worker, gameData) {
         worker.isBettingAllowed = false
         worker.lastBetAmount = bet.amount
         worker.lastBetChoice = bet.choice
+        worker.lastBetRuleName = bettingDecision.ruleName // 🆕 Lưu rule đã dùng
 
-        const logPrefix = config.gameSettings.IS_MARTINGALE ? "Martingale" : "Normal"
+        const logPrefix = "Rule-Martingale"
         logMessage(
           chalk.magenta(`[${getCurrentTime()}] `) +
           `Đã chọn quy tắc: ${chalk.yellow(bettingDecision.ruleName)} - Đặt cược (${logPrefix}): ${chalk.yellow(bet.choice)} với số tiền ${chalk.red(bet.amount)} đ.`,
@@ -617,6 +695,14 @@ class GameWorker {
     this.lastBetAmount = 0
     this.lastBetChoice = null
 
+    // 🆕 Rule-based Martingale state (pattern winning streak)
+    this.consecutiveWins = 0 // Số lần thắng liên tiếp
+    this.isPausedByWinStreak = false // Đang dừng do thắng 3 lần liên tiếp
+    this.lastMatchedRuleName = null // Pattern cuối cùng đã match
+    this.lastBetRuleName = null // Quy tắc đã dùng cho lần cược gần nhất
+    this.ruleBaseBetAmount = DEFAULT_BET_AMOUNT // Số tiền cược gốc của rule
+    this.ruleMartingaleCurrentBet = DEFAULT_BET_AMOUNT // Số tiền cược hiện tại cho rule Martingale
+
     // Management
     this.activeIntervals = []
     this.pingCounter = 2
@@ -646,6 +732,15 @@ class GameWorker {
     this.martingaleCurrentBet = this.baseBetAmount
     this.lastBetAmount = 0
     this.lastBetChoice = null
+    
+    // 🆕 Reset rule-based Martingale state
+    this.consecutiveWins = 0
+    this.isPausedByWinStreak = false
+    this.lastMatchedRuleName = null
+    this.lastBetRuleName = null
+    this.ruleBaseBetAmount = DEFAULT_BET_AMOUNT
+    this.ruleMartingaleCurrentBet = DEFAULT_BET_AMOUNT
+    
     if (IS_MARTINGALE) {
       logMessage(chalk.magenta(`[${getCurrentTime()}] Martingale state reset.`))
     }
