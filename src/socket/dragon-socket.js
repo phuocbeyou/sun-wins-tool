@@ -594,13 +594,12 @@ function executeBettingLogic(worker, gameData) {
   worker.bettingChoice = bettingDecision.choices
   
   // 🆕 Sử dụng ruleMartingaleCurrentBet cho số tiền cược
-  // Chỉ khởi tạo base bet amount khi lần đầu cược (ruleBaseBetAmount chưa được set từ rule)
-  if (worker.ruleBaseBetAmount === DEFAULT_BET_AMOUNT || !worker.lastBetRuleName) {
+  // Chỉ khởi tạo base bet amount MỘT LẦN DUY NHẤT khi chưa từng bet
+  if (!worker.hasInitializedMartingale) {
     worker.ruleBaseBetAmount = bettingDecision.amounts[0] || config.gameSettings.BET_AMOUNT
-    // Chỉ reset ruleMartingaleCurrentBet nếu đây là lần đầu tiên
-    if (!worker.lastBetRuleName) {
-      worker.ruleMartingaleCurrentBet = worker.ruleBaseBetAmount
-    }
+    worker.ruleMartingaleCurrentBet = worker.ruleBaseBetAmount
+    worker.hasInitializedMartingale = true
+    logMessage(chalk.cyan(`[${getCurrentTime()}] Khởi tạo Martingale: Base = ${worker.ruleBaseBetAmount}đ`))
   }
   
   worker.currentBetAmount = worker.ruleMartingaleCurrentBet
@@ -702,6 +701,7 @@ class GameWorker {
     this.lastBetRuleName = null // Quy tắc đã dùng cho lần cược gần nhất
     this.ruleBaseBetAmount = DEFAULT_BET_AMOUNT // Số tiền cược gốc của rule
     this.ruleMartingaleCurrentBet = DEFAULT_BET_AMOUNT // Số tiền cược hiện tại cho rule Martingale
+    this.hasInitializedMartingale = false // 🆕 Flag để biết đã khởi tạo martingale chưa
 
     // Management
     this.activeIntervals = []
